@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>持仓数据看板</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #f5f6fa; color: #2c3e50;
+    padding: 16px;
+  }
+
+  .tab-bar {
+    display: flex; gap: 0; max-width: 1500px; margin: 0 auto 20px;
+    background: #e8e8e8; border-radius: 10px; padding: 4px; width: fit-content; flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 10px 18px; border: none; background: transparent; cursor: pointer;
+    font-size: 14px; font-weight: 600; color: #7f8c8d; border-radius: 8px;
+    transition: all .2s; white-space: nowrap;
+  }
+  .tab-btn.active { background: #fff; color: #1a1a2e; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+  .tab-btn:hover:not(.active) { color: #2c3e50; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .app-title { text-align: left; font-size: 26px; font-weight: 700; color: #1a1a2e; padding: 16px 0 12px; border-bottom: 2px solid #eef0f3; }
+  .header { text-align: left; margin-bottom: 20px; padding-left: 4px; }
+  .header h1 { font-size: 26px; color: #1a1a2e; margin-bottom: 6px; font-weight: 700; }
+  .header .subtitle { font-size: 13px; color: #7f8c8d; }
+  .header .update-time { font-size: 13px; color: #e74c3c; margin-top: 6px; }
+  .header .range-note { font-size: 12px; color: #95a5a6; margin-top: 2px; }
+
+  /* ===== sub tabs (铁矿席位 子界面) ===== */
+  .sub-tab-bar { display: flex; gap: 0; max-width: 1400px; margin: 0 auto 16px; background: #e3e8ef; border-radius: 8px; padding: 4px; width: fit-content; }
+  .sub-btn { padding: 8px 26px; border: none; background: transparent; cursor: pointer; font-size: 14px; font-weight: 600; color: #7f8c8d; border-radius: 6px; transition: all .2s; }
+  .sub-btn.active { background: #fff; color: #1a1a2e; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+
+  /* ===== SUMMARY CARDS ===== */
+  .summary-bar { max-width: 1400px; margin: 0 auto 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .summary-item { background: #fff; border-radius: 10px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; }
+  .summary-label { font-size: 12px; color: #7f8c8d; margin-bottom: 6px; }
+  .summary-value { font-size: 22px; font-weight: 700; }
+  .summary-change { font-size: 12px; margin-top: 4px; }
+
+  /* ===== FUTURES TABLES & CHARTS ===== */
+  .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 1400px; margin: 0 auto 24px; }
+  .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 18px; }
+  .card-title { font-size: 15px; font-weight: 600; color: #1a1a2e; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e8e8e8; }
+  .card-title.gs { border-bottom-color: #d4a843; }
+  .card-title.ms { border-bottom-color: #3498db; }
+  .card-title.jm { border-bottom-color: #2c3e50; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 9px 7px; text-align: center; border-bottom: 1px solid #ecf0f1; }
+  th { background: #f8f9fa; font-weight: 600; color: #555; font-size: 12px; }
+  tr:last-child td { border-bottom: none; }
+  .change-row { background: #fdf6e3 !important; font-weight: 600; }
+  .change-row td { border-top: 2px solid #d4a843; }
+  .positive { color: #e74c3c; }
+  .negative { color: #27ae60; }
+  .neutral { color: #7f8c8d; }
+  .dash { color: #bdc3c7; }
+
+  .chart-section { max-width: 1400px; margin: 0 auto 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .chart-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 18px; }
+  .chart-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .chart-head .card-title { border: none; padding: 0; margin: 0; }
+  .toggle-group { display: flex; gap: 6px; }
+  .toggle-btn { border: 1px solid #d0d7de; background: #fff; color: #555; border-radius: 6px; padding: 4px 12px; font-size: 12px; cursor: pointer; transition: all .15s; user-select: none; }
+  .toggle-btn.on { background: #2c3e50; color: #fff; border-color: #2c3e50; }
+  .toggle-btn.long.on { background: #e74c3c; border-color: #e74c3c; }
+  .toggle-btn.short.on { background: #27ae60; border-color: #27ae60; }
+  .toggle-btn.net.on { background: #8e44ad; border-color: #8e44ad; }
+  .toggle-btn.call.on { background: #e74c3c; border-color: #e74c3c; }
+  .toggle-btn.put.on { background: #27ae60; border-color: #27ae60; }
+  .toggle-btn:disabled { opacity: .35; cursor: not-allowed; }
+  .chart-container { width: 100%; height: 330px; }
+  .chart-note { max-width: 1400px; margin: -8px auto 10px; font-size: 12px; color: #95a5a6; font-style: italic; }
+
+  .section-label { max-width: 1400px; margin: 0 auto 10px; font-size: 15px; font-weight: 600; color: #1a1a2e; }
+
+  /* ===== OPTIONS TAB ===== */
+  .options-controls { max-width: 1400px; margin: 0 auto 18px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; background: #fff; border-radius: 10px; padding: 14px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .options-controls label { font-size: 13px; font-weight: 600; color: #555; white-space: nowrap; }
+  .options-controls input[type="date"] { padding: 7px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; outline: none; }
+  .options-controls input[type="date"]:focus { border-color: #3498db; }
+  .options-controls select { padding: 7px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; outline: none; background: #fff; }
+  .opt-toggle-group { display: flex; gap: 0; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+  .opt-toggle-group button { padding: 8px 24px; border: none; cursor: pointer; font-size: 14px; font-weight: 600; transition: all .15s; background: #f8f9fa; color: #7f8c8d; }
+  .opt-toggle-group button.active-call { background: #e74c3c; color: #fff; }
+  .opt-toggle-group button.active-put { background: #27ae60; color: #fff; }
+  .opt-toggle-group button.active-ring { background: #e67e22; color: #fff; }
+  .opt-toggle-group button:disabled, .opt-toggle-group button.disabled-btn { opacity: .4; cursor: not-allowed; }
+  .opt-toggle-group button.disabled-btn:hover { background: #f8f9fa; color: #7f8c8d; }
+  .data-status { font-size: 12px; color: #95a5a6; margin-left: auto; }
+  .options-chart-area { max-width: 1400px; margin: 0 auto 24px; }
+  .options-chart-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 20px; }
+  .options-table-wrap { max-width: 1400px; margin: 0 auto 24px; max-height: 460px; overflow: auto; }
+  .options-table-wrap table { font-size: 13px; }
+
+  .collapse-btn { display: block; margin: 10px auto 0; padding: 8px 22px; border: 1px solid #3498db; background: #fff; color: #3498db; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all .15s; }
+  .collapse-btn:hover { background: #3498db; color: #fff; }
+
+  /* ===== DAILY SUMMARY TABLE ===== */
+  .daily-summary-section { max-width: 1400px; margin: 0 auto 20px; }
+  .daily-summary-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 20px; }
+  .daily-summary-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .daily-summary-head .card-title { border: none; padding: 0; margin: 0; }
+  .daily-summary-table-wrap { max-width: 1400px; margin: 0 auto 8px; max-height: 460px; overflow: auto; }
+  .daily-summary-table-wrap table { font-size: 12px; }
+  .daily-summary-table-wrap th { position: sticky; top: 0; z-index: 1; background: #f8f9fa !important; }
+  .daily-summary-table-wrap td:first-child { white-space: nowrap; font-weight: 600; }
+  .empty-note { text-align: center; color: #999; padding: 40px; font-size: 14px; }
+
+  @media (max-width: 900px) {
+    .dashboard-grid, .chart-section { grid-template-columns: 1fr; }
+    .summary-bar { grid-template-columns: 1fr; }
+    .options-controls { flex-direction: column; align-items: stretch; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app-title">📊 黑色衍生品数据看板</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" data-tab="ferrous">外资国内期货黑色持仓</button>
+  <button class="tab-btn" data-tab="iron">国内主要期货席位铁矿持仓</button>
+  <button class="tab-btn" data-tab="jm">国内主要期货席位焦煤持仓</button>
+  <button class="tab-btn" data-tab="ironfuture">新交所铁矿期货持仓</button>
+  <button class="tab-btn" data-tab="options">新交所铁矿期权持仓</button>
+</div>
+
+<!-- ===== TAB 1: 外资国内期货黑色持仓（高盛/摩根） ===== -->
+<div class="tab-panel active" id="panel-ferrous">
+  <div class="header">
+    <div class="subtitle">高盛期货 &amp; 摩根期货 — 持仓变化监测（大商所 / 上期所：铁矿石 · 螺纹钢 · 热卷）</div>
+  </div>
+  <div class="summary-bar" id="ferrous-summary-bar"></div>
+  <div class="section-label">持仓对比</div>
+  <div class="dashboard-grid" id="ferrous-dashboard-grid"></div>
+  <div class="section-label">历史持仓走势</div>
+  <div class="chart-note">注：空白时间段为机构未上榜</div>
+  <div class="chart-section" id="ferrous-chart-section"></div>
+</div>
+
+<!-- ===== TAB 2: 国内主要期货席位铁矿持仓（国君/永安/东证/中信/银河 × 铁矿/螺纹/热卷） ===== -->
+<div class="tab-panel" id="panel-iron">
+  <div class="header">
+    <div class="subtitle">国君 · 永安 · 东证 · 中信 · 银河 — 持仓变化监测（大商所铁矿 / 上期所螺纹 · 热卷）</div>
+  </div>
+  <div class="sub-tab-bar">
+    <button class="sub-btn active" data-c="i">铁矿</button>
+    <button class="sub-btn" data-c="rb">螺纹</button>
+    <button class="sub-btn" data-c="hc">热卷</button>
+  </div>
+  <div class="iron-sub" data-c="i">
+    <div class="summary-bar" id="iron_i-summary-bar"></div>
+    <div class="section-label">持仓对比</div>
+    <div class="dashboard-grid" id="iron_i-grid"></div>
+    <div class="section-label">历史持仓走势</div>
+    <div class="chart-note">注：空白时间段为机构未上榜</div>
+    <div class="chart-section" id="iron_i-chart-section"></div>
+  </div>
+  <div class="iron-sub" data-c="rb" style="display:none">
+    <div class="summary-bar" id="iron_rb-summary-bar"></div>
+    <div class="section-label">持仓对比</div>
+    <div class="dashboard-grid" id="iron_rb-grid"></div>
+    <div class="section-label">历史持仓走势</div>
+    <div class="chart-note">注：空白时间段为机构未上榜</div>
+    <div class="chart-section" id="iron_rb-chart-section"></div>
+  </div>
+  <div class="iron-sub" data-c="hc" style="display:none">
+    <div class="summary-bar" id="iron_hc-summary-bar"></div>
+    <div class="section-label">持仓对比</div>
+    <div class="dashboard-grid" id="iron_hc-grid"></div>
+    <div class="section-label">历史持仓走势</div>
+    <div class="chart-note">注：空白时间段为机构未上榜</div>
+    <div class="chart-section" id="iron_hc-chart-section"></div>
+  </div>
+</div>
+
+<!-- ===== TAB 3: 国内主要期货席位焦煤持仓（国君/永安/东证/中信/银河） ===== -->
+<div class="tab-panel" id="panel-jm">
+  <div class="header">
+    <div class="subtitle">国君 · 永安 · 东证 · 中信 · 银河 — 持仓变化监测（大连商品交易所：焦煤 jm）</div>
+  </div>
+  <div class="summary-bar" id="jm-summary-bar"></div>
+  <div class="section-label">持仓对比</div>
+  <div class="dashboard-grid" id="jm-dashboard-grid"></div>
+  <div class="section-label">历史持仓走势</div>
+  <div class="chart-note">注：空白时间段为机构未上榜</div>
+  <div class="chart-section" id="jm-chart-section"></div>
+</div>
+
+<!-- ===== TAB 4: 新交所铁矿期货持仓 ===== -->
+<div class="tab-panel" id="panel-ironfuture">
+  <div class="header">
+    <div class="subtitle">SGX TSI 铁矿期货（FEF）— 总持仓量 &amp; 主力合约持仓量监测</div>
+    <div class="update-time" id="futures-update-time"></div>
+  </div>
+
+  <!-- 每日持仓汇总（默认最新十天，可展开） -->
+  <div class="section-label">每日持仓汇总</div>
+  <div class="daily-summary-table-wrap" id="futures-summary-table-wrap"></div>
+
+  <!-- 走势图（持仓量/主力持仓量 可选 + 环比/同比 可选对比） -->
+  <div class="section-label" style="margin-top:14px">走势图</div>
+  <div class="options-controls">
+    <label>指标：</label>
+    <div class="opt-toggle-group" id="fut-metric-toggle">
+      <button class="active-ring" data-metric="持仓量" onclick="setFutMetric('持仓量')">持仓量</button>
+      <button data-metric="变化量" onclick="setFutMetric('变化量')">变化量</button>
+    </div>
+    <label style="margin-left:10px">显示：</label>
+    <div class="opt-toggle-group" id="fut-series-toggle">
+      <button class="active-ring" data-series="total" onclick="toggleFutSeries('total')">持仓量</button>
+      <button data-series="dominant" onclick="toggleFutSeries('dominant')">主力持仓量</button>
+    </div>
+    <label style="margin-left:10px">对比：</label>
+    <div class="opt-toggle-group" id="fut-mode-toggle">
+      <button data-mode="环比" onclick="toggleFutMode('环比')">环比</button>
+      <button class="active-ring" data-mode="同比" onclick="toggleFutMode('同比')">同比</button>
+    </div>
+    <span class="data-status" id="fut-trend-status"></span>
+  </div>
+  <div class="options-chart-area">
+    <div class="options-chart-card">
+      <div class="chart-container" id="fut-trend-chart" style="height:380px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB 5: 新交所铁矿期权持仓 ===== -->
+<div class="tab-panel" id="panel-options">
+  <div class="header">
+    <div class="subtitle">SGX FEF 铁矿石期权 — 持仓汇总 &amp; 主力合约行权价变化对比</div>
+    <div class="update-time" id="options-update-time"></div>
+  </div>
+
+  <!-- 每日持仓汇总（默认最新十天，可展开） -->
+  <div class="section-label">每日持仓汇总</div>
+  <div class="daily-summary-table-wrap" id="daily-summary-table-wrap"></div>
+
+  <!-- 走势图（CALL/PUT/净持仓 可选 + 环比/同比 可选对比，默认本月绝对） -->
+  <div class="section-label" style="margin-top:14px">走势图</div>
+  <div class="options-controls">
+    <label>指标：</label>
+    <div class="opt-toggle-group" id="trend-metric-toggle">
+      <button class="active-ring" data-metric="持仓量" onclick="setTrendMetric('持仓量')">持仓量</button>
+      <button data-metric="变化量" onclick="setTrendMetric('变化量')">变化量</button>
+    </div>
+    <label style="margin-left:10px">显示：</label>
+    <div class="opt-toggle-group" id="trend-series-toggle">
+      <button class="active-ring" data-series="call" onclick="toggleTrendSeries('call')">CALL 看涨</button>
+      <button class="active-ring" data-series="put" onclick="toggleTrendSeries('put')">PUT 看跌</button>
+      <button data-series="net" onclick="toggleTrendSeries('net')">看涨-看跌持仓量</button>
+    </div>
+    <label style="margin-left:10px">对比：</label>
+    <div class="opt-toggle-group" id="trend-mode-toggle">
+      <button data-mode="环比" onclick="toggleTrendMode('环比')">环比</button>
+      <button class="active-ring" data-mode="同比" onclick="toggleTrendMode('同比')">同比</button>
+    </div>
+    <span class="data-status" id="trend-status"></span>
+  </div>
+  <div class="options-chart-area">
+    <div class="options-chart-card">
+      <div class="chart-container" id="trend-chart" style="height:380px;"></div>
+    </div>
+  </div>
+
+  <!-- 当前持仓的行权价格分布（当前交易日各行权价 CALL/PUT 持仓量柱状图，可切换看涨/看跌） -->
+  <div class="section-label" style="margin-top:14px">当前持仓的行权价格分布</div>
+  <div class="options-controls">
+    <label>合约范围：</label>
+    <select id="dist-contract-select">
+      <option value="ALL">全部合约</option>
+      <option value="主力">主力合约</option>
+    </select>
+    <label style="margin-left:8px">选择日期：</label>
+    <input type="date" id="dist-date" value="">
+    <div class="opt-toggle-group" id="dist-type-toggle">
+      <button class="active-call" data-type="call" onclick="setDistType('call')">CALL（看涨）</button>
+      <button data-type="put" onclick="setDistType('put')">PUT（看跌）</button>
+    </div>
+    <span class="data-status" id="dist-status"></span>
+  </div>
+  <div class="options-chart-area">
+    <div class="options-chart-card">
+      <div class="chart-head">
+        <div class="card-title" id="dist-chart-title">CALL 当前持仓行权价分布</div>
+        <span class="data-status" id="dist-verify" style="margin:0"></span>
+      </div>
+      <div class="chart-container" id="dist-chart" style="height:420px;"></div>
+      <div style="font-size:12px;color:#95a5a6;font-style:italic;margin-top:6px">注：橙柱为持仓量最集中的行权价；「全部合约」下各行权价持仓量加总 = 上方「每日持仓汇总」表中该日期的 CALL/PUT 合计（见标题右侧校验）。</div>
+    </div>
+  </div>
+
+  <!-- 在不同行权价上的变化（默认全部合约加总，可选主力） -->
+  <div class="section-label" style="margin-top:14px">在不同行权价上的变化</div>
+  <div class="options-controls">
+    <label>合约范围：</label>
+    <select id="opt-contract-select">
+      <option value="ALL">全部合约</option>
+      <option value="主力">主力合约</option>
+    </select>
+    <label style="margin-left:8px">对比日期：</label>
+    <input type="date" id="opt-date-from" value="">
+    <label style="margin-left:4px">→</label>
+    <input type="date" id="opt-date-to" value="">
+    <div class="opt-toggle-group" id="opt-type-toggle">
+      <button class="active-call" data-type="call" onclick="setOptType('call')">CALL（看涨）</button>
+      <button data-type="put" onclick="setOptType('put')">PUT（看跌）</button>
+    </div>
+    <span class="data-status" id="opt-data-status"></span>
+  </div>
+  <div class="options-chart-area">
+    <div class="options-chart-card">
+      <div class="chart-head">
+        <div class="card-title" id="opt-chart-title">CALL 持仓量变化</div>
+      </div>
+      <div class="chart-container" id="opt-chart" style="height:420px;"></div>
+    </div>
+  </div>
+
+  <!-- 详细数据表（默认收起，可展开） -->
+  <div style="max-width:1400px;margin:0 auto 8px;text-align:center">
+    <button class="collapse-btn" id="opt-table-toggle">展开详细数据表</button>
+  </div>
+  <div class="options-table-wrap" id="opt-table-wrap" style="display:none"></div>
+</div>
+
+<script>
+// ============================================================
+// TAB SWITCHING
+// ============================================================
+function isActiveTab(name){ const p=document.getElementById('panel-'+name); return !!(p && p.classList.contains('active')); }
+function renderTab(name){
+  if(name==='ferrous'){ if(ferrousData) renderFerrous(); }
+  else if(name==='iron'){ if(ironData.i) renderIron(document.querySelector('.sub-btn.active').dataset.c); }
+  else if(name==='jm'){ if(jmData) renderJM(); }
+  else if(name==='options'){ if(sgxData && sgxData.dates) initOptionsUI(); }
+  else if(name==='ironfuture'){ if(futuresData && futuresData.dates) initFuturesUI(); }
+}
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const t = btn.dataset.tab;
+    const panel = document.getElementById('panel-' + t);
+    if (panel) panel.classList.add('active');   // 关键修复：面板必须加 active 才显示
+    renderTab(t);                                 // 面板已可见，此时渲染图表尺寸正确
+    requestAnimationFrame(() => {
+      if (t === 'ferrous') Object.values(ferrousCharts).forEach(c => c.chart && c.chart.resize());
+      else if (t === 'jm') Object.values(jmCharts).forEach(c => c.chart && c.chart.resize());
+      else if (t === 'iron') resizeIron(document.querySelector('.sub-btn.active').dataset.c);
+      else { if(optChart) optChart.resize(); if(trendChart) trendChart.resize(); if(futChart) futChart.resize(); if(distChart) distChart.resize(); }
+    });
+  });
+});
+
+// ============================================================
+// GENERIC HELPERS
+// ============================================================
+function fmt(v) {
+  if (v === null || v === undefined) return '<span class="dash">-</span>';
+  return v.toLocaleString();
+}
+function fmtChange(v) {
+  if (v === null || v === undefined) return '<span class="dash">-</span>';
+  if (v > 0) return '<span class="positive">+' + v.toLocaleString() + '</span>';
+  if (v < 0) return '<span class="negative">' + v.toLocaleString() + '</span>';
+  return '<span class="neutral">0</span>';
+}
+function calcChange(today, yesterday) {
+  if (today === null || yesterday === null) return null;
+  return today - yesterday;
+}
+function formatDateStr(dstr) {
+  if (dstr && dstr.length === 8) return dstr.substring(0,4)+'-'+dstr.substring(4,6)+'-'+dstr.substring(6,8);
+  return dstr || '';
+}
+function parseDateInput(dateStr) { return dateStr ? dateStr.replace(/-/g,'') : ''; }
+
+// ============================================================
+// TAB 1: 外资国内期货黑色持仓（高盛/摩根）
+// ============================================================
+let ferrousData = null;
+const FERROUS_CATS = [
+  { key: 'gs_iron', title: '高盛铁矿持仓', cls: 'gs', color: '#d4a843' },
+  { key: 'ms_iron', title: '摩根铁矿持仓', cls: 'ms', color: '#3498db' },
+  { key: 'gs_rebar', title: '高盛螺纹持仓', cls: 'gs', color: '#e67e22' },
+  { key: 'gs_hrc',  title: '高盛热卷持仓', cls: 'gs', color: '#16a085' }
+];
+const ferrousCharts = {};
+
+async function loadFerrousData() {
+  try {
+    const resp = await fetch('data.json?t=' + Date.now());
+    ferrousData = await resp.json();
+  } catch(e) {}
+  if (isActiveTab('ferrous')) renderFerrous();
+}
+function renderFerrous() {
+  const records = ferrousData.records;
+  const today = records[records.length - 1];
+  const yesterday = records[records.length - 2];
+  renderFerrousSummary(today, yesterday);
+  renderGenericTables(today, yesterday, FERROUS_CATS, 'ferrous-dashboard-grid');
+  renderGenericCharts(records, FERROUS_CATS, ferrousCharts, 'ferrous-chart-section');
+}
+// 净持仓卡：动态遍历所有品种，凡 net != null 即显示（确保后续 ms_iron/gs_rebar 等恢复后自动出现）
+function renderFerrousSummary(today, yesterday) {
+  let html = '';
+  for (const cat of FERROUS_CATS) {
+    const net = today[cat.key].net;
+    if (net === null || net === undefined) continue;
+    const prevNet = yesterday ? yesterday[cat.key].net : null;
+    const change = calcChange(net, prevNet);
+    let changeHtml = '';
+    if (change !== null) {
+      const sign = change > 0 ? '+' : '';
+      const cls = change > 0 ? 'positive' : (change < 0 ? 'negative' : 'neutral');
+      changeHtml = '<span class="' + cls + '">' + sign + change.toLocaleString() + ' (日变化)</span>';
+    }
+    html += '<div class="summary-item"><div class="summary-label">' + cat.title.replace('持仓','净持仓') + '</div>' +
+      '<div class="summary-value" style="color:' + cat.color + '">' + (net > 0 ? '+' : '') + net.toLocaleString() + '</div>' +
+      '<div class="summary-change">' + changeHtml + '</div></div>';
+  }
+  document.getElementById('ferrous-summary-bar').innerHTML = html;
+}
+
+// ============================================================
+// GENERIC CHART + TABLE RENDERER (ferrous / jm / iron)
+// ============================================================
+function renderGenericTables(today, yesterday, CATS, gridId) {
+  let html = '';
+  for (const cat of CATS) {
+    const k = cat.key;
+    const t = today[k], y = yesterday ? yesterday[k] : {long:null,short:null,net:null};
+    const chgL = calcChange(t.long, y.long);
+    const chgS = calcChange(t.short, y.short);
+    const chgN = calcChange(t.net, y.net);
+    html += '<div class="card">';
+    html += '<div class="card-title ' + cat.cls + '">' + cat.title + '变化情况</div>';
+    html += '<table><thead><tr><th>日期</th><th>多</th><th>空</th><th>净持仓</th></tr></thead><tbody>';
+    if (yesterday) html += '<tr><td>' + yesterday.date + '</td><td>' + fmt(y.long) + '</td><td>' + fmt(y.short) + '</td><td>' + fmt(y.net) + '</td></tr>';
+    html += '<tr><td>' + today.date + '</td><td>' + fmt(t.long) + '</td><td>' + fmt(t.short) + '</td><td>' + fmt(t.net) + '</td></tr>';
+    html += '<tr class="change-row"><td>日变化</td><td>' + fmtChange(chgL) + '</td><td>' + fmtChange(chgS) + '</td><td>' + fmtChange(chgN) + '</td></tr>';
+    html += '</tbody></table></div>';
+  }
+  document.getElementById(gridId).innerHTML = html;
+}
+function renderGenericCharts(records, CATS, store, sectionId) {
+  const dates = records.map(r => r.date.substring(0,4)+'/'+r.date.substring(4,6)+'/'+r.date.substring(6));
+  let html = '';
+  for (const cat of CATS) {
+    const longData = records.map(r => r[cat.key].long);
+    const shortData = records.map(r => r[cat.key].short);
+    const netData = records.map(r => r[cat.key].net);
+    const hasLong = longData.some(v => v !== null);
+    const hasShort = shortData.some(v => v !== null);
+    const hasNet = netData.some(v => v !== null);
+    html += '<div class="chart-card"><div class="chart-head"><div class="card-title ' + cat.cls + '">' + cat.title + '</div>';
+    html += '<div class="toggle-group" data-cat="' + cat.key + '">';
+    html += '<button class="toggle-btn long' + (hasLong?' on':'') + '" data-m="long" '+(hasLong?'':'disabled')+'>多</button>';
+    html += '<button class="toggle-btn short'+(hasShort?' on':'')+'" data-m="short" '+(hasShort?'':'disabled')+'>空</button>';
+    html += '<button class="toggle-btn net' + (hasNet?' on':'') + '" data-m="net" '+(hasNet?'':'disabled')+'>净持仓</button>';
+    html += '</div></div><div class="chart-container" id="chart-' + sectionId + '-' + cat.key + '"></div></div>';
+  }
+  document.getElementById(sectionId).innerHTML = html;
+
+  for (const cat of CATS) {
+    const dom = document.getElementById('chart-' + sectionId + '-' + cat.key);
+    if (!dom) continue;
+    const chart = echarts.getInstanceByDom(dom) || echarts.init(dom);
+    store[cat.key] = {
+      chart,
+      dates,
+      longData: records.map(r => r[cat.key].long),
+      shortData: records.map(r => r[cat.key].short),
+      netData: records.map(r => r[cat.key].net)
+    };
+    drawGenericChart(store, cat.key);
+  }
+  document.querySelectorAll('#' + sectionId + ' .toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.disabled) return;
+      btn.classList.toggle('on');
+      drawGenericChart(store, btn.parentElement.getAttribute('data-cat'));
+    });
+  });
+}
+function drawGenericChart(store, key) {
+  const c = store[key]; if (!c) return;
+  // 通过图表 DOM 的 id 反推对应的 sectionId：chart-<sectionId>-<key>
+  const domId = c.chart.getDom().id;                 // chart-<sectionId>-<key>
+  const sectionId = domId.substring(6, domId.length - key.length - 1);
+  const toggleGroup = document.querySelector('#' + sectionId + ' .toggle-group[data-cat="' + key + '"]');
+  if (!toggleGroup) return;
+  const state = { long: toggleGroup.querySelector('[data-m="long"]').classList.contains('on'),
+                  short: toggleGroup.querySelector('[data-m="short"]').classList.contains('on'),
+                  net: toggleGroup.querySelector('[data-m="net"]').classList.contains('on') };
+  const seriesDefs = [];
+  if (state.long) seriesDefs.push({ name:'多', data:c.longData, color:'#e74c3c' });
+  if (state.short) seriesDefs.push({ name:'空', data:c.shortData, color:'#27ae60' });
+  if (state.net) seriesDefs.push({ name:'净持仓', data:c.netData, color:'#8e44ad' });
+
+  if (seriesDefs.length === 0) { c.chart.clear(); return; }
+
+  const useDual = state.net && (state.long || state.short);
+  function rangeOf(arr) {
+    const vals = arr.filter(v => v !== null && v !== undefined);
+    if (vals.length === 0) return null;
+    let mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals);
+    if (mn === mn && mn === mx) { const p = Math.abs(mn) * 0.1 || 1; return [mn - p, mx + p]; }
+    const pad = (mx - mn) * 0.08;
+    return [mn - pad, mx + pad];
+  }
+
+  let yAxis, series, gridRight = '4%';
+  if (useDual) {
+    const posData = seriesDefs.filter(s => s.name !== '净持仓').flatMap(s => s.data);
+    const netData = seriesDefs.filter(s => s.name === '净持仓').flatMap(s => s.data);
+    const posR = rangeOf(posData), netR = rangeOf(netData);
+    yAxis = [
+      { type:'value', scale:true, min: posR ? posR[0] : null, max: posR ? posR[1] : null,
+        axisLabel:{fontSize:11, formatter:v=>Number(v).toLocaleString()}, splitLine:{lineStyle:{type:'dashed'}},
+        name:'多/空', nameTextStyle:{fontSize:10}, nameGap:8 },
+      { type:'value', scale:true, min: netR ? netR[0] : null, max: netR ? netR[1] : null,
+        axisLabel:{fontSize:11, formatter:v=>(v>=0?'+':'')+Number(v).toLocaleString()}, splitLine:{show:false},
+        name:'净持仓', nameTextStyle:{fontSize:10} }
+    ];
+    series = seriesDefs.map(s => ({
+      name:s.name, type:'line', data:s.data, smooth:true, symbol:'circle', symbolSize:4,
+      connectNulls:false, lineStyle:{width:2}, itemStyle:{color:s.color},
+      yAxisIndex: s.name === '净持仓' ? 1 : 0
+    }));
+    gridRight = '9%';
+  } else {
+    const r = rangeOf(seriesDefs.flatMap(s => s.data));
+    yAxis = { type:'value', scale:true, min: r ? r[0] : null, max: r ? r[1] : null,
+      axisLabel:{fontSize:11, formatter:v=>Number(v).toLocaleString()}, splitLine:{lineStyle:{type:'dashed'}} };
+    series = seriesDefs.map(s => ({
+      name:s.name, type:'line', data:s.data, smooth:true, symbol:'circle', symbolSize:4,
+      connectNulls:false, lineStyle:{width:2}, itemStyle:{color:s.color}
+    }));
+  }
+
+  c.chart.setOption({
+    tooltip: { trigger:'axis', axisPointer:{type:'cross'}, valueFormatter:v=>(v===null||v===undefined?'-':Number(v).toLocaleString()) },
+    legend:{ data:seriesDefs.map(s=>s.name), bottom:0, textStyle:{fontSize:11} },
+    grid:{ left:'3%',right:gridRight,bottom:'15%',top:'8%', containLabel:true },
+    xAxis:{ type:'category', data:c.dates, boundaryGap:false, axisLabel:{fontSize:10, rotate:40, interval:Math.floor(c.dates.length/12)} },
+    yAxis: yAxis,
+    series: series
+  }, true);
+}
+
+// ============================================================
+// TAB 2: 国内主要期货席位铁矿持仓（国君/永安/东证/中信/银河 × i/rb/hc）
+// ============================================================
+let ironData = { i:null, rb:null, hc:null };
+const IRON_CATS = [
+  { key: '国君', title: '国君期货持仓', cls: 'jm', color: '#2c3e50' },
+  { key: '永安', title: '永安期货持仓', cls: 'jm', color: '#2980b9' },
+  { key: '东证', title: '东证期货持仓', cls: 'jm', color: '#16a085' },
+  { key: '中信', title: '中信期货持仓', cls: 'jm', color: '#e67e22' },
+  { key: '银河', title: '银河期货持仓', cls: 'jm', color: '#8e44ad' }
+];
+const ironChartsI = {}, ironChartsRb = {}, ironChartsHc = {};
+function ironStore(c){ return c==='i'?ironChartsI : c==='rb'?ironChartsRb : ironChartsHc; }
+function ironSection(c){ return 'iron_'+c+'-chart-section'; }
+function ironGrid(c){ return 'iron_'+c+'-grid'; }
+
+async function loadIronData() {
+  const files = { i:'IRON_i_data.json', rb:'IRON_rb_data.json', hc:'IRON_hc_data.json' };
+  for (const c of ['i','rb','hc']) {
+    try {
+      const resp = await fetch(files[c] + '?t=' + Date.now());
+      ironData[c] = await resp.json();
+    } catch(e) { ironData[c] = null; }
+  }
+  if (isActiveTab('iron')) renderIron(document.querySelector('.sub-btn.active').dataset.c);
+}
+function renderIron(contract) {
+  const data = ironData[contract]; if (!data) return;
+  const records = data.records;
+  const today = records[records.length - 1];
+  const yesterday = records[records.length - 2];
+  renderIronSummary(contract, today, yesterday);
+  renderGenericTables(today, yesterday, IRON_CATS, ironGrid(contract));
+  renderGenericCharts(records, IRON_CATS, ironStore(contract), ironSection(contract));
+}
+function renderIronSummary(contract, today, yesterday) {
+  let html = '';
+  for (const cat of IRON_CATS) {
+    const net = today[cat.key].net;
+    if (net === null || net === undefined) continue;
+    const prevNet = yesterday ? yesterday[cat.key].net : null;
+    const change = calcChange(net, prevNet);
+    let changeHtml = '';
+    if (change !== null) {
+      const sign = change > 0 ? '+' : '';
+      const cls = change > 0 ? 'positive' : (change < 0 ? 'negative' : 'neutral');
+      changeHtml = '<span class="' + cls + '">' + sign + change.toLocaleString() + ' (日变化)</span>';
+    }
+    html += '<div class="summary-item"><div class="summary-label">' + cat.title.replace('持仓','净持仓') + '</div>' +
+      '<div class="summary-value" style="color:' + cat.color + '">' + (net > 0 ? '+' : '') + net.toLocaleString() + '</div>' +
+      '<div class="summary-change">' + changeHtml + '</div></div>';
+  }
+  document.getElementById('iron_'+contract+'-summary-bar').innerHTML = html;
+}
+function resizeIron(contract) {
+  Object.values(ironStore(contract)).forEach(x => x.chart && x.chart.resize());
+}
+document.querySelectorAll('.sub-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.sub-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const c = b.dataset.c;
+    document.querySelectorAll('.iron-sub').forEach(s => s.style.display = s.dataset.c === c ? '' : 'none');
+    if (ironData[c]) renderIron(c);   // 子界面可见后再渲染，避免 0 尺寸
+    resizeIron(c);
+  });
+});
+
+// ============================================================
+// TAB 3: 国内主要期货席位焦煤持仓（国君/永安/东证/中信/银河）
+// ============================================================
+let jmData = null;
+const JM_CATS = [
+  { key: '国君', title: '国君期货持仓', cls: 'jm', color: '#2c3e50' },
+  { key: '永安', title: '永安期货持仓', cls: 'jm', color: '#2980b9' },
+  { key: '东证', title: '东证期货持仓', cls: 'jm', color: '#16a085' },
+  { key: '中信', title: '中信期货持仓', cls: 'jm', color: '#e67e22' },
+  { key: '银河', title: '银河期货持仓', cls: 'jm', color: '#8e44ad' }
+];
+const jmCharts = {};
+
+async function loadJMData() {
+  try {
+    const resp = await fetch('JM_data.json?t=' + Date.now());
+    jmData = await resp.json();
+  } catch(e) {}
+  if (isActiveTab('jm')) renderJM();
+}
+function renderJM() {
+  const records = jmData.records;
+  const today = records[records.length - 1];
+  const yesterday = records[records.length - 2];
+  renderJMSummary(today, yesterday);
+  renderGenericTables(today, yesterday, JM_CATS, 'jm-dashboard-grid');
+  renderGenericCharts(records, JM_CATS, jmCharts, 'jm-chart-section');
+}
+function renderJMSummary(today, yesterday) {
+  let html = '';
+  for (const cat of JM_CATS) {
+    const net = today[cat.key].net;
+    if (net === null || net === undefined) continue;
+    const prevNet = yesterday ? yesterday[cat.key].net : null;
+    const change = calcChange(net, prevNet);
+    let changeHtml = '';
+    if (change !== null) {
+      const sign = change > 0 ? '+' : '';
+      const cls = change > 0 ? 'positive' : (change < 0 ? 'negative' : 'neutral');
+      changeHtml = '<span class="' + cls + '">' + sign + change.toLocaleString() + ' (日变化)</span>';
+    }
+    html += '<div class="summary-item"><div class="summary-label">' + cat.title.replace('持仓','净持仓') + '</div>' +
+      '<div class="summary-value" style="color:' + cat.color + '">' + (net > 0 ? '+' : '') + net.toLocaleString() + '</div>' +
+      '<div class="summary-change">' + changeHtml + '</div></div>';
+  }
+  document.getElementById('jm-summary-bar').innerHTML = html;
+}
+
+// ============================================================
+// TAB 5: 新交所铁矿期权持仓
+// ============================================================
+let sgxData = null;
+let sgxHistory = null;
+let optChart = null;
+let trendChart = null;
+let currentOptType = 'call';
+let currentContractMonth = 'ALL';
+let trendCompare = { 环比:false, 同比:true };
+let trendSeriesSel = { call:true, put:true, net:false };
+let trendMode = '持仓量';
+let distChart = null;
+let distType = 'call';
+let distContractMonth = 'ALL';
+let distDate = '';
+
+async function loadOptionsData() {
+  try {
+    const resp = await fetch('sgx_options.json?t=' + Date.now());
+    sgxData = await resp.json();
+  } catch(e) { sgxData = { dates: [], data: {} }; }
+  try {
+    const resp2 = await fetch('sgx_options_history.json?t=' + Date.now());
+    sgxHistory = await resp2.json();
+  } catch(e) { sgxHistory = { dates: [], data: {} }; }
+
+  if (!sgxData.dates || sgxData.dates.length === 0) document.getElementById('options-update-time').textContent = '暂无期权数据';
+  else document.getElementById('options-update-time').textContent = '已加载 ' + sgxData.dates.length + ' 个交易日 · 最后更新：' + (sgxData.lastUpdated || '-');
+  if (isActiveTab('options')) initOptionsUI();
+}
+function initOptionsUI() {
+  const availDates = (sgxData.dates || []).slice().sort();
+  if (availDates.length >= 2) {
+    document.getElementById('opt-date-to').value = formatDateStr(availDates[availDates.length-1]);
+    document.getElementById('opt-date-from').value = formatDateStr(availDates[Math.max(0, availDates.length-2)]);
+  }
+  // 合约范围（仅 全部 / 主力 两项）
+  const sel = document.getElementById('opt-contract-select');
+  sel.innerHTML = '';
+  const oAll = document.createElement('option'); oAll.value='ALL'; oAll.textContent='全部合约'; sel.appendChild(oAll);
+  const oMain = document.createElement('option'); oMain.value='主力'; oMain.textContent='主力合约'; sel.appendChild(oMain);
+  sel.value = 'ALL';
+  currentContractMonth = 'ALL';
+
+  const curMonth = (sgxData.dates||[]).slice().sort().pop()?.substring(0,6) || '';
+  document.getElementById('opt-data-status').textContent = `已加载 ${availDates.length} 个交易日`;
+  document.getElementById('trend-status').textContent = curMonth ? (`${curMonth.substring(0,4)}年${parseInt(curMonth.substring(4))}月（含上月） · 共 ${availDates.length} 个交易日 · 历史 ${sgxHistory.dates ? sgxHistory.dates.length : 0} 天`) : '暂无数据';
+
+  if (!trendChart) trendChart = echarts.init(document.getElementById('trend-chart'));
+  relabelSeriesButtons();
+  updateCompareLock();
+  drawTrendChart();
+  renderDailySummaryTable();
+  renderOptionsChart();
+  // 当前持仓行权价分布：默认最新交易日 + 全部合约 + CALL
+  const availDates2 = (sgxData.dates || []).slice().sort();
+  if (availDates2.length) {
+    distDate = availDates2[availDates2.length-1];
+    document.getElementById('dist-date').value = formatDateStr(distDate);
+    distContractMonth = 'ALL';
+    document.getElementById('dist-contract-select').value = 'ALL';
+    const btns = document.querySelectorAll('#dist-type-toggle button');
+    btns.forEach(b => b.className = '');
+    btns.forEach(b => { if (b.dataset.type === distType) b.className = distType === 'call' ? 'active-call' : 'active-put'; });
+    document.getElementById('dist-chart-title').textContent = distType.toUpperCase() + ' 当前持仓行权价分布';
+    renderDistributionChart();
+  }
+}
+function setOptType(type) {
+  currentOptType = type;
+  const btns = document.querySelectorAll('#opt-type-toggle button');
+  btns.forEach(b => b.className = '');
+  btns.forEach(b => { if (b.dataset.type === type) b.className = type === 'call' ? 'active-call' : 'active-put'; });
+  document.getElementById('opt-chart-title').textContent = type.toUpperCase() + ' 持仓量变化';
+  renderOptionsChart();
+}
+function toggleTrendSeries(key) {
+  trendSeriesSel[key] = !trendSeriesSel[key];
+  const btn = document.querySelector('#trend-series-toggle button[data-series="'+key+'"]');
+  if (btn) btn.className = trendSeriesSel[key] ? 'active-ring' : '';
+  updateCompareLock();
+  drawTrendChart();
+}
+function toggleTrendMode(mode) {
+  trendCompare[mode] = !trendCompare[mode];
+  const btn = document.querySelector('#trend-mode-toggle button[data-mode="'+mode+'"]');
+  if (btn) btn.className = trendCompare[mode] ? 'active-ring' : '';
+  drawTrendChart();
+}
+// 指标切换：持仓量 / 变化量（避免绝对量与变化量共用坐标轴导致压平）
+function setTrendMetric(metric) {
+  trendMode = metric;
+  document.querySelectorAll('#trend-metric-toggle button').forEach(b => {
+    b.className = (b.dataset.metric === metric) ? 'active-ring' : '';
+  });
+  relabelSeriesButtons();
+  updateCompareLock();
+  drawTrendChart();
+}
+function relabelSeriesButtons() {
+  const isDelta = trendMode === '变化量';
+  const labels = {
+    call: isDelta ? 'CALL 变化量' : 'CALL 看涨',
+    put:  isDelta ? 'PUT 变化量'  : 'PUT 看跌',
+    net:  isDelta ? '看涨-看跌持仓量 变化量' : '看涨-看跌持仓量'
+  };
+  document.querySelectorAll('#trend-series-toggle button').forEach(b => {
+    b.textContent = labels[b.dataset.series];
+  });
+}
+function selectedSeriesCount() {
+  return ['call','put','net'].filter(k => trendSeriesSel[k]).length;
+}
+// 超过 2 条序列时锁定 环比/同比（按钮置灰不可点）
+function updateCompareLock() {
+  const locked = selectedSeriesCount() > 2;
+  document.querySelectorAll('#trend-mode-toggle button').forEach(b => {
+    b.disabled = locked;
+    if (locked) {
+      b.classList.add('disabled-btn');
+      b.classList.remove('active-ring');
+      b.title = '选择 2 项以内才能对比';
+      trendCompare[b.dataset.mode] = false;
+    } else {
+      b.classList.remove('disabled-btn');
+      b.title = '';
+    }
+  });
+}
+// 变化量 = 相邻交易日差值（与每日持仓汇总表“变化量”列口径一致）
+function prevDayIn(list, dk) {
+  const sorted = list.slice().sort();
+  const idx = sorted.indexOf(dk);
+  return idx > 0 ? sorted[idx-1] : null;
+}
+function seriesAbs(kind, dk, source) {
+  return source === 'live' ? getLiveTotal(dk, kind) : getHistTotal(dk, kind);
+}
+function seriesDelta(kind, dk, source) {
+  const list = source === 'live' ? sgxData.dates : sgxHistory.dates;
+  const prev = prevDayIn(list, dk);
+  if (!prev) return null;
+  const a = seriesAbs(kind, prev, source);
+  const b = seriesAbs(kind, dk, source);
+  return (a != null && b != null) ? b - a : null;
+}
+document.getElementById('opt-date-from').addEventListener('change', renderOptionsChart);
+document.getElementById('opt-date-to').addEventListener('change', renderOptionsChart);
+document.getElementById('opt-contract-select').addEventListener('change', (e) => { currentContractMonth = e.target.value; renderOptionsChart(); });
+document.getElementById('dist-contract-select').addEventListener('change', (e) => { distContractMonth = e.target.value; renderDistributionChart(); });
+document.getElementById('dist-date').addEventListener('change', (e) => { distDate = parseDateInput(e.target.value); renderDistributionChart(); });
+document.getElementById('opt-table-toggle').addEventListener('click', () => {
+  const wrap = document.getElementById('opt-table-wrap');
+  const btn = document.getElementById('opt-table-toggle');
+  if (wrap.style.display === 'none') { wrap.style.display = ''; btn.textContent = '收起详细数据表'; }
+  else { wrap.style.display = 'none'; btn.textContent = '展开详细数据表'; }
+});
+
+// ---- 主力合约：持仓量最大的合约月份 ----
+function dominantMonth(dateKey) {
+  const cd = sgxData.data[dateKey];
+  if (!cd || !cd.contracts) return null;
+  let best = null, bestOI = -1;
+  for (const mm of Object.keys(cd.contracts)) {
+    const c = cd.contracts[mm].call || {}, p = cd.contracts[mm].put || {};
+    const oi = Object.values(c).reduce((s,v)=>s+(v||0),0) + Object.values(p).reduce((s,v)=>s+(v||0),0);
+    if (oi > bestOI) { bestOI = oi; best = mm; }
+  }
+  return best;
+}
+function getOIDataByMonth(dateKey, month, type) {
+  const cd = sgxData.data[dateKey];
+  if (!cd) return null;
+  if (month === '主力') { const mm = dominantMonth(dateKey); return mm ? (cd.contracts[mm] && cd.contracts[mm][type]) || null : null; }
+  return (cd.contracts && cd.contracts[month] && cd.contracts[month][type]) || null;
+}
+function getOIDataForDate(dateKey) {
+  if (!sgxData.data[dateKey]) return null;
+  if (currentContractMonth === 'ALL') return sgxData.data[dateKey][currentOptType] || null;
+  return getOIDataByMonth(dateKey, currentContractMonth, currentOptType);
+}
+
+// ============================================================
+// 走势图：本月绝对(CALL/PUT/净持仓) + 可选 环比(上月同日)/同比(去年同月) 叠加
+function sumDict(o) {
+  if (!o || typeof o !== 'object') return null;
+  let t = 0, any = false;
+  for (const k in o) { if (o[k] != null) { t += o[k]; any = true; } }
+  return any ? t : null;
+}
+// 净持仓 = 看涨合计 − 看跌合计（数据里 net 字段为 null，需实时计算）
+function getLiveTotal(dateKey, kind) {
+  const rec = sgxData.data[dateKey];
+  if (!rec) return null;
+  if (kind === 'net') {
+    const c = sumDict(rec['call']), p = sumDict(rec['put']);
+    return (c != null && p != null) ? c - p : null;
+  }
+  return sumDict(rec[kind]);
+}
+function getHistTotal(dateKey, kind) {
+  const d = sgxHistory.data[dateKey];
+  if (!d) return null;
+  if (kind === 'net') {
+    const c = (d['call'] != null) ? d['call'] : null;
+    const p = (d['put'] != null) ? d['put'] : null;
+    return (c != null && p != null) ? c - p : null;
+  }
+  return (d[kind] != null) ? d[kind] : null;
+}
+function shiftMonth(yyyymm, delta) {
+  let y = parseInt(yyyymm.substring(0,4)); let m = parseInt(yyyymm.substring(4));
+  m += delta;
+  while (m > 12) { m -= 12; y += 1; }
+  while (m < 1) { m += 12; y -= 1; }
+  return '' + y + ('0'+m).slice(-2);
+}
+function drawTrendChart() {
+  if (!trendChart) return;
+  const allDates = (sgxData.dates || []).slice().sort();
+  if (!allDates.length) { trendChart.clear(); return; }
+  const curMonth = allDates[allDates.length-1].substring(0,6);
+  const prevMonth = shiftMonth(curMonth, -1);
+  const curDays = allDates.filter(d => d.startsWith(curMonth) || d.startsWith(prevMonth)).sort();
+  const dateLabels = curDays.map(formatDateStr);
+  const cmpOn = trendCompare['环比'], yoyOn = trendCompare['同比'];
+  const isDelta = trendMode === '变化量';
+  const showLeft = trendSeriesSel.call || trendSeriesSel.put;
+
+  const meta = [
+    { key:'call', name: isDelta ? 'CALL 变化量' : 'CALL 看涨', color:'#e74c3c', dash:'solid',  width:3 },
+    { key:'put',  name: isDelta ? 'PUT 变化量'  : 'PUT 看跌',  color:'#27ae60', dash:'solid',  width:3 },
+    { key:'net',  name: isDelta ? '看涨-看跌持仓量 变化量' : '看涨-看跌持仓量', color:'#2e86de', dash:'dashed', width:3.5 }
+  ];
+  const valOf = (dk, kind, source) => isDelta ? seriesDelta(kind, dk, source) : seriesAbs(kind, dk, source);
+
+  const seriesDefs = [], legend = [];
+  for (const m of meta) {
+    if (!trendSeriesSel[m.key]) continue;
+    const yIdx = (m.key === 'net') ? (showLeft ? 1 : 0) : 0;
+    // 主数据（实线/加粗，hover 才显点）
+    const sdef = { name: m.name, type:'line', yAxisIndex:yIdx, z:5,
+      data: curDays.map(dk => valOf(dk, m.key, 'live')),
+      smooth:true, showSymbol:false, symbol:'circle', symbolSize:6, connectNulls:false,
+      lineStyle:{width:m.width, color:m.color, type:m.dash}, itemStyle:{color:m.color},
+      emphasis:{focus:'series', scale:1.6} };
+    if (m.key === 'net' && !isDelta) sdef.areaStyle = { color: m.color, opacity:0.06 };
+    seriesDefs.push(sdef);
+    legend.push(m.name);
+    // 环比（细虚线 + 降透明度）：上月同日
+    if (cmpOn) {
+      const pm = shiftMonth(curMonth, -1);
+      seriesDefs.push({ name: m.name + '（环比）', type:'line', yAxisIndex:yIdx, z:2,
+        data: curDays.map(dk => valOf(pm + dk.substring(6), m.key, 'hist')),
+        smooth:true, showSymbol:false, symbol:'circle', symbolSize:4, connectNulls:false,
+        lineStyle:{width:1.2, color:m.color, type:'dashed', opacity:0.45}, itemStyle:{color:m.color, opacity:0.45} });
+      legend.push(m.name + '（环比）');
+    }
+    // 同比（细点线 + 降透明度）：去年同月
+    if (yoyOn) {
+      const py = shiftMonth(curMonth, -12);
+      seriesDefs.push({ name: m.name + '（同比）', type:'line', yAxisIndex:yIdx, z:2,
+        data: curDays.map(dk => valOf(py + dk.substring(6), m.key, 'hist')),
+        smooth:true, showSymbol:false, symbol:'circle', symbolSize:4, connectNulls:false,
+        lineStyle:{width:1.2, color:m.color, type:'dotted', opacity:0.45}, itemStyle:{color:m.color, opacity:0.45} });
+      legend.push(m.name + '（同比）');
+    }
+  }
+  if (!seriesDefs.length) { trendChart.clear(); return; }
+  const yAxisArr = [];
+  const leftName = isDelta ? '变化量' : 'CALL / PUT';
+  const rightName = isDelta ? '看涨-看跌 变化量' : '看涨-看跌持仓量';
+  if (showLeft) yAxisArr.push({ type:'value', scale:true, name:leftName, nameTextStyle:{fontSize:10, color:'#7f8c8d'},
+    axisLabel:{fontSize:11, formatter:v=>Number(v).toLocaleString()}, splitLine:{lineStyle:{type:'dashed', color:'rgba(0,0,0,0.06)'}} });
+  yAxisArr.push({ type:'value', scale:true, name:rightName, nameTextStyle:{fontSize:10, color:'#2e86de'},
+    axisLabel:{fontSize:11, formatter:v=>Number(v).toLocaleString()}, splitLine:{show:false} });
+  // 持仓量模式：tooltip 附带日变化量；变化量模式本身即为变化，无需再算
+  const chgBySeries = {};
+  if (!isDelta) {
+    for (const m of meta) {
+      if (!trendSeriesSel[m.key]) continue;
+      chgBySeries[m.name] = curDays.map((dk, i) => {
+        if (i === 0) return null;
+        const a = valOf(curDays[i-1], m.key, 'live'), b = valOf(dk, m.key, 'live');
+        return (a != null && b != null) ? b - a : null;
+      });
+    }
+  }
+  trendChart.setOption({
+    title: { text: '走势图', left:'center', top:6, textStyle:{fontSize:14, fontWeight:'normal'} },
+    tooltip: { trigger:'axis', formatter: function(params) {
+      let s = (params[0] ? params[0].axisValue : '') + '<br/>';
+      for (const p of params) {
+        const v = p.value;
+        const vstr = (v == null || v === undefined) ? '-' : Number(v).toLocaleString();
+        s += p.marker + p.seriesName + ': ' + vstr;
+        if (!isDelta && !p.seriesName.includes('环比') && !p.seriesName.includes('同比') && chgBySeries[p.seriesName] && p.dataIndex > 0) {
+          const chg = chgBySeries[p.seriesName][p.dataIndex];
+          if (chg != null) s += '  (Δ' + (chg >= 0 ? '+' : '') + chg.toLocaleString() + ')';
+        }
+        s += '<br/>';
+      }
+      return s;
+    } },
+    legend: { data: legend, bottom:2, type:'scroll', textStyle:{fontSize:12}, itemWidth:24, itemHeight:12 },
+    grid: { left:'3%', right:'4%', bottom:'16%', top:'12%', containLabel:true },
+    xAxis: { type:'category', data:dateLabels, boundaryGap:false, axisLabel:{fontSize:11, rotate:40, interval: Math.floor(dateLabels.length/12)}, axisTick:{show:false} },
+    yAxis: yAxisArr,
+    series: seriesDefs
+  }, true);
+}
+
+// ============================================================
+// 每日持仓汇总表（默认最新十天，可展开）
+// ============================================================
+function computeDailySummaries() {
+  if (!sgxData || !sgxData.dates || sgxData.dates.length === 0) return [];
+  const summaries = [];
+  const sortedDates = [...sgxData.dates].sort();
+  for (const dk of sortedDates) {
+    const dayData = sgxData.data[dk];
+    if (!dayData) continue;
+    const callOI = dayData['call'] || {};
+    const putOI = dayData['put'] || {};
+    const callTotal = Object.values(callOI).reduce((s,v)=>s+(v||0), 0);
+    const putTotal = Object.values(putOI).reduce((s,v)=>s+(v||0), 0);
+    const netTotal = callTotal - putTotal;
+    summaries.push({ date: dk, dateDisplay: formatDateStr(dk), callTotal, putTotal, netTotal, callChg: null, putChg: null, netChg: null });
+  }
+  summaries.sort((a,b) => a.date.localeCompare(b.date));
+  for (let i = 1; i < summaries.length; i++) {
+    summaries[i].callChg = summaries[i].callTotal - summaries[i-1].callTotal;
+    summaries[i].putChg = summaries[i].putTotal - summaries[i-1].putTotal;
+    summaries[i].netChg = summaries[i].netTotal - summaries[i-1].netTotal;
+  }
+  summaries.reverse(); // 表格改为「近→远」：最新日期置顶，默认展开即看到最近十天
+  return summaries;
+}
+function renderDailySummaryTable() {
+  const tableWrap = document.getElementById('daily-summary-table-wrap');
+  const summaries = computeDailySummaries();
+  if (summaries.length === 0) { tableWrap.innerHTML = '<p style="text-align:center;color:#999;padding:30px;">暂无期权数据，等待更新...</p>'; return; }
+  let html = '<table><thead><tr>' +
+    '<th>DATE</th><th>看涨<br/>CALL</th><th>看跌<br/>PUT</th><th>看涨-看跌<br/>持仓量</th>' +
+    '<th>CALL<br/>变化量</th><th>PUT<br/>变化量</th><th>看涨-看跌<br/>变化量</th>' +
+    '</tr></thead><tbody>';
+  for (let i = 0; i < summaries.length; i++) {
+    const s = summaries[i];
+    const callChgCls = s.callChg !== null ? (s.callChg >= 0 ? 'positive' : 'negative') : 'neutral';
+    const putChgCls = s.putChg !== null ? (s.putChg >= 0 ? 'positive' : 'negative') : 'neutral';
+    const netChgCls = s.netChg !== null ? (s.netChg >= 0 ? 'positive' : 'negative') : 'neutral';
+    html += '<tr>' +
+      `<td>${s.dateDisplay}</td>` +
+      `<td>${s.callTotal.toLocaleString()}</td>` +
+      `<td>${s.putTotal.toLocaleString()}</td>` +
+      `<td class="${s.netTotal >= 0 ? 'positive' : 'negative'}">${s.netTotal >= 0 ? '+' : ''}${s.netTotal.toLocaleString()}</td>` +
+      `<td class="${callChgCls}">${s.callChg !== null ? (s.callChg >= 0 ? '+' : '') + s.callChg.toLocaleString() : '-'}</td>` +
+      `<td class="${putChgCls}">${s.putChg !== null ? (s.putChg >= 0 ? '+' : '') + s.putChg.toLocaleString() : '-'}</td>` +
+      `<td class="${netChgCls}">${s.netChg !== null ? (s.netChg >= 0 ? '+' : '') + s.netChg.toLocaleString() : '-'}</td>` +
+      '</tr>';
+  }
+  html += '</tbody></table>';
+  tableWrap.innerHTML = html;
+  applyDailySummaryCollapse(summaries.length);
+}
+function applyDailySummaryCollapse(total) {
+  const wrap = document.getElementById('daily-summary-table-wrap');
+  const tbody = wrap.querySelector('tbody');
+  if (!tbody) return;
+  const rows = tbody.querySelectorAll('tr');
+  const LIMIT = 10;
+  if (rows.length <= LIMIT) return; // 不足十天无需收起
+  // 默认只显示最新十天（表格已「近→远」，最前面 LIMIT 行即最近十天）
+  rows.forEach((tr, i) => { tr.style.display = (i < LIMIT) ? '' : 'none'; });
+  if (!wrap.querySelector('.collapse-btn')) {
+    const btn = document.createElement('button');
+    btn.className = 'collapse-btn';
+    btn.textContent = '展开全部 ' + rows.length + ' 天';
+    btn.onclick = () => {
+      const expanded = btn.dataset.exp === '1';
+      rows.forEach(tr => tr.style.display = '');
+      btn.textContent = expanded ? '展开全部 ' + rows.length + ' 天' : '收起（仅显示最新十天）';
+      btn.dataset.exp = expanded ? '0' : '1';
+    };
+    wrap.appendChild(btn);
+  }
+}
+
+// ============================================================
+// 主力合约行权价变化柱图（集中处换色 + 常驻数字）
+// ============================================================
+function renderOptionsChart() {
+  const fromKey = parseDateInput(document.getElementById('opt-date-from').value);
+  const toKey = parseDateInput(document.getElementById('opt-date-to').value);
+  if (!fromKey || !toKey || !sgxData || !sgxData.data) return;
+  const oiFrom = getOIDataForDate(fromKey);
+  const oiTo = getOIDataForDate(toKey);
+  if (!oiFrom && !oiTo) { document.getElementById('opt-data-status').textContent = `${fromKey} 或 ${toKey} 无${currentOptType.toUpperCase()}数据`; return; }
+  const allStrikes = new Set();
+  if (oiFrom) Object.keys(oiFrom).forEach(s => allStrikes.add(s));
+  if (oiTo) Object.keys(oiTo).forEach(s => allStrikes.add(s));
+  const strikes = Array.from(allStrikes).sort((a,b) => Number(a)-Number(b));
+  const changes = strikes.map(s => ((oiTo && oiTo[s])||0) - ((oiFrom && oiFrom[s])||0));
+  // 最集中的柱子（绝对值最大）用突出色
+  let maxIdx = 0;
+  changes.forEach((v, i) => { if (Math.abs(v) > Math.abs(changes[maxIdx])) maxIdx = i; });
+  const colors = changes.map((v, i) => i === maxIdx ? '#e67e22' : (v >= 0 ? '#e74c3c' : '#27ae60'));
+  renderOptionsTable(strikes, oiFrom, oiTo, changes);
+  if (!optChart) optChart = echarts.init(document.getElementById('opt-chart'));
+  const monthLabel = currentContractMonth === '主力' ? ('主力(' + (dominantMonth(toKey) || '?') + ')') : '全部合约';
+  optChart.setOption({
+    title: { text: currentOptType.toUpperCase() + ' ' + fromKey.substring(4) + '→' + toKey.substring(4) + ' 变化 · ' + monthLabel, subtext:'单位：手（正=增加/负=减少；橙柱为变化最集中处）', left:'center', top:8, textStyle:{fontSize:14,fontWeight:'normal'}, subtextStyle:{fontSize:11,color:'#999'} },
+    tooltip: { trigger:'axis', formatter: function(params) {
+      const s = params[0]; const strike = s.name; const change = s.value;
+      const vFrom = (oiFrom && oiFrom[strike]) || 0; const vTo = (oiTo && oiTo[strike]) || 0;
+      return '行权价: ' + strike + '<br/>' + fromKey + ': ' + vFrom.toLocaleString() + '<br/>' + toKey + ': ' + vTo.toLocaleString() + '<br/>变化: ' + (change>=0?'+':'')+change.toLocaleString() + '<br/>(颜色：红增/绿减/橙最集中)';
+    }},
+    grid: { left:'3%', right:'3%', bottom:'12%', top:'65', containLabel:true },
+    xAxis: { type:'category', data:strikes, axisLabel:{fontSize:10, interval: strikes.length>30?Math.floor(strikes.length/15):0, rotate:30} },
+    yAxis: { type:'value', axisLabel:{fontSize:11}, splitLine:{lineStyle:{type:'dashed'}}, nameTextStyle:{fontSize:11} },
+    series: [{ type:'bar', data:changes, barWidth: strikes.length>40?'60%':'75%', itemStyle:{color:function(p){return colors[p.dataIndex]}},
+      label:{ show:true, position:'top', fontSize:8, color:'#555', formatter:function(p){ return p.value!==0 ? (p.value>=0?'+':'')+p.value : ''; } } }]
+  }, true);
+}
+function renderOptionsTable(strikes, oiFrom, oiTo, changes) {
+  let html = '<table><thead><tr><th>行权价</th><th>'+formatDateStr(parseDateInput(document.getElementById('opt-date-from').value))+'</th>'+
+    '<th>'+formatDateStr(parseDateInput(document.getElementById('opt-date-to').value))+'</th><th>变化</th></tr></thead><tbody>';
+  for (let i=0; i<strikes.length; i++) {
+    const s = strikes[i]; const vFrom = (oiFrom && oiFrom[s]) || 0; const vTo = (oiTo && oiTo[s]) || 0; const chg = changes[i];
+    const cls = chg > 0 ? 'positive' : (chg < 0 ? 'negative' : 'neutral');
+    html += '<tr><td style="font-weight:600">'+s+'</td><td>'+vFrom.toLocaleString()+'</td><td>'+vTo.toLocaleString()+'</td><td class="'+cls+'">'+(chg>=0?'+':'')+chg.toLocaleString()+'</td></tr>';
+  }
+  html += '</tbody></table>';
+  document.getElementById('opt-table-wrap').innerHTML = html;
+}
+
+// ============================================================
+// 当前持仓的行权价格分布（单一交易日 · 各行权价 CALL/PUT 持仓量柱图）
+// 底层逻辑：全部合约下，各行权价持仓量加总 = 上方「每日持仓汇总」表该日期 CALL/PUT 合计
+// ============================================================
+function setDistType(type) {
+  distType = type;
+  const btns = document.querySelectorAll('#dist-type-toggle button');
+  btns.forEach(b => b.className = '');
+  btns.forEach(b => { if (b.dataset.type === type) b.className = type === 'call' ? 'active-call' : 'active-put'; });
+  document.getElementById('dist-chart-title').textContent = type.toUpperCase() + ' 当前持仓行权价分布';
+  renderDistributionChart();
+}
+// 取某日期某合约范围(type)下「按行权价聚合成交量」字典
+// month==='ALL' 用顶层 call/put（已是跨合约加总）；'主力' 用 dominantMonth 对应合约月
+function getDistOIData(dateKey, month, type) {
+  const cd = sgxData.data[dateKey];
+  if (!cd) return null;
+  if (month === '主力') { const mm = dominantMonth(dateKey); return mm ? (cd.contracts[mm] && cd.contracts[mm][type]) || null : null; }
+  return cd[type] || null;
+}
+function renderDistributionChart() {
+  const dateKey = distDate;
+  if (!dateKey || !sgxData.data[dateKey]) { document.getElementById('dist-status').textContent = '该日期无数据'; document.getElementById('dist-verify').textContent = ''; return; }
+  const oi = getDistOIData(dateKey, distContractMonth, distType);
+  if (!oi) { document.getElementById('dist-status').textContent = '无 ' + distType.toUpperCase() + ' 数据'; document.getElementById('dist-verify').textContent = ''; return; }
+  // 过滤掉持仓量为 0 的行权价（分布无意义），其余按行权价升序
+  const strikes = Object.keys(oi).map(Number).filter(k => (oi[k] || 0) !== 0).sort((a,b)=>a-b);
+  const oiVals = strikes.map(s => oi[s] || 0);
+  const total = oiVals.reduce((s,v)=>s+v, 0);
+  const monthLabel = distContractMonth === '主力' ? ('主力(' + (dominantMonth(dateKey) || '?') + ')') : '全部合约';
+  document.getElementById('dist-status').textContent = `${strikes.length} 个行权价 · 合计 ${total.toLocaleString()} 手`;
+  // 校验：全部合约下，加总应等于上方汇总表该日期 CALL/PUT 合计
+  let verifyTxt = '';
+  if (distContractMonth === 'ALL') {
+    const sumObj = computeDailySummaries().find(s => s.date === dateKey);
+    if (sumObj) {
+      const tableTotal = distType === 'call' ? sumObj.callTotal : sumObj.putTotal;
+      const ok = (tableTotal === total);
+      verifyTxt = (ok ? '✓ ' : '⚠ ') + '加总 ' + total.toLocaleString() + ' = 汇总表 ' + tableTotal.toLocaleString() + (ok ? '（一致）' : '（不一致）');
+    }
+  } else {
+    verifyTxt = '（主力合约视图，不与汇总表直接对应）';
+  }
+  document.getElementById('dist-verify').textContent = verifyTxt;
+  const maxVal = oiVals.length ? Math.max.apply(null, oiVals) : 0;
+  const baseColor = distType === 'call' ? '#e74c3c' : '#27ae60';
+  const colors = oiVals.map(v => v === maxVal ? '#e67e22' : baseColor);
+  if (!distChart) distChart = echarts.init(document.getElementById('dist-chart'));
+  distChart.setOption({
+    title: { text: distType.toUpperCase() + ' 持仓分布 · ' + monthLabel + ' · ' + formatDateStr(dateKey), subtext:'单位：手（橙柱为持仓量最集中行权价）', left:'center', top:8, textStyle:{fontSize:14,fontWeight:'normal'}, subtextStyle:{fontSize:11,color:'#999'} },
+    tooltip: { trigger:'axis', formatter: function(params) {
+      const s = params[0]; const k = s.name; const v = (oi[k]||0);
+      const pct = total ? (v/total*100).toFixed(1) : '0';
+      return '行权价: ' + k + '<br/>持仓量: ' + v.toLocaleString() + ' 手<br/>占比: ' + pct + '%';
+    }},
+    grid: { left:'3%', right:'3%', bottom:'12%', top:'65', containLabel:true },
+    xAxis: { type:'category', data:strikes.map(String), axisLabel:{fontSize:10, interval: strikes.length>30?Math.floor(strikes.length/15):0, rotate:30} },
+    yAxis: { type:'value', axisLabel:{fontSize:11, formatter:v=>Number(v).toLocaleString()}, splitLine:{lineStyle:{type:'dashed'}}, nameTextStyle:{fontSize:11} },
+    series: [{ type:'bar', data:oiVals, barWidth: strikes.length>40?'60%':'75%', itemStyle:{color:function(p){return colors[p.dataIndex]}},
+      label:{ show:true, position:'top', fontSize:8, color:'#555', formatter:function(p){ return p.value ? (p.value>=1000? (p.value/1000).toFixed(0)+'k' : String(p.value)) : ''; } } }]
+  }, true);
+}
+
+// ============================================================
+// TAB 4: 新交所铁矿期货持仓（FEF）总持仓量 & 主力合约持仓量
+// 数据源：SGX 公开 CDN FUTURE.zip（与期权同源）；商品代码 FEF；持仓量列 OINT
+//   总持仓量 = 所有 FEF 合约月 OINT 之和；主力合约持仓量 = OINT 最大合约月
+//   日期使用 CSV 内 DATE 字段（SGX 官方结算日戳，与用户提供 Excel 口径一致）
+// ============================================================
+let futuresData = { dates: [], data: {} };
+let futuresHist = { dates: [], data: {} };
+let futChart = null;
+let futSeriesSel = { total: true, dominant: false };
+let futCompare = { 环比: false, 同比: true };
+let futMode = '持仓量';
+
+async function loadFuturesData() {
+  try {
+    const resp = await fetch('sgx_futures.json?t=' + Date.now());
+    futuresData = await resp.json();
+  } catch(e) { futuresData = { dates: [], data: {} }; }
+  try {
+    const resp2 = await fetch('sgx_futures_history.json?t=' + Date.now());
+    futuresHist = await resp2.json();
+  } catch(e) { futuresHist = { dates: [], data: {} }; }
+  if (!futuresData.dates || futuresData.dates.length === 0) document.getElementById('futures-update-time').textContent = '暂无期货数据';
+  else document.getElementById('futures-update-time').textContent = '已加载 ' + futuresData.dates.length + ' 个交易日 · 最后更新：' + (futuresData.lastUpdated || '-');
+  if (isActiveTab('ironfuture')) initFuturesUI();
+}
+function initFuturesUI() {
+  const availDates = (futuresData.dates || []).slice().sort();
+  const curMonth = availDates.length ? availDates[availDates.length-1].substring(0,6) : '';
+  document.getElementById('fut-trend-status').textContent = curMonth
+    ? (`${curMonth.substring(0,4)}年${parseInt(curMonth.substring(4))}月（含上月） · 共 ${availDates.length} 个交易日 · 历史 ${futuresHist.dates ? futuresHist.dates.length : 0} 天`)
+    : '暂无数据';
+  if (!futChart) futChart = echarts.init(document.getElementById('fut-trend-chart'));
+  relabelFutSeriesButtons();
+  updateFutCompareLock();
+  drawFutTrendChart();
+  renderFuturesSummaryTable();
+}
+function toggleFutSeries(key) {
+  futSeriesSel[key] = !futSeriesSel[key];
+  const btn = document.querySelector('#fut-series-toggle button[data-series="'+key+'"]');
+  if (btn) btn.className = futSeriesSel[key] ? 'active-ring' : '';
+  updateFutCompareLock();
+  drawFutTrendChart();
+}
+function toggleFutMode(mode) {
+  futCompare[mode] = !futCompare[mode];
+  const btn = document.querySelector('#fut-mode-toggle button[data-mode="'+mode+'"]');
+  if (btn) btn.className = futCompare[mode] ? 'active-ring' : '';
+  drawFutTrendChart();
+}
+function setFutMetric(metric) {
+  futMode = metric;
+  document.querySelectorAll('#fut-metric-toggle button').forEach(b => {
+    b.className = (b.dataset.metric === metric) ? 'active-ring' : '';
+  });
+  relabelFutSeriesButtons();
+  updateFutCompareLock();
+  drawFutTrendChart();
+}
+function relabelFutSeriesButtons() {
+  const isDelta = futMode === '变化量';
+  const labels = {
+    total: isDelta ? '总持仓量 变化量' : '总持仓量',
+    dominant: isDelta ? '主力持仓量 变化量' : '主力持仓量'
+  };
+  document.querySelectorAll('#fut-series-toggle button').forEach(b => {
+    b.textContent = labels[b.dataset.series];
+  });
+}
+function selectedFutSeriesCount() {
+  return ['total','dominant'].filter(k => futSeriesSel[k]).length;
+}
+function updateFutCompareLock() {
+  const locked = selectedFutSeriesCount() > 2;
+  document.querySelectorAll('#fut-mode-toggle button').forEach(b => {
+    b.disabled = locked;
+    if (locked) { b.classList.add('disabled-btn'); b.classList.remove('active-ring'); b.title = '选择 2 项以内才能对比'; futCompare[b.dataset.mode] = false; }
+    else { b.classList.remove('disabled-btn'); b.title = ''; }
+  });
+}
+function prevFutDay(list, dk) {
+  const sorted = list.slice().sort();
+  const idx = sorted.indexOf(dk);
+  return idx > 0 ? sorted[idx-1] : null;
+}
+function futValAbs(kind, dk, source) {
+  const rec = (source === 'live' ? futuresData.data : futuresHist.data)[dk];
+  if (!rec) return null;
+  return (kind === 'total') ? (rec.totalOI != null ? rec.totalOI : null) : (rec.dominantOI != null ? rec.dominantOI : null);
+}
+function futValDelta(kind, dk, source) {
+  const list = source === 'live' ? futuresData.dates : futuresHist.dates;
+  const prev = prevFutDay(list, dk);
+  if (!prev) return null;
+  const a = futValAbs(kind, prev, source), b = futValAbs(kind, dk, source);
+  return (a != null && b != null) ? b - a : null;
+}
+function drawFutTrendChart() {
+  if (!futChart) return;
+  const allDates = (futuresData.dates || []).slice().sort();
+  if (!allDates.length) { futChart.clear(); return; }
+  const curMonth = allDates[allDates.length-1].substring(0,6);
+  const prevMonth = shiftMonth(curMonth, -1);
+  const curDays = allDates.filter(d => d.startsWith(curMonth) || d.startsWith(prevMonth)).sort();
+  const dateLabels = curDays.map(formatDateStr);
+  const cmpOn = futCompare['环比'], yoyOn = futCompare['同比'];
+  const isDelta = futMode === '变化量';
+  const showTotal = futSeriesSel.total, showDom = futSeriesSel.dominant;
+  const meta = [
+    { key:'total', name: isDelta ? '总持仓量 变化量' : '总持仓量', color:'#e74c3c', axis:0, dash:'solid',  width:3 },
+    { key:'dominant', name: isDelta ? '主力持仓量 变化量' : '主力持仓量', color:'#27ae60', axis:1, dash:'dashed', width:3 }
+  ];
+  const valOf = (dk, kind, source) => isDelta ? futValDelta(kind, dk, source) : futValAbs(kind, dk, source);
+  const seriesDefs = [], legend = [];
+  for (const m of meta) {
+    if (!futSeriesSel[m.key]) continue;
+    const yIdx = m.axis;
+    // 主数据（hover 才显点）
+    seriesDefs.push({ name: m.name, type:'line', yAxisIndex:yIdx, z:5,
+      data: curDays.map(dk => valOf(dk, m.key, 'live')),
+      smooth:true, showSymbol:false, symbol:'circle', symbolSize:6, connectNulls:false,
+      lineStyle:{width:m.width, color:m.color, type:m.dash}, itemStyle:{color:m.color},
+      emphasis:{focus:'series', scale:1.6} });
+    legend.push(m.name);
+    if (cmpOn) {
+      const pm = shiftMonth(curMonth, -1);
+      seriesDefs.push({ name: m.name + '（环比）', type:'line', yAxisIndex:yIdx, z:2,
+        data: curDays.map(dk => valOf(pm + dk.substring(6), m.key, 'hist')),
+        smooth:true, showSymbol:false, symbol:'circle', symbolSize:4, connectNulls:false,
+        lineStyle:{width:1.2, color:m.color, type:'dashed', opacity:0.45}, itemStyle:{color:m.color, opacity:0.45} });
+      legend.push(m.name + '（环比）');
+    }
+    if (yoyOn) {
+      const py = shiftMonth(curMonth, -12);
+      seriesDefs.push({ name: m.name + '（同比）', type:'line', yAxisIndex:yIdx, z:2,
+        data: curDays.map(dk => valOf(py + dk.substring(6), m.key, 'hist')),
+        smooth:true, showSymbol:false, symbol:'circle', symbolSize:4, connectNulls:false,
+        lineStyle:{width:1.2, color:m.color, type:'dotted', opacity:0.45}, itemStyle:{color:m.color, opacity:0.45} });
+      legend.push(m.name + '（同比）');
+    }
+  }
+  if (!seriesDefs.length) { futChart.clear(); return; }
+  const yAxisArr = [];
+  if (showTotal) yAxisArr.push({ type:'value', scale:true, name:'总持仓量', nameTextStyle:{fontSize:10, color:'#e74c3c'},
+    axisLabel:{fontSize:11, formatter:v=>Number(v).toLocaleString()}, splitLine:{lineStyle:{type:'dashed', color:'rgba(0,0,0,0.06)'}} });
+  if (showDom) yAxisArr.push({ type:'value', scale:true, name:'主力持仓量', nameTextStyle:{fontSize:10, color:'#27ae60'},
+    axisLabel:{fontSize:11, formatter:v=>Number(v).toLocaleString()}, splitLine:{show:false} });
+  const chgBySeries = {};
+  if (!isDelta) {
+    for (const m of meta) {
+      if (!futSeriesSel[m.key]) continue;
+      chgBySeries[m.name] = curDays.map((dk, i) => {
+        if (i === 0) return null;
+        const a = valOf(curDays[i-1], m.key, 'live'), b = valOf(dk, m.key, 'live');
+        return (a != null && b != null) ? b - a : null;
+      });
+    }
+  }
+  futChart.setOption({
+    title: { text: '走势图', left:'center', top:6, textStyle:{fontSize:14, fontWeight:'normal'} },
+    tooltip: { trigger:'axis', formatter: function(params) {
+      let s = (params[0] ? params[0].axisValue : '') + '<br/>';
+      for (const p of params) {
+        const v = p.value;
+        const vstr = (v == null || v === undefined) ? '-' : Number(v).toLocaleString();
+        s += p.marker + p.seriesName + ': ' + vstr;
+        if (!isDelta && !p.seriesName.includes('环比') && !p.seriesName.includes('同比') && chgBySeries[p.seriesName] && p.dataIndex > 0) {
+          const chg = chgBySeries[p.seriesName][p.dataIndex];
+          if (chg != null) s += '  (Δ' + (chg >= 0 ? '+' : '') + chg.toLocaleString() + ')';
+        }
+        s += '<br/>';
+      }
+      return s;
+    } },
+    legend: { data: legend, bottom:2, type:'scroll', textStyle:{fontSize:12}, itemWidth:24, itemHeight:12 },
+    grid: { left:'3%', right:'4%', bottom:'16%', top:'12%', containLabel:true },
+    xAxis: { type:'category', data:dateLabels, boundaryGap:false, axisLabel:{fontSize:11, rotate:40, interval: Math.floor(dateLabels.length/12)}, axisTick:{show:false} },
+    yAxis: yAxisArr,
+    series: seriesDefs
+  }, true);
+}
+function computeFuturesSummaries() {
+  if (!futuresData || !futuresData.dates || futuresData.dates.length === 0) return [];
+  const summaries = [];
+  const sortedDates = [...futuresData.dates].sort();
+  for (const dk of sortedDates) {
+    const dayData = futuresData.data[dk];
+    if (!dayData) continue;
+    summaries.push({ date: dk, dateDisplay: formatDateStr(dk),
+      total: dayData.totalOI != null ? dayData.totalOI : null,
+      dominant: dayData.dominantOI != null ? dayData.dominantOI : null,
+      totalChg: null, dominantChg: null });
+  }
+  summaries.sort((a,b) => a.date.localeCompare(b.date));
+  for (let i = 1; i < summaries.length; i++) {
+    summaries[i].totalChg = (summaries[i].total != null && summaries[i-1].total != null) ? summaries[i].total - summaries[i-1].total : null;
+    summaries[i].dominantChg = (summaries[i].dominant != null && summaries[i-1].dominant != null) ? summaries[i].dominant - summaries[i-1].dominant : null;
+  }
+  summaries.reverse(); // 表格改为「近→远」：最新日期置顶
+  return summaries;
+}
+function renderFuturesSummaryTable() {
+  const tableWrap = document.getElementById('futures-summary-table-wrap');
+  const summaries = computeFuturesSummaries();
+  if (summaries.length === 0) { tableWrap.innerHTML = '<p style="text-align:center;color:#999;padding:30px;">暂无期货数据，等待更新...</p>'; return; }
+  let html = '<table><thead><tr>' +
+    '<th>DATE</th><th>总持仓量</th><th>主力持仓量</th>' +
+    '<th>总持仓量<br/>变化量</th><th>主力持仓量<br/>变化量</th>' +
+    '</tr></thead><tbody>';
+  for (let i = 0; i < summaries.length; i++) {
+    const s = summaries[i];
+    const tCls = s.totalChg !== null ? (s.totalChg >= 0 ? 'positive' : 'negative') : 'neutral';
+    const dCls = s.dominantChg !== null ? (s.dominantChg >= 0 ? 'positive' : 'negative') : 'neutral';
+    html += '<tr>' +
+      `<td>${s.dateDisplay}</td>` +
+      `<td>${s.total != null ? s.total.toLocaleString() : '-'}</td>` +
+      `<td>${s.dominant != null ? s.dominant.toLocaleString() : '-'}</td>` +
+      `<td class="${tCls}">${s.totalChg !== null ? (s.totalChg >= 0 ? '+' : '') + s.totalChg.toLocaleString() : '-'}</td>` +
+      `<td class="${dCls}">${s.dominantChg !== null ? (s.dominantChg >= 0 ? '+' : '') + s.dominantChg.toLocaleString() : '-'}</td>` +
+      '</tr>';
+  }
+  html += '</tbody></table>';
+  tableWrap.innerHTML = html;
+  applyFuturesSummaryCollapse(summaries.length);
+}
+function applyFuturesSummaryCollapse(total) {
+  const wrap = document.getElementById('futures-summary-table-wrap');
+  const tbody = wrap.querySelector('tbody');
+  if (!tbody) return;
+  const rows = tbody.querySelectorAll('tr');
+  const LIMIT = 10;
+  if (rows.length <= LIMIT) return;
+  rows.forEach((tr, i) => { tr.style.display = (i < LIMIT) ? '' : 'none'; });
+  if (!wrap.querySelector('.collapse-btn')) {
+    const btn = document.createElement('button');
+    btn.className = 'collapse-btn';
+    btn.textContent = '展开全部 ' + rows.length + ' 天';
+    btn.onclick = () => {
+      const expanded = btn.dataset.exp === '1';
+      rows.forEach(tr => tr.style.display = '');
+      btn.textContent = expanded ? '展开全部 ' + rows.length + ' 天' : '收起（仅显示最新十天）';
+      btn.dataset.exp = expanded ? '0' : '1';
+    };
+    wrap.appendChild(btn);
+  }
+}
+
+// ============================================================
+// INIT
+// ============================================================
+loadFerrousData();
+loadIronData();
+loadJMData();
+loadOptionsData();
+loadFuturesData();
+window.addEventListener('resize', () => {
+  Object.values(ferrousCharts).forEach(k => k.chart.resize());
+  Object.values(jmCharts).forEach(k => k.chart.resize());
+  ['i','rb','hc'].forEach(c => Object.values(ironStore(c)).forEach(k => k.chart && k.chart.resize()));
+  if(optChart) optChart.resize();
+  if(trendChart) trendChart.resize();
+  if(distChart) distChart.resize();
+});
+</script>
+</body>
+</html>

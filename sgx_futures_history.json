@@ -1,0 +1,2005 @@
+{
+ "dates": [
+  "20250701",
+  "20250702",
+  "20250703",
+  "20250704",
+  "20250707",
+  "20250708",
+  "20250709",
+  "20250710",
+  "20250711",
+  "20250714",
+  "20250715",
+  "20250716",
+  "20250717",
+  "20250718",
+  "20250721",
+  "20250722",
+  "20250723",
+  "20250724",
+  "20250725",
+  "20250728",
+  "20250729",
+  "20250730",
+  "20250731",
+  "20250801",
+  "20250804",
+  "20250805",
+  "20250806",
+  "20250807",
+  "20250808",
+  "20250811",
+  "20250812",
+  "20250813",
+  "20250814",
+  "20250815",
+  "20250818",
+  "20250819",
+  "20250820",
+  "20250821",
+  "20250822",
+  "20250825",
+  "20250826",
+  "20250827",
+  "20250828",
+  "20250829",
+  "20250901",
+  "20250902",
+  "20250903",
+  "20250904",
+  "20250905",
+  "20250908",
+  "20250909",
+  "20250910",
+  "20250911",
+  "20250912",
+  "20250915",
+  "20250916",
+  "20250917",
+  "20250918",
+  "20250919",
+  "20250922",
+  "20250923",
+  "20250924",
+  "20250925",
+  "20250926",
+  "20250929",
+  "20250930",
+  "20251001",
+  "20251002",
+  "20251003",
+  "20251006",
+  "20251007",
+  "20251008",
+  "20251009",
+  "20251010",
+  "20251013",
+  "20251014",
+  "20251015",
+  "20251016",
+  "20251017",
+  "20251020",
+  "20251021",
+  "20251022",
+  "20251023",
+  "20251024",
+  "20251027",
+  "20251028",
+  "20251029",
+  "20251030",
+  "20251031",
+  "20251103",
+  "20251104",
+  "20251105",
+  "20251106",
+  "20251107",
+  "20251110",
+  "20251111",
+  "20251112",
+  "20251113",
+  "20251114",
+  "20251117",
+  "20251118",
+  "20251119",
+  "20251120",
+  "20251121",
+  "20251124",
+  "20251125",
+  "20251126",
+  "20251127",
+  "20251128",
+  "20251201",
+  "20251202",
+  "20251203",
+  "20251204",
+  "20251205",
+  "20251208",
+  "20251209",
+  "20251210",
+  "20251211",
+  "20251212",
+  "20251215",
+  "20251216",
+  "20251217",
+  "20251218",
+  "20251219",
+  "20251222",
+  "20251223",
+  "20251224",
+  "20251225",
+  "20251226",
+  "20251229",
+  "20251230",
+  "20251231",
+  "20260102",
+  "20260105",
+  "20260106",
+  "20260107",
+  "20260108",
+  "20260109",
+  "20260112",
+  "20260113",
+  "20260114",
+  "20260115",
+  "20260116",
+  "20260119",
+  "20260120",
+  "20260121",
+  "20260122",
+  "20260123",
+  "20260126",
+  "20260127",
+  "20260128",
+  "20260129",
+  "20260130",
+  "20260202",
+  "20260203",
+  "20260204",
+  "20260205",
+  "20260206",
+  "20260209",
+  "20260210",
+  "20260211",
+  "20260212",
+  "20260213",
+  "20260216",
+  "20260217",
+  "20260218",
+  "20260219",
+  "20260220",
+  "20260223",
+  "20260224",
+  "20260225",
+  "20260226",
+  "20260227",
+  "20260302",
+  "20260303",
+  "20260304",
+  "20260305",
+  "20260306",
+  "20260309",
+  "20260310",
+  "20260311",
+  "20260312",
+  "20260313",
+  "20260316",
+  "20260317",
+  "20260318",
+  "20260319",
+  "20260320",
+  "20260323",
+  "20260324",
+  "20260325",
+  "20260326",
+  "20260327",
+  "20260330",
+  "20260331",
+  "20260401",
+  "20260402",
+  "20260403",
+  "20260406",
+  "20260407",
+  "20260408",
+  "20260409",
+  "20260410",
+  "20260413",
+  "20260414",
+  "20260415",
+  "20260416",
+  "20260417",
+  "20260420",
+  "20260421",
+  "20260422",
+  "20260423",
+  "20260424",
+  "20260427",
+  "20260428",
+  "20260429",
+  "20260430",
+  "20260501",
+  "20260504",
+  "20260505",
+  "20260506",
+  "20260507",
+  "20260508",
+  "20260511",
+  "20260512",
+  "20260513",
+  "20260514",
+  "20260515",
+  "20260518",
+  "20260519",
+  "20260520",
+  "20260521",
+  "20260522",
+  "20260525",
+  "20260526",
+  "20260527",
+  "20260528",
+  "20260529",
+  "20260601",
+  "20260602",
+  "20260603",
+  "20260604",
+  "20260605",
+  "20260608",
+  "20260609",
+  "20260610",
+  "20260611",
+  "20260612",
+  "20260615",
+  "20260616",
+  "20260617",
+  "20260618",
+  "20260619",
+  "20260622",
+  "20260623",
+  "20260624",
+  "20260625",
+  "20260626",
+  "20260629",
+  "20260630",
+  "20260701",
+  "20260702",
+  "20260703",
+  "20260706",
+  "20260707",
+  "20260708",
+  "20260709",
+  "20260710",
+  "20260713",
+  "20260714",
+  "20260715",
+  "20260716",
+  "20260717",
+  "20260720",
+  "20260721",
+  "20260722",
+  "20260723",
+  "20260724",
+  "20260727",
+  "20260728",
+  "20260729",
+  "20260730",
+  "20260731",
+  "20260803",
+  "20260804",
+  "20260805",
+  "20260806",
+  "20260807",
+  "20260810",
+  "20260811",
+  "20260812",
+  "20260813",
+  "20260814",
+  "20260817",
+  "20260818",
+  "20260819",
+  "20260820",
+  "20260821",
+  "20260824",
+  "20260825",
+  "20260826",
+  "20260827",
+  "20260828",
+  "20260831",
+  "20260901",
+  "20260902",
+  "20260903",
+  "20260904",
+  "20260907",
+  "20260908",
+  "20260909",
+  "20260910",
+  "20260911",
+  "20260914",
+  "20260915",
+  "20260916",
+  "20260917",
+  "20260918",
+  "20260921",
+  "20260922",
+  "20260923",
+  "20260924",
+  "20260925",
+  "20260928",
+  "20260929",
+  "20260930",
+  "20261001",
+  "20261002",
+  "20261005",
+  "20261006",
+  "20261007",
+  "20261008",
+  "20261009"
+ ],
+ "data": {
+  "20250701": {
+   "totalOI": 1475849,
+   "dominantMonth": "08/2025",
+   "dominantOI": 389011
+  },
+  "20250702": {
+   "totalOI": 1517927,
+   "dominantMonth": "08/2025",
+   "dominantOI": 405241
+  },
+  "20250703": {
+   "totalOI": 1569508,
+   "dominantMonth": "08/2025",
+   "dominantOI": 416485
+  },
+  "20250704": {
+   "totalOI": 1577392,
+   "dominantMonth": "08/2025",
+   "dominantOI": 420852
+  },
+  "20250707": {
+   "totalOI": 1596838,
+   "dominantMonth": "08/2025",
+   "dominantOI": 422531
+  },
+  "20250708": {
+   "totalOI": 1617361,
+   "dominantMonth": "08/2025",
+   "dominantOI": 426965
+  },
+  "20250709": {
+   "totalOI": 1645804,
+   "dominantMonth": "08/2025",
+   "dominantOI": 424957
+  },
+  "20250710": {
+   "totalOI": 1744081,
+   "dominantMonth": "08/2025",
+   "dominantOI": 441026
+  },
+  "20250711": {
+   "totalOI": 1782609,
+   "dominantMonth": "08/2025",
+   "dominantOI": 437908
+  },
+  "20250714": {
+   "totalOI": 1800947,
+   "dominantMonth": "08/2025",
+   "dominantOI": 427909
+  },
+  "20250715": {
+   "totalOI": 1820317,
+   "dominantMonth": "08/2025",
+   "dominantOI": 424697
+  },
+  "20250716": {
+   "totalOI": 1842174,
+   "dominantMonth": "08/2025",
+   "dominantOI": 436071
+  },
+  "20250717": {
+   "totalOI": 1868405,
+   "dominantMonth": "08/2025",
+   "dominantOI": 444355
+  },
+  "20250718": {
+   "totalOI": 1950084,
+   "dominantMonth": "08/2025",
+   "dominantOI": 461893
+  },
+  "20250721": {
+   "totalOI": 1972546,
+   "dominantMonth": "08/2025",
+   "dominantOI": 453093
+  },
+  "20250722": {
+   "totalOI": 1983638,
+   "dominantMonth": "08/2025",
+   "dominantOI": 450011
+  },
+  "20250723": {
+   "totalOI": 2004003,
+   "dominantMonth": "08/2025",
+   "dominantOI": 442789
+  },
+  "20250724": {
+   "totalOI": 2001794,
+   "dominantMonth": "09/2025",
+   "dominantOI": 437216
+  },
+  "20250725": {
+   "totalOI": 2019674,
+   "dominantMonth": "09/2025",
+   "dominantOI": 448963
+  },
+  "20250728": {
+   "totalOI": 2014861,
+   "dominantMonth": "09/2025",
+   "dominantOI": 458818
+  },
+  "20250729": {
+   "totalOI": 2067866,
+   "dominantMonth": "09/2025",
+   "dominantOI": 495347
+  },
+  "20250730": {
+   "totalOI": 2120581,
+   "dominantMonth": "09/2025",
+   "dominantOI": 536097
+  },
+  "20250731": {
+   "totalOI": 1696146,
+   "dominantMonth": "09/2025",
+   "dominantOI": 525598
+  },
+  "20250801": {
+   "totalOI": 1727349,
+   "dominantMonth": "09/2025",
+   "dominantOI": 531889
+  },
+  "20250804": {
+   "totalOI": 1754961,
+   "dominantMonth": "09/2025",
+   "dominantOI": 516811
+  },
+  "20250805": {
+   "totalOI": 1756265,
+   "dominantMonth": "09/2025",
+   "dominantOI": 491680
+  },
+  "20250806": {
+   "totalOI": 1769441,
+   "dominantMonth": "09/2025",
+   "dominantOI": 474735
+  },
+  "20250807": {
+   "totalOI": 1796496,
+   "dominantMonth": "09/2025",
+   "dominantOI": 475465
+  },
+  "20250808": {
+   "totalOI": 1816485,
+   "dominantMonth": "09/2025",
+   "dominantOI": 478192
+  },
+  "20250811": {
+   "totalOI": 1839050,
+   "dominantMonth": "09/2025",
+   "dominantOI": 481588
+  },
+  "20250812": {
+   "totalOI": 1871566,
+   "dominantMonth": "09/2025",
+   "dominantOI": 488008
+  },
+  "20250813": {
+   "totalOI": 1943226,
+   "dominantMonth": "09/2025",
+   "dominantOI": 501024
+  },
+  "20250814": {
+   "totalOI": 1957831,
+   "dominantMonth": "09/2025",
+   "dominantOI": 490813
+  },
+  "20250815": {
+   "totalOI": 1969738,
+   "dominantMonth": "09/2025",
+   "dominantOI": 491534
+  },
+  "20250818": {
+   "totalOI": 1965423,
+   "dominantMonth": "09/2025",
+   "dominantOI": 466427
+  },
+  "20250819": {
+   "totalOI": 1953914,
+   "dominantMonth": "09/2025",
+   "dominantOI": 442748
+  },
+  "20250820": {
+   "totalOI": 1924566,
+   "dominantMonth": "09/2025",
+   "dominantOI": 405088
+  },
+  "20250821": {
+   "totalOI": 1941375,
+   "dominantMonth": "09/2025",
+   "dominantOI": 391290
+  },
+  "20250822": {
+   "totalOI": 1950151,
+   "dominantMonth": "08/2025",
+   "dominantOI": 379828
+  },
+  "20250825": {
+   "totalOI": 1953371,
+   "dominantMonth": "09/2025",
+   "dominantOI": 372303
+  },
+  "20250826": {
+   "totalOI": 1981835,
+   "dominantMonth": "10/2025",
+   "dominantOI": 386030
+  },
+  "20250827": {
+   "totalOI": 2030788,
+   "dominantMonth": "10/2025",
+   "dominantOI": 420227
+  },
+  "20250828": {
+   "totalOI": 2064699,
+   "dominantMonth": "10/2025",
+   "dominantOI": 435777
+  },
+  "20250829": {
+   "totalOI": 1710991,
+   "dominantMonth": "10/2025",
+   "dominantOI": 448773
+  },
+  "20250901": {
+   "totalOI": 1706218,
+   "dominantMonth": "10/2025",
+   "dominantOI": 449644
+  },
+  "20250902": {
+   "totalOI": 1740768,
+   "dominantMonth": "10/2025",
+   "dominantOI": 460946
+  },
+  "20250903": {
+   "totalOI": 1778386,
+   "dominantMonth": "10/2025",
+   "dominantOI": 474767
+  },
+  "20250904": {
+   "totalOI": 1818489,
+   "dominantMonth": "10/2025",
+   "dominantOI": 496117
+  },
+  "20250905": {
+   "totalOI": 1835608,
+   "dominantMonth": "10/2025",
+   "dominantOI": 500151
+  },
+  "20250908": {
+   "totalOI": 1864059,
+   "dominantMonth": "10/2025",
+   "dominantOI": 508495
+  },
+  "20250909": {
+   "totalOI": 1928470,
+   "dominantMonth": "10/2025",
+   "dominantOI": 518861
+  },
+  "20250910": {
+   "totalOI": 1948563,
+   "dominantMonth": "10/2025",
+   "dominantOI": 532217
+  },
+  "20250911": {
+   "totalOI": 2000273,
+   "dominantMonth": "10/2025",
+   "dominantOI": 543521
+  },
+  "20250912": {
+   "totalOI": 2006565,
+   "dominantMonth": "10/2025",
+   "dominantOI": 547653
+  },
+  "20250915": {
+   "totalOI": 2011211,
+   "dominantMonth": "10/2025",
+   "dominantOI": 549257
+  },
+  "20250916": {
+   "totalOI": 2038605,
+   "dominantMonth": "10/2025",
+   "dominantOI": 553781
+  },
+  "20250917": {
+   "totalOI": 2075782,
+   "dominantMonth": "10/2025",
+   "dominantOI": 566028
+  },
+  "20250918": {
+   "totalOI": 2088016,
+   "dominantMonth": "10/2025",
+   "dominantOI": 547371
+  },
+  "20250919": {
+   "totalOI": 2095016,
+   "dominantMonth": "10/2025",
+   "dominantOI": 540010
+  },
+  "20250922": {
+   "totalOI": 2102507,
+   "dominantMonth": "10/2025",
+   "dominantOI": 517910
+  },
+  "20250923": {
+   "totalOI": 2116250,
+   "dominantMonth": "10/2025",
+   "dominantOI": 498526
+  },
+  "20250924": {
+   "totalOI": 2128638,
+   "dominantMonth": "10/2025",
+   "dominantOI": 490964
+  },
+  "20250925": {
+   "totalOI": 2131391,
+   "dominantMonth": "10/2025",
+   "dominantOI": 464046
+  },
+  "20250926": {
+   "totalOI": 2117054,
+   "dominantMonth": "11/2025",
+   "dominantOI": 460901
+  },
+  "20250929": {
+   "totalOI": 2159689,
+   "dominantMonth": "11/2025",
+   "dominantOI": 509205
+  },
+  "20250930": {
+   "totalOI": 1835575,
+   "dominantMonth": "11/2025",
+   "dominantOI": 518272
+  },
+  "20251001": {
+   "totalOI": 1845911,
+   "dominantMonth": "11/2025",
+   "dominantOI": 517354
+  },
+  "20251002": {
+   "totalOI": 1854438,
+   "dominantMonth": "11/2025",
+   "dominantOI": 523836
+  },
+  "20251003": {
+   "totalOI": 1854116,
+   "dominantMonth": "11/2025",
+   "dominantOI": 524718
+  },
+  "20251006": {
+   "totalOI": 1857217,
+   "dominantMonth": "11/2025",
+   "dominantOI": 526710
+  },
+  "20251007": {
+   "totalOI": 1858339,
+   "dominantMonth": "11/2025",
+   "dominantOI": 525081
+  },
+  "20251008": {
+   "totalOI": 1870975,
+   "dominantMonth": "11/2025",
+   "dominantOI": 529415
+  },
+  "20251009": {
+   "totalOI": 1908116,
+   "dominantMonth": "11/2025",
+   "dominantOI": 539897
+  },
+  "20251010": {
+   "totalOI": 1958804,
+   "dominantMonth": "11/2025",
+   "dominantOI": 557744
+  },
+  "20251013": {
+   "totalOI": 1987020,
+   "dominantMonth": "11/2025",
+   "dominantOI": 580066
+  },
+  "20251014": {
+   "totalOI": 1986824,
+   "dominantMonth": "11/2025",
+   "dominantOI": 573865
+  },
+  "20251015": {
+   "totalOI": 2006361,
+   "dominantMonth": "11/2025",
+   "dominantOI": 576210
+  },
+  "20251016": {
+   "totalOI": 2028186,
+   "dominantMonth": "11/2025",
+   "dominantOI": 566176
+  },
+  "20251017": {
+   "totalOI": 2057888,
+   "dominantMonth": "11/2025",
+   "dominantOI": 564780
+  },
+  "20251020": {
+   "totalOI": 2057562,
+   "dominantMonth": "11/2025",
+   "dominantOI": 560043
+  },
+  "20251021": {
+   "totalOI": 2069266,
+   "dominantMonth": "11/2025",
+   "dominantOI": 556088
+  },
+  "20251022": {
+   "totalOI": 2090294,
+   "dominantMonth": "11/2025",
+   "dominantOI": 546397
+  },
+  "20251023": {
+   "totalOI": 2084955,
+   "dominantMonth": "11/2025",
+   "dominantOI": 517240
+  },
+  "20251024": {
+   "totalOI": 2176889,
+   "dominantMonth": "12/2025",
+   "dominantOI": 567777
+  },
+  "20251027": {
+   "totalOI": 2157946,
+   "dominantMonth": "12/2025",
+   "dominantOI": 592387
+  },
+  "20251028": {
+   "totalOI": 2181754,
+   "dominantMonth": "12/2025",
+   "dominantOI": 618013
+  },
+  "20251029": {
+   "totalOI": 2195002,
+   "dominantMonth": "12/2025",
+   "dominantOI": 635953
+  },
+  "20251030": {
+   "totalOI": 2194590,
+   "dominantMonth": "12/2025",
+   "dominantOI": 670907
+  },
+  "20251031": {
+   "totalOI": 1913482,
+   "dominantMonth": "12/2025",
+   "dominantOI": 687173
+  },
+  "20251103": {
+   "totalOI": 1940317,
+   "dominantMonth": "12/2025",
+   "dominantOI": 707316
+  },
+  "20251104": {
+   "totalOI": 1945599,
+   "dominantMonth": "12/2025",
+   "dominantOI": 702060
+  },
+  "20251105": {
+   "totalOI": 1936527,
+   "dominantMonth": "12/2025",
+   "dominantOI": 691486
+  },
+  "20251106": {
+   "totalOI": 1937805,
+   "dominantMonth": "12/2025",
+   "dominantOI": 690832
+  },
+  "20251107": {
+   "totalOI": 1932193,
+   "dominantMonth": "12/2025",
+   "dominantOI": 675775
+  },
+  "20251110": {
+   "totalOI": 1929674,
+   "dominantMonth": "12/2025",
+   "dominantOI": 673074
+  },
+  "20251111": {
+   "totalOI": 1922407,
+   "dominantMonth": "12/2025",
+   "dominantOI": 664985
+  },
+  "20251112": {
+   "totalOI": 1918706,
+   "dominantMonth": "12/2025",
+   "dominantOI": 659301
+  },
+  "20251113": {
+   "totalOI": 1929088,
+   "dominantMonth": "12/2025",
+   "dominantOI": 661844
+  },
+  "20251114": {
+   "totalOI": 1922101,
+   "dominantMonth": "12/2025",
+   "dominantOI": 654505
+  },
+  "20251117": {
+   "totalOI": 1950964,
+   "dominantMonth": "12/2025",
+   "dominantOI": 655329
+  },
+  "20251118": {
+   "totalOI": 1949177,
+   "dominantMonth": "12/2025",
+   "dominantOI": 652120
+  },
+  "20251119": {
+   "totalOI": 1968439,
+   "dominantMonth": "12/2025",
+   "dominantOI": 654130
+  },
+  "20251120": {
+   "totalOI": 1974180,
+   "dominantMonth": "12/2025",
+   "dominantOI": 638193
+  },
+  "20251121": {
+   "totalOI": 1974465,
+   "dominantMonth": "12/2025",
+   "dominantOI": 626391
+  },
+  "20251124": {
+   "totalOI": 1994865,
+   "dominantMonth": "12/2025",
+   "dominantOI": 621444
+  },
+  "20251125": {
+   "totalOI": 2013796,
+   "dominantMonth": "12/2025",
+   "dominantOI": 601764
+  },
+  "20251126": {
+   "totalOI": 2034291,
+   "dominantMonth": "12/2025",
+   "dominantOI": 591278
+  },
+  "20251127": {
+   "totalOI": 2068621,
+   "dominantMonth": "12/2025",
+   "dominantOI": 589539
+  },
+  "20251128": {
+   "totalOI": 1728512,
+   "dominantMonth": "01/2026",
+   "dominantOI": 582615
+  },
+  "20251201": {
+   "totalOI": 1762524,
+   "dominantMonth": "01/2026",
+   "dominantOI": 613329
+  },
+  "20251202": {
+   "totalOI": 1761682,
+   "dominantMonth": "01/2026",
+   "dominantOI": 620205
+  },
+  "20251203": {
+   "totalOI": 1781909,
+   "dominantMonth": "01/2026",
+   "dominantOI": 632454
+  },
+  "20251204": {
+   "totalOI": 1785778,
+   "dominantMonth": "01/2026",
+   "dominantOI": 637430
+  },
+  "20251205": {
+   "totalOI": 1781291,
+   "dominantMonth": "01/2026",
+   "dominantOI": 636764
+  },
+  "20251208": {
+   "totalOI": 1774510,
+   "dominantMonth": "01/2026",
+   "dominantOI": 634774
+  },
+  "20251209": {
+   "totalOI": 1775739,
+   "dominantMonth": "01/2026",
+   "dominantOI": 630283
+  },
+  "20251210": {
+   "totalOI": 1790963,
+   "dominantMonth": "01/2026",
+   "dominantOI": 616234
+  },
+  "20251211": {
+   "totalOI": 1784573,
+   "dominantMonth": "01/2026",
+   "dominantOI": 604238
+  },
+  "20251212": {
+   "totalOI": 1791656,
+   "dominantMonth": "01/2026",
+   "dominantOI": 601130
+  },
+  "20251215": {
+   "totalOI": 1785554,
+   "dominantMonth": "01/2026",
+   "dominantOI": 592563
+  },
+  "20251216": {
+   "totalOI": 1803294,
+   "dominantMonth": "01/2026",
+   "dominantOI": 573526
+  },
+  "20251217": {
+   "totalOI": 1833924,
+   "dominantMonth": "01/2026",
+   "dominantOI": 553433
+  },
+  "20251218": {
+   "totalOI": 1838762,
+   "dominantMonth": "01/2026",
+   "dominantOI": 532642
+  },
+  "20251219": {
+   "totalOI": 1863652,
+   "dominantMonth": "01/2026",
+   "dominantOI": 515442
+  },
+  "20251222": {
+   "totalOI": 1876611,
+   "dominantMonth": "12/2025",
+   "dominantOI": 491706
+  },
+  "20251223": {
+   "totalOI": 1878819,
+   "dominantMonth": "12/2025",
+   "dominantOI": 486981
+  },
+  "20251224": {
+   "totalOI": 1876741,
+   "dominantMonth": "12/2025",
+   "dominantOI": 477406
+  },
+  "20251225": {
+   "totalOI": 1876302,
+   "dominantMonth": "12/2025",
+   "dominantOI": 477311
+  },
+  "20251226": {
+   "totalOI": 1879940,
+   "dominantMonth": "12/2025",
+   "dominantOI": 477835
+  },
+  "20251229": {
+   "totalOI": 1897360,
+   "dominantMonth": "02/2026",
+   "dominantOI": 486973
+  },
+  "20251230": {
+   "totalOI": 1899532,
+   "dominantMonth": "02/2026",
+   "dominantOI": 531569
+  },
+  "20251231": {
+   "totalOI": 1492661,
+   "dominantMonth": "02/2026",
+   "dominantOI": 553731
+  },
+  "20260102": {
+   "totalOI": 1485527,
+   "dominantMonth": "02/2026",
+   "dominantOI": 554652
+  },
+  "20260105": {
+   "totalOI": 1499676,
+   "dominantMonth": "02/2026",
+   "dominantOI": 566458
+  },
+  "20260106": {
+   "totalOI": 1519696,
+   "dominantMonth": "02/2026",
+   "dominantOI": 587374
+  },
+  "20260107": {
+   "totalOI": 1531042,
+   "dominantMonth": "02/2026",
+   "dominantOI": 589301
+  },
+  "20260108": {
+   "totalOI": 1563317,
+   "dominantMonth": "02/2026",
+   "dominantOI": 585224
+  },
+  "20260109": {
+   "totalOI": 1554263,
+   "dominantMonth": "02/2026",
+   "dominantOI": 576441
+  },
+  "20260112": {
+   "totalOI": 1581492,
+   "dominantMonth": "02/2026",
+   "dominantOI": 585522
+  },
+  "20260113": {
+   "totalOI": 1588784,
+   "dominantMonth": "02/2026",
+   "dominantOI": 577148
+  },
+  "20260114": {
+   "totalOI": 1613786,
+   "dominantMonth": "02/2026",
+   "dominantOI": 554358
+  },
+  "20260115": {
+   "totalOI": 1651782,
+   "dominantMonth": "02/2026",
+   "dominantOI": 548508
+  },
+  "20260116": {
+   "totalOI": 1682289,
+   "dominantMonth": "02/2026",
+   "dominantOI": 540893
+  },
+  "20260119": {
+   "totalOI": 1715034,
+   "dominantMonth": "02/2026",
+   "dominantOI": 525746
+  },
+  "20260120": {
+   "totalOI": 1720992,
+   "dominantMonth": "02/2026",
+   "dominantOI": 494875
+  },
+  "20260121": {
+   "totalOI": 1750433,
+   "dominantMonth": "02/2026",
+   "dominantOI": 492407
+  },
+  "20260122": {
+   "totalOI": 1766434,
+   "dominantMonth": "02/2026",
+   "dominantOI": 466526
+  },
+  "20260123": {
+   "totalOI": 1790863,
+   "dominantMonth": "03/2026",
+   "dominantOI": 496538
+  },
+  "20260126": {
+   "totalOI": 1776899,
+   "dominantMonth": "03/2026",
+   "dominantOI": 488568
+  },
+  "20260127": {
+   "totalOI": 1795148,
+   "dominantMonth": "03/2026",
+   "dominantOI": 499026
+  },
+  "20260128": {
+   "totalOI": 1827740,
+   "dominantMonth": "03/2026",
+   "dominantOI": 521855
+  },
+  "20260129": {
+   "totalOI": 1845854,
+   "dominantMonth": "03/2026",
+   "dominantOI": 542681
+  },
+  "20260130": {
+   "totalOI": 1446633,
+   "dominantMonth": "03/2026",
+   "dominantOI": 525343
+  },
+  "20260202": {
+   "totalOI": 1484685,
+   "dominantMonth": "03/2026",
+   "dominantOI": 541586
+  },
+  "20260203": {
+   "totalOI": 1500054,
+   "dominantMonth": "03/2026",
+   "dominantOI": 530131
+  },
+  "20260204": {
+   "totalOI": 1522084,
+   "dominantMonth": "03/2026",
+   "dominantOI": 536077
+  },
+  "20260205": {
+   "totalOI": 1519782,
+   "dominantMonth": "03/2026",
+   "dominantOI": 523319
+  },
+  "20260206": {
+   "totalOI": 1506301,
+   "dominantMonth": "03/2026",
+   "dominantOI": 502768
+  },
+  "20260209": {
+   "totalOI": 1504740,
+   "dominantMonth": "03/2026",
+   "dominantOI": 484455
+  },
+  "20260210": {
+   "totalOI": 1531037,
+   "dominantMonth": "03/2026",
+   "dominantOI": 486049
+  },
+  "20260211": {
+   "totalOI": 1534808,
+   "dominantMonth": "03/2026",
+   "dominantOI": 483726
+  },
+  "20260212": {
+   "totalOI": 1518553,
+   "dominantMonth": "03/2026",
+   "dominantOI": 467740
+  },
+  "20260213": {
+   "totalOI": 1522037,
+   "dominantMonth": "03/2026",
+   "dominantOI": 449809
+  },
+  "20260216": {
+   "totalOI": 1512868,
+   "dominantMonth": "03/2026",
+   "dominantOI": 438781
+  },
+  "20260217": {
+   "totalOI": 1510248,
+   "dominantMonth": "03/2026",
+   "dominantOI": 436474
+  },
+  "20260218": {
+   "totalOI": 1510914,
+   "dominantMonth": "03/2026",
+   "dominantOI": 433781
+  },
+  "20260219": {
+   "totalOI": 1506204,
+   "dominantMonth": "03/2026",
+   "dominantOI": 427519
+  },
+  "20260220": {
+   "totalOI": 1512071,
+   "dominantMonth": "03/2026",
+   "dominantOI": 423214
+  },
+  "20260223": {
+   "totalOI": 1519753,
+   "dominantMonth": "03/2026",
+   "dominantOI": 415177
+  },
+  "20260224": {
+   "totalOI": 1536679,
+   "dominantMonth": "03/2026",
+   "dominantOI": 386106
+  },
+  "20260225": {
+   "totalOI": 1576182,
+   "dominantMonth": "03/2026",
+   "dominantOI": 368092
+  },
+  "20260226": {
+   "totalOI": 1622043,
+   "dominantMonth": "04/2026",
+   "dominantOI": 400508
+  },
+  "20260227": {
+   "totalOI": 1325918,
+   "dominantMonth": "04/2026",
+   "dominantOI": 415520
+  },
+  "20260302": {
+   "totalOI": 1370184,
+   "dominantMonth": "04/2026",
+   "dominantOI": 431167
+  },
+  "20260303": {
+   "totalOI": 1387459,
+   "dominantMonth": "04/2026",
+   "dominantOI": 434803
+  },
+  "20260304": {
+   "totalOI": 1389760,
+   "dominantMonth": "04/2026",
+   "dominantOI": 412145
+  },
+  "20260305": {
+   "totalOI": 1395062,
+   "dominantMonth": "04/2026",
+   "dominantOI": 413041
+  },
+  "20260306": {
+   "totalOI": 1390720,
+   "dominantMonth": "04/2026",
+   "dominantOI": 412755
+  },
+  "20260309": {
+   "totalOI": 1401858,
+   "dominantMonth": "04/2026",
+   "dominantOI": 423609
+  },
+  "20260310": {
+   "totalOI": 1441787,
+   "dominantMonth": "04/2026",
+   "dominantOI": 446358
+  },
+  "20260311": {
+   "totalOI": 1442932,
+   "dominantMonth": "04/2026",
+   "dominantOI": 450695
+  },
+  "20260312": {
+   "totalOI": 1492814,
+   "dominantMonth": "04/2026",
+   "dominantOI": 474852
+  },
+  "20260313": {
+   "totalOI": 1529149,
+   "dominantMonth": "04/2026",
+   "dominantOI": 476587
+  },
+  "20260316": {
+   "totalOI": 1548251,
+   "dominantMonth": "04/2026",
+   "dominantOI": 478715
+  },
+  "20260317": {
+   "totalOI": 1578912,
+   "dominantMonth": "04/2026",
+   "dominantOI": 489433
+  },
+  "20260318": {
+   "totalOI": 1600522,
+   "dominantMonth": "04/2026",
+   "dominantOI": 487219
+  },
+  "20260319": {
+   "totalOI": 1625141,
+   "dominantMonth": "04/2026",
+   "dominantOI": 495443
+  },
+  "20260320": {
+   "totalOI": 1645305,
+   "dominantMonth": "04/2026",
+   "dominantOI": 483899
+  },
+  "20260323": {
+   "totalOI": 1651687,
+   "dominantMonth": "04/2026",
+   "dominantOI": 482724
+  },
+  "20260324": {
+   "totalOI": 1676219,
+   "dominantMonth": "04/2026",
+   "dominantOI": 477636
+  },
+  "20260325": {
+   "totalOI": 1697020,
+   "dominantMonth": "04/2026",
+   "dominantOI": 434109
+  },
+  "20260326": {
+   "totalOI": 1696640,
+   "dominantMonth": "05/2026",
+   "dominantOI": 452557
+  },
+  "20260327": {
+   "totalOI": 1733796,
+   "dominantMonth": "05/2026",
+   "dominantOI": 484050
+  },
+  "20260330": {
+   "totalOI": 1769432,
+   "dominantMonth": "05/2026",
+   "dominantOI": 514360
+  },
+  "20260331": {
+   "totalOI": 1454470,
+   "dominantMonth": "05/2026",
+   "dominantOI": 529368
+  },
+  "20260401": {
+   "totalOI": 1471161,
+   "dominantMonth": "05/2026",
+   "dominantOI": 530546
+  },
+  "20260402": {
+   "totalOI": 1487610,
+   "dominantMonth": "05/2026",
+   "dominantOI": 530157
+  },
+  "20260403": {
+   "totalOI": 1480355,
+   "dominantMonth": "05/2026",
+   "dominantOI": 532906
+  },
+  "20260406": {
+   "totalOI": 1483393,
+   "dominantMonth": "05/2026",
+   "dominantOI": 537040
+  },
+  "20260407": {
+   "totalOI": 1499150,
+   "dominantMonth": "05/2026",
+   "dominantOI": 552595
+  },
+  "20260408": {
+   "totalOI": 1539861,
+   "dominantMonth": "05/2026",
+   "dominantOI": 568928
+  },
+  "20260409": {
+   "totalOI": 1566547,
+   "dominantMonth": "05/2026",
+   "dominantOI": 577912
+  },
+  "20260410": {
+   "totalOI": 1578765,
+   "dominantMonth": "05/2026",
+   "dominantOI": 589258
+  },
+  "20260413": {
+   "totalOI": 1568150,
+   "dominantMonth": "05/2026",
+   "dominantOI": 574503
+  },
+  "20260414": {
+   "totalOI": 1592153,
+   "dominantMonth": "05/2026",
+   "dominantOI": 581378
+  },
+  "20260415": {
+   "totalOI": 1596925,
+   "dominantMonth": "05/2026",
+   "dominantOI": 578801
+  },
+  "20260416": {
+   "totalOI": 1617853,
+   "dominantMonth": "05/2026",
+   "dominantOI": 573805
+  },
+  "20260417": {
+   "totalOI": 1622637,
+   "dominantMonth": "05/2026",
+   "dominantOI": 570330
+  },
+  "20260420": {
+   "totalOI": 1641921,
+   "dominantMonth": "05/2026",
+   "dominantOI": 567263
+  },
+  "20260421": {
+   "totalOI": 1674103,
+   "dominantMonth": "05/2026",
+   "dominantOI": 561766
+  },
+  "20260422": {
+   "totalOI": 1704287,
+   "dominantMonth": "05/2026",
+   "dominantOI": 552592
+  },
+  "20260423": {
+   "totalOI": 1737037,
+   "dominantMonth": "05/2026",
+   "dominantOI": 542386
+  },
+  "20260424": {
+   "totalOI": 1782749,
+   "dominantMonth": "05/2026",
+   "dominantOI": 541636
+  },
+  "20260427": {
+   "totalOI": 1810892,
+   "dominantMonth": "06/2026",
+   "dominantOI": 543171
+  },
+  "20260428": {
+   "totalOI": 1796006,
+   "dominantMonth": "06/2026",
+   "dominantOI": 567796
+  },
+  "20260429": {
+   "totalOI": 1819509,
+   "dominantMonth": "06/2026",
+   "dominantOI": 594534
+  },
+  "20260430": {
+   "totalOI": 1539822,
+   "dominantMonth": "06/2026",
+   "dominantOI": 609423
+  },
+  "20260501": {
+   "totalOI": 1547293,
+   "dominantMonth": "06/2026",
+   "dominantOI": 618999
+  },
+  "20260504": {
+   "totalOI": 1562254,
+   "dominantMonth": "06/2026",
+   "dominantOI": 630385
+  },
+  "20260505": {
+   "totalOI": 1573766,
+   "dominantMonth": "06/2026",
+   "dominantOI": 639721
+  },
+  "20260506": {
+   "totalOI": 1612409,
+   "dominantMonth": "06/2026",
+   "dominantOI": 662516
+  },
+  "20260507": {
+   "totalOI": 1654427,
+   "dominantMonth": "06/2026",
+   "dominantOI": 681615
+  },
+  "20260508": {
+   "totalOI": 1643302,
+   "dominantMonth": "06/2026",
+   "dominantOI": 673482
+  },
+  "20260511": {
+   "totalOI": 1652290,
+   "dominantMonth": "06/2026",
+   "dominantOI": 683820
+  },
+  "20260512": {
+   "totalOI": 1671344,
+   "dominantMonth": "06/2026",
+   "dominantOI": 681206
+  },
+  "20260513": {
+   "totalOI": 1691826,
+   "dominantMonth": "06/2026",
+   "dominantOI": 688131
+  },
+  "20260514": {
+   "totalOI": 1694475,
+   "dominantMonth": "06/2026",
+   "dominantOI": 672048
+  },
+  "20260515": {
+   "totalOI": 1691854,
+   "dominantMonth": "06/2026",
+   "dominantOI": 642523
+  },
+  "20260518": {
+   "totalOI": 1704849,
+   "dominantMonth": "06/2026",
+   "dominantOI": 631222
+  },
+  "20260519": {
+   "totalOI": 1715143,
+   "dominantMonth": "06/2026",
+   "dominantOI": 617132
+  },
+  "20260520": {
+   "totalOI": 1754751,
+   "dominantMonth": "06/2026",
+   "dominantOI": 601852
+  },
+  "20260521": {
+   "totalOI": 1755200,
+   "dominantMonth": "06/2026",
+   "dominantOI": 591461
+  },
+  "20260522": {
+   "totalOI": 1736531,
+   "dominantMonth": "06/2026",
+   "dominantOI": 560369
+  },
+  "20260525": {
+   "totalOI": 1767361,
+   "dominantMonth": "06/2026",
+   "dominantOI": 548836
+  },
+  "20260526": {
+   "totalOI": 1737613,
+   "dominantMonth": "06/2026",
+   "dominantOI": 506149
+  },
+  "20260527": {
+   "totalOI": 1707395,
+   "dominantMonth": "07/2026",
+   "dominantOI": 459980
+  },
+  "20260528": {
+   "totalOI": 1693603,
+   "dominantMonth": "07/2026",
+   "dominantOI": 473703
+  },
+  "20260529": {
+   "totalOI": 1316429,
+   "dominantMonth": "07/2026",
+   "dominantOI": 488534
+  },
+  "20260601": {
+   "totalOI": 1327233,
+   "dominantMonth": "07/2026",
+   "dominantOI": 497372
+  },
+  "20260602": {
+   "totalOI": 1356847,
+   "dominantMonth": "07/2026",
+   "dominantOI": 505480
+  },
+  "20260603": {
+   "totalOI": 1399566,
+   "dominantMonth": "07/2026",
+   "dominantOI": 507484
+  },
+  "20260604": {
+   "totalOI": 1409910,
+   "dominantMonth": "07/2026",
+   "dominantOI": 501250
+  },
+  "20260605": {
+   "totalOI": 1393148,
+   "dominantMonth": "07/2026",
+   "dominantOI": 481468
+  },
+  "20260608": {
+   "totalOI": 1360479,
+   "dominantMonth": "07/2026",
+   "dominantOI": 453388
+  },
+  "20260609": {
+   "totalOI": 1360247,
+   "dominantMonth": "07/2026",
+   "dominantOI": 423486
+  },
+  "20260610": {
+   "totalOI": 1359580,
+   "dominantMonth": "06/2026",
+   "dominantOI": 416041
+  },
+  "20260611": {
+   "totalOI": 1354457,
+   "dominantMonth": "06/2026",
+   "dominantOI": 416860
+  },
+  "20260612": {
+   "totalOI": 1348918,
+   "dominantMonth": "06/2026",
+   "dominantOI": 416256
+  },
+  "20260615": {
+   "totalOI": 1354701,
+   "dominantMonth": "06/2026",
+   "dominantOI": 416642
+  },
+  "20260616": {
+   "totalOI": 1363387,
+   "dominantMonth": "06/2026",
+   "dominantOI": 412232
+  },
+  "20260617": {
+   "totalOI": 1396514,
+   "dominantMonth": "06/2026",
+   "dominantOI": 410049
+  },
+  "20260618": {
+   "totalOI": 1404982,
+   "dominantMonth": "06/2026",
+   "dominantOI": 407685
+  },
+  "20260619": {
+   "totalOI": 1409081,
+   "dominantMonth": "06/2026",
+   "dominantOI": 406638
+  },
+  "20260622": {
+   "totalOI": 1419296,
+   "dominantMonth": "06/2026",
+   "dominantOI": 406520
+  },
+  "20260623": {
+   "totalOI": 1450672,
+   "dominantMonth": "06/2026",
+   "dominantOI": 392015
+  },
+  "20260624": {
+   "totalOI": 1475876,
+   "dominantMonth": "06/2026",
+   "dominantOI": 384475
+  },
+  "20260625": {
+   "totalOI": 1485126,
+   "dominantMonth": "06/2026",
+   "dominantOI": 384215
+  },
+  "20260626": {
+   "totalOI": 1465976,
+   "dominantMonth": "06/2026",
+   "dominantOI": 377662
+  },
+  "20260629": {
+   "totalOI": 1491337,
+   "dominantMonth": "06/2026",
+   "dominantOI": 371482
+  },
+  "20260630": {
+   "totalOI": 1128322,
+   "dominantMonth": "08/2026",
+   "dominantOI": 350105
+  },
+  "20260701": {
+   "totalOI": 1139494,
+   "dominantMonth": "08/2026",
+   "dominantOI": 352953
+  },
+  "20260702": {
+   "totalOI": 1148593,
+   "dominantMonth": "08/2026",
+   "dominantOI": 349045
+  },
+  "20260703": {
+   "totalOI": 1163918,
+   "dominantMonth": "08/2026",
+   "dominantOI": 352172
+  },
+  "20260706": {
+   "totalOI": 1183146,
+   "dominantMonth": "08/2026",
+   "dominantOI": 364216
+  },
+  "20260707": {
+   "totalOI": 1203308,
+   "dominantMonth": "08/2026",
+   "dominantOI": 372205
+  },
+  "20260708": {
+   "totalOI": 1204210,
+   "dominantMonth": "08/2026",
+   "dominantOI": 361043
+  },
+  "20260709": {
+   "totalOI": 1215830,
+   "dominantMonth": "08/2026",
+   "dominantOI": 363122
+  },
+  "20260710": {
+   "totalOI": 1240832,
+   "dominantMonth": "08/2026",
+   "dominantOI": 367444
+  },
+  "20260713": {
+   "totalOI": 1253077,
+   "dominantMonth": "08/2026",
+   "dominantOI": 368959
+  },
+  "20260714": {
+   "totalOI": 1280386,
+   "dominantMonth": "08/2026",
+   "dominantOI": 378468
+  },
+  "20260715": {
+   "totalOI": 1303138,
+   "dominantMonth": "08/2026",
+   "dominantOI": 387724
+  },
+  "20260716": {
+   "totalOI": 1311496,
+   "dominantMonth": "08/2026",
+   "dominantOI": 390336
+  },
+  "20260717": {
+   "totalOI": 1318378,
+   "dominantMonth": "08/2026",
+   "dominantOI": 387129
+  },
+  "20260720": {
+   "totalOI": 1354500,
+   "dominantMonth": "08/2026",
+   "dominantOI": 370597
+  },
+  "20260721": {
+   "totalOI": 1365637,
+   "dominantMonth": "08/2026",
+   "dominantOI": 359270
+  },
+  "20260722": {
+   "totalOI": 1432100,
+   "dominantMonth": "08/2026",
+   "dominantOI": 376985
+  },
+  "20260723": {
+   "totalOI": 1446186,
+   "dominantMonth": "09/2026",
+   "dominantOI": 380271
+  },
+  "20260724": {
+   "totalOI": 1436874,
+   "dominantMonth": "09/2026",
+   "dominantOI": 391143
+  },
+  "20260727": {
+   "totalOI": 1430914,
+   "dominantMonth": "09/2026",
+   "dominantOI": 403153
+  },
+  "20260728": {
+   "totalOI": 1437258,
+   "dominantMonth": "09/2026",
+   "dominantOI": 415830
+  },
+  "20260729": {
+   "totalOI": 1428553,
+   "dominantMonth": "09/2026",
+   "dominantOI": 416721
+  },
+  "20260730": {
+   "totalOI": 1481596,
+   "dominantMonth": "09/2026",
+   "dominantOI": 435559
+  },
+  "20260731": {
+   "totalOI": 1207747,
+   "dominantMonth": "09/2026",
+   "dominantOI": 450784
+  },
+  "20260803": {
+   "totalOI": 1246032,
+   "dominantMonth": "09/2026",
+   "dominantOI": 471214
+  },
+  "20260804": {
+   "totalOI": 1275491,
+   "dominantMonth": "09/2026",
+   "dominantOI": 469022
+  },
+  "20260805": {
+   "totalOI": 1293298,
+   "dominantMonth": "09/2026",
+   "dominantOI": 469800
+  },
+  "20260806": {
+   "totalOI": 1311306,
+   "dominantMonth": "09/2026",
+   "dominantOI": 474855
+  },
+  "20260807": {
+   "totalOI": 1315257,
+   "dominantMonth": "09/2026",
+   "dominantOI": 478810
+  },
+  "20260810": {
+   "totalOI": 1321433,
+   "dominantMonth": "09/2026",
+   "dominantOI": 481026
+  },
+  "20260811": {
+   "totalOI": 1338708,
+   "dominantMonth": "09/2026",
+   "dominantOI": 477670
+  },
+  "20260812": {
+   "totalOI": 1348973,
+   "dominantMonth": "09/2026",
+   "dominantOI": 479754
+  },
+  "20260813": {
+   "totalOI": 1364356,
+   "dominantMonth": "09/2026",
+   "dominantOI": 488121
+  },
+  "20260814": {
+   "totalOI": 1364300,
+   "dominantMonth": "09/2026",
+   "dominantOI": 482273
+  },
+  "20260817": {
+   "totalOI": 1365417,
+   "dominantMonth": "09/2026",
+   "dominantOI": 480966
+  },
+  "20260818": {
+   "totalOI": 1384291,
+   "dominantMonth": "09/2026",
+   "dominantOI": 464345
+  },
+  "20260819": {
+   "totalOI": 1380270,
+   "dominantMonth": "09/2026",
+   "dominantOI": 439260
+  },
+  "20260820": {
+   "totalOI": 1374800,
+   "dominantMonth": "09/2026",
+   "dominantOI": 424308
+  },
+  "20260821": {
+   "totalOI": 1374843,
+   "dominantMonth": "09/2026",
+   "dominantOI": 405774
+  },
+  "20260824": {
+   "totalOI": 1397335,
+   "dominantMonth": "09/2026",
+   "dominantOI": 402330
+  },
+  "20260825": {
+   "totalOI": 1424796,
+   "dominantMonth": "09/2026",
+   "dominantOI": 385482
+  },
+  "20260826": {
+   "totalOI": 1441018,
+   "dominantMonth": "09/2026",
+   "dominantOI": 369305
+  },
+  "20260827": {
+   "totalOI": 1433075,
+   "dominantMonth": "10/2026",
+   "dominantOI": 370937
+  },
+  "20260828": {
+   "totalOI": 1443607,
+   "dominantMonth": "10/2026",
+   "dominantOI": 384002
+  },
+  "20260831": {
+   "totalOI": 1158236,
+   "dominantMonth": "10/2026",
+   "dominantOI": 393021
+  },
+  "20260901": {
+   "totalOI": 1180416,
+   "dominantMonth": "10/2026",
+   "dominantOI": 402051
+  },
+  "20260902": {
+   "totalOI": 1181953,
+   "dominantMonth": "10/2026",
+   "dominantOI": 385838
+  },
+  "20260903": {
+   "totalOI": 1187701,
+   "dominantMonth": "10/2026",
+   "dominantOI": 378512
+  },
+  "20260904": {
+   "totalOI": 1214843,
+   "dominantMonth": "10/2026",
+   "dominantOI": 379802
+  },
+  "20260907": {
+   "totalOI": 1256965,
+   "dominantMonth": "10/2026",
+   "dominantOI": 398236
+  },
+  "20260908": {
+   "totalOI": 1273145,
+   "dominantMonth": "10/2026",
+   "dominantOI": 395624
+  },
+  "20260909": {
+   "totalOI": 1267484,
+   "dominantMonth": "10/2026",
+   "dominantOI": 380483
+  },
+  "20260910": {
+   "totalOI": 1279438,
+   "dominantMonth": "10/2026",
+   "dominantOI": 372297
+  },
+  "20260911": {
+   "totalOI": 1283919,
+   "dominantMonth": "10/2026",
+   "dominantOI": 361585
+  },
+  "20260914": {
+   "totalOI": 1291819,
+   "dominantMonth": "10/2026",
+   "dominantOI": 362154
+  },
+  "20260915": {
+   "totalOI": 1325052,
+   "dominantMonth": "10/2026",
+   "dominantOI": 363291
+  },
+  "20260916": {
+   "totalOI": 1361708,
+   "dominantMonth": "10/2026",
+   "dominantOI": 374212
+  },
+  "20260917": {
+   "totalOI": 1396936,
+   "dominantMonth": "10/2026",
+   "dominantOI": 379438
+  },
+  "20260918": {
+   "totalOI": 1415789,
+   "dominantMonth": "10/2026",
+   "dominantOI": 379675
+  },
+  "20260921": {
+   "totalOI": 1431492,
+   "dominantMonth": "10/2026",
+   "dominantOI": 373253
+  },
+  "20260922": {
+   "totalOI": 1442706,
+   "dominantMonth": "10/2026",
+   "dominantOI": 378723
+  },
+  "20260923": {
+   "totalOI": 1482807,
+   "dominantMonth": "10/2026",
+   "dominantOI": 390832
+  },
+  "20260924": {
+   "totalOI": 1495633,
+   "dominantMonth": "10/2026",
+   "dominantOI": 377881
+  },
+  "20260925": {
+   "totalOI": 1508532,
+   "dominantMonth": "10/2026",
+   "dominantOI": 373574
+  },
+  "20260928": {
+   "totalOI": 1506196,
+   "dominantMonth": "11/2026",
+   "dominantOI": 359052
+  },
+  "20260929": {
+   "totalOI": 1563920,
+   "dominantMonth": "11/2026",
+   "dominantOI": 398861
+  },
+  "20260930": {
+   "totalOI": 1283146,
+   "dominantMonth": "11/2026",
+   "dominantOI": 434659
+  },
+  "20261001": {
+   "totalOI": 1311686,
+   "dominantMonth": "11/2026",
+   "dominantOI": 453477
+  },
+  "20261002": {
+   "totalOI": 1329650,
+   "dominantMonth": "11/2026",
+   "dominantOI": 471438
+  },
+  "20261005": {
+   "totalOI": 1356260,
+   "dominantMonth": "11/2026",
+   "dominantOI": 490320
+  },
+  "20261006": {
+   "totalOI": 1365691,
+   "dominantMonth": "11/2026",
+   "dominantOI": 499595
+  },
+  "20261007": {
+   "totalOI": 1380803,
+   "dominantMonth": "11/2026",
+   "dominantOI": 507047
+  },
+  "20261008": {
+   "totalOI": 1394866,
+   "dominantMonth": "11/2026",
+   "dominantOI": 510364
+  },
+  "20261009": {
+   "totalOI": 1408261,
+   "dominantMonth": "11/2026",
+   "dominantOI": 517499
+  }
+ },
+ "meta": {}
+}

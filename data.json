@@ -1,0 +1,4215 @@
+{
+ "lastUpdated": "20261009",
+ "source": "东方财富期货龙虎榜（数据来源：大连商品交易所 / 上海期货交易所 每日持仓排名）",
+ "records": [
+  {
+   "date": "20260105",
+   "gs_iron": {
+    "long": 42527,
+    "short": 17297,
+    "net": 25230
+   },
+   "ms_iron": {
+    "long": 31982,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 28427,
+    "short": 32372,
+    "net": -3945
+   },
+   "gs_hrc": {
+    "long": 14595,
+    "short": 47035,
+    "net": -32440
+   }
+  },
+  {
+   "date": "20260106",
+   "gs_iron": {
+    "long": 41275,
+    "short": 17526,
+    "net": 23749
+   },
+   "ms_iron": {
+    "long": 33335,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 36537,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 15650,
+    "short": 42742,
+    "net": -27092
+   }
+  },
+  {
+   "date": "20260107",
+   "gs_iron": {
+    "long": 41059,
+    "short": 8538,
+    "net": 32521
+   },
+   "ms_iron": {
+    "long": 34189,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 34666,
+    "short": 33502,
+    "net": 1164
+   },
+   "gs_hrc": {
+    "long": 24236,
+    "short": 27778,
+    "net": -3542
+   }
+  },
+  {
+   "date": "20260108",
+   "gs_iron": {
+    "long": 42424,
+    "short": 8224,
+    "net": 34200
+   },
+   "ms_iron": {
+    "long": 34576,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 53058,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 29656,
+    "short": 30861,
+    "net": -1205
+   }
+  },
+  {
+   "date": "20260109",
+   "gs_iron": {
+    "long": 42967,
+    "short": 8034,
+    "net": 34933
+   },
+   "ms_iron": {
+    "long": 35220,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 62022,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 33810,
+    "short": 33168,
+    "net": 642
+   }
+  },
+  {
+   "date": "20260112",
+   "gs_iron": {
+    "long": 45143,
+    "short": 6721,
+    "net": 38422
+   },
+   "ms_iron": {
+    "long": 34076,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 63144,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 36408,
+    "short": 34784,
+    "net": 1624
+   }
+  },
+  {
+   "date": "20260113",
+   "gs_iron": {
+    "long": 42623,
+    "short": 7798,
+    "net": 34825
+   },
+   "ms_iron": {
+    "long": 33998,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 69013,
+    "short": 24576,
+    "net": 44437
+   },
+   "gs_hrc": {
+    "long": 42492,
+    "short": 34273,
+    "net": 8219
+   }
+  },
+  {
+   "date": "20260114",
+   "gs_iron": {
+    "long": 44791,
+    "short": 5602,
+    "net": 39189
+   },
+   "ms_iron": {
+    "long": 33159,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 70508,
+    "short": 22146,
+    "net": 48362
+   },
+   "gs_hrc": {
+    "long": 47034,
+    "short": 35486,
+    "net": 11548
+   }
+  },
+  {
+   "date": "20260115",
+   "gs_iron": {
+    "long": 48224,
+    "short": 14759,
+    "net": 33465
+   },
+   "ms_iron": {
+    "long": 32706,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 70580,
+    "short": 23235,
+    "net": 47345
+   },
+   "gs_hrc": {
+    "long": 51569,
+    "short": 32679,
+    "net": 18890
+   }
+  },
+  {
+   "date": "20260116",
+   "gs_iron": {
+    "long": 48975,
+    "short": 5041,
+    "net": 43934
+   },
+   "ms_iron": {
+    "long": 32800,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 67948,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 59749,
+    "short": 26958,
+    "net": 32791
+   }
+  },
+  {
+   "date": "20260119",
+   "gs_iron": {
+    "long": 51332,
+    "short": 4739,
+    "net": 46593
+   },
+   "ms_iron": {
+    "long": 31957,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 53069,
+    "short": 30113,
+    "net": 22956
+   },
+   "gs_hrc": {
+    "long": 58021,
+    "short": 26868,
+    "net": 31153
+   }
+  },
+  {
+   "date": "20260120",
+   "gs_iron": {
+    "long": 54390,
+    "short": 3455,
+    "net": 50935
+   },
+   "ms_iron": {
+    "long": 31494,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 44046,
+    "short": 31481,
+    "net": 12565
+   },
+   "gs_hrc": {
+    "long": 54259,
+    "short": 24539,
+    "net": 29720
+   }
+  },
+  {
+   "date": "20260121",
+   "gs_iron": {
+    "long": 51711,
+    "short": 2686,
+    "net": 49025
+   },
+   "ms_iron": {
+    "long": 29743,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 35444,
+    "short": 35949,
+    "net": -505
+   },
+   "gs_hrc": {
+    "long": 47002,
+    "short": 18539,
+    "net": 28463
+   }
+  },
+  {
+   "date": "20260122",
+   "gs_iron": {
+    "long": 52146,
+    "short": 2684,
+    "net": 49462
+   },
+   "ms_iron": {
+    "long": 28376,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 30949,
+    "short": 54254,
+    "net": -23305
+   },
+   "gs_hrc": {
+    "long": 49303,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260123",
+   "gs_iron": {
+    "long": 52690,
+    "short": 3188,
+    "net": 49502
+   },
+   "ms_iron": {
+    "long": 28363,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 38573,
+    "short": 52450,
+    "net": -13877
+   },
+   "gs_hrc": {
+    "long": 53983,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260126",
+   "gs_iron": {
+    "long": 50255,
+    "short": 5578,
+    "net": 44677
+   },
+   "ms_iron": {
+    "long": 27461,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 52986,
+    "short": 47243,
+    "net": 5743
+   },
+   "gs_hrc": {
+    "long": 67599,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260127",
+   "gs_iron": {
+    "long": 50579,
+    "short": 5037,
+    "net": 45542
+   },
+   "ms_iron": {
+    "long": 28592,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 50983,
+    "short": 46265,
+    "net": 4718
+   },
+   "gs_hrc": {
+    "long": 75827,
+    "short": 19532,
+    "net": 56295
+   }
+  },
+  {
+   "date": "20260128",
+   "gs_iron": {
+    "long": 47353,
+    "short": 5390,
+    "net": 41963
+   },
+   "ms_iron": {
+    "long": 26931,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 50945,
+    "short": 56315,
+    "net": -5370
+   },
+   "gs_hrc": {
+    "long": 83269,
+    "short": 21442,
+    "net": 61827
+   }
+  },
+  {
+   "date": "20260129",
+   "gs_iron": {
+    "long": 46128,
+    "short": 6355,
+    "net": 39773
+   },
+   "ms_iron": {
+    "long": 27282,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 63770,
+    "short": 41108,
+    "net": 22662
+   },
+   "gs_hrc": {
+    "long": 92699,
+    "short": 22081,
+    "net": 70618
+   }
+  },
+  {
+   "date": "20260130",
+   "gs_iron": {
+    "long": 47801,
+    "short": 6554,
+    "net": 41247
+   },
+   "ms_iron": {
+    "long": 26077,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 70845,
+    "short": 38846,
+    "net": 31999
+   },
+   "gs_hrc": {
+    "long": 101904,
+    "short": 22525,
+    "net": 79379
+   }
+  },
+  {
+   "date": "20260202",
+   "gs_iron": {
+    "long": 44623,
+    "short": 14374,
+    "net": 30249
+   },
+   "ms_iron": {
+    "long": 25768,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 63859,
+    "short": 48872,
+    "net": 14987
+   },
+   "gs_hrc": {
+    "long": 95191,
+    "short": 22781,
+    "net": 72410
+   }
+  },
+  {
+   "date": "20260203",
+   "gs_iron": {
+    "long": 42283,
+    "short": 6065,
+    "net": 36218
+   },
+   "ms_iron": {
+    "long": 23871,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 66303,
+    "short": 64313,
+    "net": 1990
+   },
+   "gs_hrc": {
+    "long": 90054,
+    "short": 23891,
+    "net": 66163
+   }
+  },
+  {
+   "date": "20260204",
+   "gs_iron": {
+    "long": 42836,
+    "short": 15433,
+    "net": 27403
+   },
+   "ms_iron": {
+    "long": 23684,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 66400,
+    "short": 67339,
+    "net": -939
+   },
+   "gs_hrc": {
+    "long": 94901,
+    "short": 24390,
+    "net": 70511
+   }
+  },
+  {
+   "date": "20260205",
+   "gs_iron": {
+    "long": 40756,
+    "short": 14122,
+    "net": 26634
+   },
+   "ms_iron": {
+    "long": 22039,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 66296,
+    "short": 87284,
+    "net": -20988
+   },
+   "gs_hrc": {
+    "long": 97523,
+    "short": 26325,
+    "net": 71198
+   }
+  },
+  {
+   "date": "20260206",
+   "gs_iron": {
+    "long": 36513,
+    "short": 14440,
+    "net": 22073
+   },
+   "ms_iron": {
+    "long": 20185,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 66304,
+    "short": 101946,
+    "net": -35642
+   },
+   "gs_hrc": {
+    "long": 92504,
+    "short": 28492,
+    "net": 64012
+   }
+  },
+  {
+   "date": "20260209",
+   "gs_iron": {
+    "long": 38329,
+    "short": 14620,
+    "net": 23709
+   },
+   "ms_iron": {
+    "long": 19200,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 66352,
+    "short": 108496,
+    "net": -42144
+   },
+   "gs_hrc": {
+    "long": 87250,
+    "short": 30885,
+    "net": 56365
+   }
+  },
+  {
+   "date": "20260210",
+   "gs_iron": {
+    "long": 38977,
+    "short": 15766,
+    "net": 23211
+   },
+   "ms_iron": {
+    "long": 18544,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 73583,
+    "short": 121250,
+    "net": -47667
+   },
+   "gs_hrc": {
+    "long": 82955,
+    "short": 36794,
+    "net": 46161
+   }
+  },
+  {
+   "date": "20260211",
+   "gs_iron": {
+    "long": 39295,
+    "short": 17323,
+    "net": 21972
+   },
+   "ms_iron": {
+    "long": 16864,
+    "short": 792,
+    "net": 16072
+   },
+   "gs_rebar": {
+    "long": 77208,
+    "short": 131543,
+    "net": -54335
+   },
+   "gs_hrc": {
+    "long": 86740,
+    "short": 39084,
+    "net": 47656
+   }
+  },
+  {
+   "date": "20260212",
+   "gs_iron": {
+    "long": 37070,
+    "short": 17639,
+    "net": 19431
+   },
+   "ms_iron": {
+    "long": 15162,
+    "short": 880,
+    "net": 14282
+   },
+   "gs_rebar": {
+    "long": 77186,
+    "short": 136207,
+    "net": -59021
+   },
+   "gs_hrc": {
+    "long": 85922,
+    "short": 41597,
+    "net": 44325
+   }
+  },
+  {
+   "date": "20260213",
+   "gs_iron": {
+    "long": 36086,
+    "short": 18663,
+    "net": 17423
+   },
+   "ms_iron": {
+    "long": 13909,
+    "short": 880,
+    "net": 13029
+   },
+   "gs_rebar": {
+    "long": 100145,
+    "short": 134204,
+    "net": -34059
+   },
+   "gs_hrc": {
+    "long": 89809,
+    "short": 43643,
+    "net": 46166
+   }
+  },
+  {
+   "date": "20260224",
+   "gs_iron": {
+    "long": 35086,
+    "short": 18063,
+    "net": 17023
+   },
+   "ms_iron": {
+    "long": 13367,
+    "short": 1146,
+    "net": 12221
+   },
+   "gs_rebar": {
+    "long": 92538,
+    "short": 139716,
+    "net": -47178
+   },
+   "gs_hrc": {
+    "long": 78275,
+    "short": 41781,
+    "net": 36494
+   }
+  },
+  {
+   "date": "20260225",
+   "gs_iron": {
+    "long": 33972,
+    "short": 17977,
+    "net": 15995
+   },
+   "ms_iron": {
+    "long": 14194,
+    "short": 1146,
+    "net": 13048
+   },
+   "gs_rebar": {
+    "long": 84747,
+    "short": 124515,
+    "net": -39768
+   },
+   "gs_hrc": {
+    "long": 64317,
+    "short": 42547,
+    "net": 21770
+   }
+  },
+  {
+   "date": "20260226",
+   "gs_iron": {
+    "long": 33107,
+    "short": 19194,
+    "net": 13913
+   },
+   "ms_iron": {
+    "long": 13273,
+    "short": 1146,
+    "net": 12127
+   },
+   "gs_rebar": {
+    "long": 71407,
+    "short": 113332,
+    "net": -41925
+   },
+   "gs_hrc": {
+    "long": 60670,
+    "short": 46015,
+    "net": 14655
+   }
+  },
+  {
+   "date": "20260227",
+   "gs_iron": {
+    "long": 32886,
+    "short": 18719,
+    "net": 14167
+   },
+   "ms_iron": {
+    "long": 12559,
+    "short": 1146,
+    "net": 11413
+   },
+   "gs_rebar": {
+    "long": 58177,
+    "short": 119641,
+    "net": -61464
+   },
+   "gs_hrc": {
+    "long": 50232,
+    "short": 43351,
+    "net": 6881
+   }
+  },
+  {
+   "date": "20260302",
+   "gs_iron": {
+    "long": 31865,
+    "short": 17986,
+    "net": 13879
+   },
+   "ms_iron": {
+    "long": 11949,
+    "short": 1146,
+    "net": 10803
+   },
+   "gs_rebar": {
+    "long": 55091,
+    "short": 103424,
+    "net": -48333
+   },
+   "gs_hrc": {
+    "long": 42258,
+    "short": 44239,
+    "net": -1981
+   }
+  },
+  {
+   "date": "20260303",
+   "gs_iron": {
+    "long": 31180,
+    "short": 19540,
+    "net": 11640
+   },
+   "ms_iron": {
+    "long": 11737,
+    "short": 825,
+    "net": 10912
+   },
+   "gs_rebar": {
+    "long": 42904,
+    "short": 82426,
+    "net": -39522
+   },
+   "gs_hrc": {
+    "long": 35604,
+    "short": 45863,
+    "net": -10259
+   }
+  },
+  {
+   "date": "20260304",
+   "gs_iron": {
+    "long": 30763,
+    "short": 18784,
+    "net": 11979
+   },
+   "ms_iron": {
+    "long": 11311,
+    "short": 825,
+    "net": 10486
+   },
+   "gs_rebar": {
+    "long": 49624,
+    "short": 68746,
+    "net": -19122
+   },
+   "gs_hrc": {
+    "long": 33123,
+    "short": 46906,
+    "net": -13783
+   }
+  },
+  {
+   "date": "20260305",
+   "gs_iron": {
+    "long": 30941,
+    "short": 17399,
+    "net": 13542
+   },
+   "ms_iron": {
+    "long": 12192,
+    "short": 325,
+    "net": 11867
+   },
+   "gs_rebar": {
+    "long": 53677,
+    "short": 52082,
+    "net": 1595
+   },
+   "gs_hrc": {
+    "long": 28286,
+    "short": 47375,
+    "net": -19089
+   }
+  },
+  {
+   "date": "20260306",
+   "gs_iron": {
+    "long": 31624,
+    "short": 16196,
+    "net": 15428
+   },
+   "ms_iron": {
+    "long": 13245,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 55722,
+    "short": 43530,
+    "net": 12192
+   },
+   "gs_hrc": {
+    "long": 27189,
+    "short": 52761,
+    "net": -25572
+   }
+  },
+  {
+   "date": "20260309",
+   "gs_iron": {
+    "long": 32610,
+    "short": 15085,
+    "net": 17525
+   },
+   "ms_iron": {
+    "long": 13686,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 76902,
+    "short": 36477,
+    "net": 40425
+   },
+   "gs_hrc": {
+    "long": 28406,
+    "short": 49506,
+    "net": -21100
+   }
+  },
+  {
+   "date": "20260310",
+   "gs_iron": {
+    "long": 34661,
+    "short": 15309,
+    "net": 19352
+   },
+   "ms_iron": {
+    "long": 14934,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 88466,
+    "short": 34623,
+    "net": 53843
+   },
+   "gs_hrc": {
+    "long": 26688,
+    "short": 51451,
+    "net": -24763
+   }
+  },
+  {
+   "date": "20260311",
+   "gs_iron": {
+    "long": 33865,
+    "short": 6712,
+    "net": 27153
+   },
+   "ms_iron": {
+    "long": 15732,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 97509,
+    "short": 31332,
+    "net": 66177
+   },
+   "gs_hrc": {
+    "long": 26704,
+    "short": 54049,
+    "net": -27345
+   }
+  },
+  {
+   "date": "20260312",
+   "gs_iron": {
+    "long": 35416,
+    "short": 6424,
+    "net": 28992
+   },
+   "ms_iron": {
+    "long": 16946,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 95491,
+    "short": 27713,
+    "net": 67778
+   },
+   "gs_hrc": {
+    "long": 26745,
+    "short": 55985,
+    "net": -29240
+   }
+  },
+  {
+   "date": "20260313",
+   "gs_iron": {
+    "long": 38137,
+    "short": 6319,
+    "net": 31818
+   },
+   "ms_iron": {
+    "long": 19451,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 103676,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 27169,
+    "short": 45728,
+    "net": -18559
+   }
+  },
+  {
+   "date": "20260316",
+   "gs_iron": {
+    "long": 38655,
+    "short": 5279,
+    "net": 33376
+   },
+   "ms_iron": {
+    "long": 23186,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 106900,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 27156,
+    "short": 44090,
+    "net": -16934
+   }
+  },
+  {
+   "date": "20260317",
+   "gs_iron": {
+    "long": 38046,
+    "short": 5345,
+    "net": 32701
+   },
+   "ms_iron": {
+    "long": 23925,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 113075,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 27681,
+    "short": 39713,
+    "net": -12032
+   }
+  },
+  {
+   "date": "20260318",
+   "gs_iron": {
+    "long": 39869,
+    "short": 5446,
+    "net": 34423
+   },
+   "ms_iron": {
+    "long": 24483,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 114493,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 28716,
+    "short": 27792,
+    "net": 924
+   }
+  },
+  {
+   "date": "20260319",
+   "gs_iron": {
+    "long": 36361,
+    "short": 5711,
+    "net": 30650
+   },
+   "ms_iron": {
+    "long": 25527,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 106432,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 28368,
+    "short": 24480,
+    "net": 3888
+   }
+  },
+  {
+   "date": "20260320",
+   "gs_iron": {
+    "long": 38059,
+    "short": 5985,
+    "net": 32074
+   },
+   "ms_iron": {
+    "long": 26912,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 100104,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 26970,
+    "short": 6438,
+    "net": 20532
+   }
+  },
+  {
+   "date": "20260323",
+   "gs_iron": {
+    "long": 40571,
+    "short": 6284,
+    "net": 34287
+   },
+   "ms_iron": {
+    "long": 25965,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 91352,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 28432,
+    "short": 7256,
+    "net": 21176
+   }
+  },
+  {
+   "date": "20260324",
+   "gs_iron": {
+    "long": 42355,
+    "short": 6685,
+    "net": 35670
+   },
+   "ms_iron": {
+    "long": 26226,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 89264,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 38258,
+    "short": 6744,
+    "net": 31514
+   }
+  },
+  {
+   "date": "20260325",
+   "gs_iron": {
+    "long": 41053,
+    "short": 7642,
+    "net": 33411
+   },
+   "ms_iron": {
+    "long": 26439,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 83882,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 39959,
+    "short": 6425,
+    "net": 33534
+   }
+  },
+  {
+   "date": "20260326",
+   "gs_iron": {
+    "long": 42203,
+    "short": 9746,
+    "net": 32457
+   },
+   "ms_iron": {
+    "long": 26877,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 74612,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 36453,
+    "short": 6710,
+    "net": 29743
+   }
+  },
+  {
+   "date": "20260327",
+   "gs_iron": {
+    "long": 40669,
+    "short": 10209,
+    "net": 30460
+   },
+   "ms_iron": {
+    "long": 26950,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 65053,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 35161,
+    "short": 6840,
+    "net": 28321
+   }
+  },
+  {
+   "date": "20260330",
+   "gs_iron": {
+    "long": 40841,
+    "short": 10251,
+    "net": 30590
+   },
+   "ms_iron": {
+    "long": 26866,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 56800,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 36806,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260331",
+   "gs_iron": {
+    "long": 39691,
+    "short": 10587,
+    "net": 29104
+   },
+   "ms_iron": {
+    "long": 27321,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 59927,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 31303,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260401",
+   "gs_iron": {
+    "long": 42672,
+    "short": 10989,
+    "net": 31683
+   },
+   "ms_iron": {
+    "long": 24608,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 58741,
+    "short": 13985,
+    "net": 44756
+   },
+   "gs_hrc": {
+    "long": 35414,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260402",
+   "gs_iron": {
+    "long": 44174,
+    "short": 10140,
+    "net": 34034
+   },
+   "ms_iron": {
+    "long": 25100,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 49523,
+    "short": 18193,
+    "net": 31330
+   },
+   "gs_hrc": {
+    "long": 31863,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260403",
+   "gs_iron": {
+    "long": 44542,
+    "short": 10195,
+    "net": 34347
+   },
+   "ms_iron": {
+    "long": 24889,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 45759,
+    "short": 21774,
+    "net": 23985
+   },
+   "gs_hrc": {
+    "long": 31341,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260407",
+   "gs_iron": {
+    "long": 47662,
+    "short": 9964,
+    "net": 37698
+   },
+   "ms_iron": {
+    "long": 25003,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 42848,
+    "short": 24103,
+    "net": 18745
+   },
+   "gs_hrc": {
+    "long": 29360,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260408",
+   "gs_iron": {
+    "long": 47369,
+    "short": 10783,
+    "net": 36586
+   },
+   "ms_iron": {
+    "long": 24994,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 35240,
+    "short": 29619,
+    "net": 5621
+   },
+   "gs_hrc": {
+    "long": 26916,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260409",
+   "gs_iron": {
+    "long": 44178,
+    "short": 12451,
+    "net": 31727
+   },
+   "ms_iron": {
+    "long": 24892,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 32412,
+    "short": 37435,
+    "net": -5023
+   },
+   "gs_hrc": {
+    "long": 29273,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260410",
+   "gs_iron": {
+    "long": 42265,
+    "short": 11782,
+    "net": 30483
+   },
+   "ms_iron": {
+    "long": 23578,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 30448,
+    "short": 44613,
+    "net": -14165
+   },
+   "gs_hrc": {
+    "long": 32357,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260413",
+   "gs_iron": {
+    "long": 42065,
+    "short": 11127,
+    "net": 30938
+   },
+   "ms_iron": {
+    "long": 23378,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 30075,
+    "short": 53936,
+    "net": -23861
+   },
+   "gs_hrc": {
+    "long": 34323,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260414",
+   "gs_iron": {
+    "long": 40333,
+    "short": 12469,
+    "net": 27864
+   },
+   "ms_iron": {
+    "long": 22490,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 29706,
+    "short": 60338,
+    "net": -30632
+   },
+   "gs_hrc": {
+    "long": 37387,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260415",
+   "gs_iron": {
+    "long": 39807,
+    "short": 12607,
+    "net": 27200
+   },
+   "ms_iron": {
+    "long": 20546,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 29368,
+    "short": 61430,
+    "net": -32062
+   },
+   "gs_hrc": {
+    "long": 37099,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260416",
+   "gs_iron": {
+    "long": 40143,
+    "short": 13971,
+    "net": 26172
+   },
+   "ms_iron": {
+    "long": 21941,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 29088,
+    "short": 48870,
+    "net": -19782
+   },
+   "gs_hrc": {
+    "long": 46099,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260417",
+   "gs_iron": {
+    "long": 41089,
+    "short": 13802,
+    "net": 27287
+   },
+   "ms_iron": {
+    "long": 22072,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 29046,
+    "short": 37588,
+    "net": -8542
+   },
+   "gs_hrc": {
+    "long": 53721,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260420",
+   "gs_iron": {
+    "long": 37763,
+    "short": 14654,
+    "net": 23109
+   },
+   "ms_iron": {
+    "long": 22526,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 40149,
+    "short": 29795,
+    "net": 10354
+   },
+   "gs_hrc": {
+    "long": 66276,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260421",
+   "gs_iron": {
+    "long": 39243,
+    "short": 13643,
+    "net": 25600
+   },
+   "ms_iron": {
+    "long": 22128,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 40803,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 78529,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260422",
+   "gs_iron": {
+    "long": 37749,
+    "short": 14915,
+    "net": 22834
+   },
+   "ms_iron": {
+    "long": 24765,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 39488,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 85359,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260423",
+   "gs_iron": {
+    "long": 38879,
+    "short": 13031,
+    "net": 25848
+   },
+   "ms_iron": {
+    "long": 25567,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 54326,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 93723,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260424",
+   "gs_iron": {
+    "long": 38963,
+    "short": 13465,
+    "net": 25498
+   },
+   "ms_iron": {
+    "long": 26540,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 66248,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 98872,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260427",
+   "gs_iron": {
+    "long": 39922,
+    "short": 13888,
+    "net": 26034
+   },
+   "ms_iron": {
+    "long": 28377,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 73809,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 105048,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260428",
+   "gs_iron": {
+    "long": 40925,
+    "short": 14828,
+    "net": 26097
+   },
+   "ms_iron": {
+    "long": 28287,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 70193,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 110543,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260429",
+   "gs_iron": {
+    "long": 39867,
+    "short": 16941,
+    "net": 22926
+   },
+   "ms_iron": {
+    "long": 28974,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 65920,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 116978,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260430",
+   "gs_iron": {
+    "long": 38767,
+    "short": 16800,
+    "net": 21967
+   },
+   "ms_iron": {
+    "long": 27927,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 73327,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 122732,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260506",
+   "gs_iron": {
+    "long": 40285,
+    "short": 16888,
+    "net": 23397
+   },
+   "ms_iron": {
+    "long": 29670,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 85445,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 128569,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260507",
+   "gs_iron": {
+    "long": 40080,
+    "short": 16489,
+    "net": 23591
+   },
+   "ms_iron": {
+    "long": 31703,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 103813,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 129830,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260508",
+   "gs_iron": {
+    "long": 41858,
+    "short": 16268,
+    "net": 25590
+   },
+   "ms_iron": {
+    "long": 32040,
+    "short": 1760,
+    "net": 30280
+   },
+   "gs_rebar": {
+    "long": 114865,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 129801,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260511",
+   "gs_iron": {
+    "long": 43012,
+    "short": 3777,
+    "net": 39235
+   },
+   "ms_iron": {
+    "long": 32441,
+    "short": 1760,
+    "net": 30681
+   },
+   "gs_rebar": {
+    "long": 122675,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 126407,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260512",
+   "gs_iron": {
+    "long": 45969,
+    "short": 3777,
+    "net": 42192
+   },
+   "ms_iron": {
+    "long": 32053,
+    "short": 1760,
+    "net": 30293
+   },
+   "gs_rebar": {
+    "long": 125950,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 131309,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260513",
+   "gs_iron": {
+    "long": 45062,
+    "short": 4577,
+    "net": 40485
+   },
+   "ms_iron": {
+    "long": 32693,
+    "short": 1760,
+    "net": 30933
+   },
+   "gs_rebar": {
+    "long": 117119,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 138852,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260514",
+   "gs_iron": {
+    "long": 48786,
+    "short": 4377,
+    "net": 44409
+   },
+   "ms_iron": {
+    "long": 32481,
+    "short": 1760,
+    "net": 30721
+   },
+   "gs_rebar": {
+    "long": 104284,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 147186,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260515",
+   "gs_iron": {
+    "long": 49910,
+    "short": 4718,
+    "net": 45192
+   },
+   "ms_iron": {
+    "long": 32178,
+    "short": 1760,
+    "net": 30418
+   },
+   "gs_rebar": {
+    "long": 97927,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 157648,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260518",
+   "gs_iron": {
+    "long": 50969,
+    "short": 15668,
+    "net": 35301
+   },
+   "ms_iron": {
+    "long": 32178,
+    "short": 1760,
+    "net": 30418
+   },
+   "gs_rebar": {
+    "long": 82826,
+    "short": null,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 161368,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260519",
+   "gs_iron": {
+    "long": 51319,
+    "short": 14360,
+    "net": 36959
+   },
+   "ms_iron": {
+    "long": 32003,
+    "short": 1760,
+    "net": 30243
+   },
+   "gs_rebar": {
+    "long": 65349,
+    "short": 31290,
+    "net": 34059
+   },
+   "gs_hrc": {
+    "long": 160083,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260520",
+   "gs_iron": {
+    "long": 49133,
+    "short": 14510,
+    "net": 34623
+   },
+   "ms_iron": {
+    "long": 30385,
+    "short": 1760,
+    "net": 28625
+   },
+   "gs_rebar": {
+    "long": 47485,
+    "short": 39231,
+    "net": 8254
+   },
+   "gs_hrc": {
+    "long": 154075,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260521",
+   "gs_iron": {
+    "long": 47929,
+    "short": 4650,
+    "net": 43279
+   },
+   "ms_iron": {
+    "long": 28389,
+    "short": 1760,
+    "net": 26629
+   },
+   "gs_rebar": {
+    "long": 39373,
+    "short": 33670,
+    "net": 5703
+   },
+   "gs_hrc": {
+    "long": 149189,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260522",
+   "gs_iron": {
+    "long": 46930,
+    "short": 4507,
+    "net": 42423
+   },
+   "ms_iron": {
+    "long": 27992,
+    "short": 1760,
+    "net": 26232
+   },
+   "gs_rebar": {
+    "long": 24130,
+    "short": 28916,
+    "net": -4786
+   },
+   "gs_hrc": {
+    "long": 130714,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260525",
+   "gs_iron": {
+    "long": 47523,
+    "short": 4532,
+    "net": 42991
+   },
+   "ms_iron": {
+    "long": 27437,
+    "short": 1760,
+    "net": 25677
+   },
+   "gs_rebar": {
+    "long": 33887,
+    "short": 24048,
+    "net": 9839
+   },
+   "gs_hrc": {
+    "long": 143012,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260526",
+   "gs_iron": {
+    "long": 44341,
+    "short": 1000,
+    "net": 43341
+   },
+   "ms_iron": {
+    "long": 26992,
+    "short": 1760,
+    "net": 25232
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 32247,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 112173,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260527",
+   "gs_iron": {
+    "long": 43306,
+    "short": 1000,
+    "net": 42306
+   },
+   "ms_iron": {
+    "long": 26429,
+    "short": 1760,
+    "net": 24669
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 36179,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 111203,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260528",
+   "gs_iron": {
+    "long": 43042,
+    "short": null,
+    "net": null
+   },
+   "ms_iron": {
+    "long": 25741,
+    "short": 1760,
+    "net": 23981
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 40248,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 110346,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260529",
+   "gs_iron": {
+    "long": 44410,
+    "short": 8668,
+    "net": 35742
+   },
+   "ms_iron": {
+    "long": 24927,
+    "short": 1760,
+    "net": 23167
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 41928,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 113553,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260601",
+   "gs_iron": {
+    "long": 43995,
+    "short": 10122,
+    "net": 33873
+   },
+   "ms_iron": {
+    "long": 22915,
+    "short": 1760,
+    "net": 21155
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 41726,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 123803,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260602",
+   "gs_iron": {
+    "long": 43274,
+    "short": 9408,
+    "net": 33866
+   },
+   "ms_iron": {
+    "long": 22563,
+    "short": 1760,
+    "net": 20803
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 37498,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 125949,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260603",
+   "gs_iron": {
+    "long": 42219,
+    "short": 10467,
+    "net": 31752
+   },
+   "ms_iron": {
+    "long": 22117,
+    "short": 1760,
+    "net": 20357
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 43544,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 121341,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260604",
+   "gs_iron": {
+    "long": 41160,
+    "short": 10527,
+    "net": 30633
+   },
+   "ms_iron": {
+    "long": 22249,
+    "short": 1760,
+    "net": 20489
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 45646,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 120563,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260605",
+   "gs_iron": {
+    "long": 40593,
+    "short": 9055,
+    "net": 31538
+   },
+   "ms_iron": {
+    "long": 21104,
+    "short": 1760,
+    "net": 19344
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 43825,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 109350,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260608",
+   "gs_iron": {
+    "long": 39782,
+    "short": 10151,
+    "net": 29631
+   },
+   "ms_iron": {
+    "long": 20170,
+    "short": 1760,
+    "net": 18410
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 57173,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 102726,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260609",
+   "gs_iron": {
+    "long": 37079,
+    "short": 10972,
+    "net": 26107
+   },
+   "ms_iron": {
+    "long": 18549,
+    "short": 1760,
+    "net": 16789
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 57581,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 89136,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260610",
+   "gs_iron": {
+    "long": 35824,
+    "short": 11613,
+    "net": 24211
+   },
+   "ms_iron": {
+    "long": 16012,
+    "short": 1760,
+    "net": 14252
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 39349,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 83339,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260611",
+   "gs_iron": {
+    "long": 37605,
+    "short": 12059,
+    "net": 25546
+   },
+   "ms_iron": {
+    "long": 15682,
+    "short": 1760,
+    "net": 13922
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 39227,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 78425,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260612",
+   "gs_iron": {
+    "long": 37549,
+    "short": 12269,
+    "net": 25280
+   },
+   "ms_iron": {
+    "long": 14954,
+    "short": 1760,
+    "net": 13194
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 30683,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 80475,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260615",
+   "gs_iron": {
+    "long": 41469,
+    "short": 11892,
+    "net": 29577
+   },
+   "ms_iron": {
+    "long": 14570,
+    "short": 1760,
+    "net": 12810
+   },
+   "gs_rebar": {
+    "long": 32928,
+    "short": 19931,
+    "net": 12997
+   },
+   "gs_hrc": {
+    "long": 93051,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260616",
+   "gs_iron": {
+    "long": 39966,
+    "short": 13230,
+    "net": 26736
+   },
+   "ms_iron": {
+    "long": 11606,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 29498,
+    "short": 25323,
+    "net": 4175
+   },
+   "gs_hrc": {
+    "long": 85411,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260617",
+   "gs_iron": {
+    "long": 39206,
+    "short": 14450,
+    "net": 24756
+   },
+   "ms_iron": {
+    "long": 10530,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 18946,
+    "short": 31550,
+    "net": -12604
+   },
+   "gs_hrc": {
+    "long": 74288,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260618",
+   "gs_iron": {
+    "long": 37267,
+    "short": 14256,
+    "net": 23011
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 44313,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 59073,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260622",
+   "gs_iron": {
+    "long": 36126,
+    "short": 13849,
+    "net": 22277
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 55892,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 62346,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260623",
+   "gs_iron": {
+    "long": 34564,
+    "short": 15006,
+    "net": 19558
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 68738,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 56307,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260624",
+   "gs_iron": {
+    "long": 34498,
+    "short": 15325,
+    "net": 19173
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 79323,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 57476,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260625",
+   "gs_iron": {
+    "long": 34815,
+    "short": 19815,
+    "net": 15000
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 94995,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 53087,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260626",
+   "gs_iron": {
+    "long": 33300,
+    "short": 19335,
+    "net": 13965
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 114514,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 56138,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260629",
+   "gs_iron": {
+    "long": 33675,
+    "short": 19458,
+    "net": 14217
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 126075,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 59351,
+    "short": 21785,
+    "net": 37566
+   }
+  },
+  {
+   "date": "20260630",
+   "gs_iron": {
+    "long": 34715,
+    "short": 20080,
+    "net": 14635
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 141709,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 65543,
+    "short": 21919,
+    "net": 43624
+   }
+  },
+  {
+   "date": "20260701",
+   "gs_iron": {
+    "long": 32931,
+    "short": 23708,
+    "net": 9223
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 156142,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 61135,
+    "short": 27908,
+    "net": 33227
+   }
+  },
+  {
+   "date": "20260702",
+   "gs_iron": {
+    "long": 33684,
+    "short": 23461,
+    "net": 10223
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 168978,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 54127,
+    "short": 37138,
+    "net": 16989
+   }
+  },
+  {
+   "date": "20260703",
+   "gs_iron": {
+    "long": 34570,
+    "short": 23753,
+    "net": 10817
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 9257,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 173725,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 46369,
+    "short": 38203,
+    "net": 8166
+   }
+  },
+  {
+   "date": "20260706",
+   "gs_iron": {
+    "long": 32204,
+    "short": 23068,
+    "net": 9136
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 9920,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 169236,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 42307,
+    "short": 38451,
+    "net": 3856
+   }
+  },
+  {
+   "date": "20260707",
+   "gs_iron": {
+    "long": 31435,
+    "short": 21237,
+    "net": 10198
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 10737,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 167439,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 30521,
+    "short": 43338,
+    "net": -12817
+   }
+  },
+  {
+   "date": "20260708",
+   "gs_iron": {
+    "long": 32507,
+    "short": 22358,
+    "net": 10149
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 11207,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 158867,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 29634,
+    "short": 48542,
+    "net": -18908
+   }
+  },
+  {
+   "date": "20260709",
+   "gs_iron": {
+    "long": 33409,
+    "short": 23069,
+    "net": 10340
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 12118,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 159844,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 32147,
+    "short": 53269,
+    "net": -21122
+   }
+  },
+  {
+   "date": "20260710",
+   "gs_iron": {
+    "long": 35036,
+    "short": 22636,
+    "net": 12400
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 14782,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 165440,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 27693,
+    "short": 56547,
+    "net": -28854
+   }
+  },
+  {
+   "date": "20260713",
+   "gs_iron": {
+    "long": 32697,
+    "short": 20309,
+    "net": 12388
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 15338,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 176846,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 24571,
+    "short": 61485,
+    "net": -36914
+   }
+  },
+  {
+   "date": "20260714",
+   "gs_iron": {
+    "long": 28148,
+    "short": 23449,
+    "net": 4699
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 14725,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 173701,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 24040,
+    "short": 66522,
+    "net": -42482
+   }
+  },
+  {
+   "date": "20260715",
+   "gs_iron": {
+    "long": 29754,
+    "short": 21634,
+    "net": 8120
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 13452,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 152611,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 29154,
+    "short": 57322,
+    "net": -28168
+   }
+  },
+  {
+   "date": "20260716",
+   "gs_iron": {
+    "long": 29634,
+    "short": 20308,
+    "net": 9326
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 13537,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 158798,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 27950,
+    "short": 50993,
+    "net": -23043
+   }
+  },
+  {
+   "date": "20260717",
+   "gs_iron": {
+    "long": 29442,
+    "short": 20644,
+    "net": 8798
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 11980,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 145997,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 25634,
+    "short": 49809,
+    "net": -24175
+   }
+  },
+  {
+   "date": "20260720",
+   "gs_iron": {
+    "long": 20242,
+    "short": 18666,
+    "net": 1576
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 13042,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 155241,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 22181,
+    "short": 52299,
+    "net": -30118
+   }
+  },
+  {
+   "date": "20260721",
+   "gs_iron": {
+    "long": 21688,
+    "short": 17928,
+    "net": 3760
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 13324,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 165845,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 57195,
+    "net": null
+   }
+  },
+  {
+   "date": "20260722",
+   "gs_iron": {
+    "long": 22461,
+    "short": 19974,
+    "net": 2487
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 13541,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 166507,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 62664,
+    "net": null
+   }
+  },
+  {
+   "date": "20260723",
+   "gs_iron": {
+    "long": 23125,
+    "short": 19796,
+    "net": 3329
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 11081,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 164447,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 17628,
+    "short": 59569,
+    "net": -41941
+   }
+  },
+  {
+   "date": "20260724",
+   "gs_iron": {
+    "long": 23895,
+    "short": 19511,
+    "net": 4384
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 12108,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 169596,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 59937,
+    "net": null
+   }
+  },
+  {
+   "date": "20260727",
+   "gs_iron": {
+    "long": 24071,
+    "short": 18995,
+    "net": 5076
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 12241,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 169006,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 18606,
+    "short": 55467,
+    "net": -36861
+   }
+  },
+  {
+   "date": "20260728",
+   "gs_iron": {
+    "long": 24128,
+    "short": 18978,
+    "net": 5150
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 11379,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 175342,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 16555,
+    "short": 60787,
+    "net": -44232
+   }
+  },
+  {
+   "date": "20260729",
+   "gs_iron": {
+    "long": 24308,
+    "short": 18913,
+    "net": 5395
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 12292,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 181422,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 16476,
+    "short": 57855,
+    "net": -41379
+   }
+  },
+  {
+   "date": "20260730",
+   "gs_iron": {
+    "long": 26304,
+    "short": 23760,
+    "net": 2544
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 13880,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 199758,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 71853,
+    "net": null
+   }
+  },
+  {
+   "date": "20260731",
+   "gs_iron": {
+    "long": 29071,
+    "short": 21096,
+    "net": 7975
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 17657,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 205798,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 79368,
+    "net": null
+   }
+  },
+  {
+   "date": "20260803",
+   "gs_iron": {
+    "long": 30205,
+    "short": 23117,
+    "net": 7088
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 7695,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 210523,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 86353,
+    "net": null
+   }
+  },
+  {
+   "date": "20260804",
+   "gs_iron": {
+    "long": 29093,
+    "short": 33517,
+    "net": -4424
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 15911,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 209739,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 91883,
+    "net": null
+   }
+  },
+  {
+   "date": "20260805",
+   "gs_iron": {
+    "long": 26900,
+    "short": 27233,
+    "net": -333
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 17877,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 207939,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 100026,
+    "net": null
+   }
+  },
+  {
+   "date": "20260806",
+   "gs_iron": {
+    "long": 28192,
+    "short": 27766,
+    "net": 426
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 19178,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 204488,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 107890,
+    "net": null
+   }
+  },
+  {
+   "date": "20260807",
+   "gs_iron": {
+    "long": 30915,
+    "short": 27501,
+    "net": 3414
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 19969,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 200216,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 112257,
+    "net": null
+   }
+  },
+  {
+   "date": "20260810",
+   "gs_iron": {
+    "long": 28579,
+    "short": 28058,
+    "net": 521
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 16723,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 193899,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 116124,
+    "net": null
+   }
+  },
+  {
+   "date": "20260811",
+   "gs_iron": {
+    "long": 30481,
+    "short": 26858,
+    "net": 3623
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 17795,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 196673,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 121755,
+    "net": null
+   }
+  },
+  {
+   "date": "20260812",
+   "gs_iron": {
+    "long": 30848,
+    "short": 26287,
+    "net": 4561
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 23062,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 199514,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 123659,
+    "net": null
+   }
+  },
+  {
+   "date": "20260813",
+   "gs_iron": {
+    "long": 33505,
+    "short": 29700,
+    "net": 3805
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 20410,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 213819,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 125055,
+    "net": null
+   }
+  },
+  {
+   "date": "20260814",
+   "gs_iron": {
+    "long": 33866,
+    "short": 26042,
+    "net": 7824
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 21078,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 204597,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 113229,
+    "net": null
+   }
+  },
+  {
+   "date": "20260817",
+   "gs_iron": {
+    "long": 33036,
+    "short": 26890,
+    "net": 6146
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 21964,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 196585,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 107369,
+    "net": null
+   }
+  },
+  {
+   "date": "20260818",
+   "gs_iron": {
+    "long": 30056,
+    "short": 26420,
+    "net": 3636
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 19267,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 188465,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 101085,
+    "net": null
+   }
+  },
+  {
+   "date": "20260819",
+   "gs_iron": {
+    "long": 31543,
+    "short": 25039,
+    "net": 6504
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 18371,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 173545,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 91050,
+    "net": null
+   }
+  },
+  {
+   "date": "20260820",
+   "gs_iron": {
+    "long": 27916,
+    "short": 26374,
+    "net": 1542
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 21568,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 165518,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 84138,
+    "net": null
+   }
+  },
+  {
+   "date": "20260821",
+   "gs_iron": {
+    "long": 28221,
+    "short": 25393,
+    "net": 2828
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 19062,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 155295,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 78217,
+    "net": null
+   }
+  },
+  {
+   "date": "20260824",
+   "gs_iron": {
+    "long": 30454,
+    "short": 20929,
+    "net": 9525
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 16837,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 145655,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 65509,
+    "net": null
+   }
+  },
+  {
+   "date": "20260825",
+   "gs_iron": {
+    "long": 30549,
+    "short": 19175,
+    "net": 11374
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 15138,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 128831,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 54136,
+    "net": null
+   }
+  },
+  {
+   "date": "20260826",
+   "gs_iron": {
+    "long": 28293,
+    "short": 18451,
+    "net": 9842
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 12714,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 115689,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 48359,
+    "net": null
+   }
+  },
+  {
+   "date": "20260827",
+   "gs_iron": {
+    "long": 31292,
+    "short": 17045,
+    "net": 14247
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 13480,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 88203,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 43946,
+    "net": null
+   }
+  },
+  {
+   "date": "20260828",
+   "gs_iron": {
+    "long": 27129,
+    "short": 14056,
+    "net": 13073
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 11977,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 69417,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 32537,
+    "net": null
+   }
+  },
+  {
+   "date": "20260831",
+   "gs_iron": {
+    "long": 29301,
+    "short": 14666,
+    "net": 14635
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 12316,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 68533,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 12449,
+    "short": 14443,
+    "net": -1994
+   }
+  },
+  {
+   "date": "20260901",
+   "gs_iron": {
+    "long": 27945,
+    "short": 14566,
+    "net": 13379
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 10935,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 64703,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 16864,
+    "short": 17276,
+    "net": -412
+   }
+  },
+  {
+   "date": "20260902",
+   "gs_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 79909,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 18545,
+    "short": 17822,
+    "net": 723
+   }
+  },
+  {
+   "date": "20260903",
+   "gs_iron": {
+    "long": 29165,
+    "short": 14833,
+    "net": 14332
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 10132,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 94761,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 20027,
+    "short": 15043,
+    "net": 4984
+   }
+  },
+  {
+   "date": "20260904",
+   "gs_iron": {
+    "long": 31692,
+    "short": 13291,
+    "net": 18401
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 9378,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 97264,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 20330,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260907",
+   "gs_iron": {
+    "long": 32627,
+    "short": 10520,
+    "net": 22107
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 103176,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 21597,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260908",
+   "gs_iron": {
+    "long": 33340,
+    "short": 10589,
+    "net": 22751
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 104122,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 25893,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260909",
+   "gs_iron": {
+    "long": 33868,
+    "short": 12224,
+    "net": 21644
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 97854,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 26797,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260910",
+   "gs_iron": {
+    "long": 30350,
+    "short": 11454,
+    "net": 18896
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 94051,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": 16279,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260911",
+   "gs_iron": {
+    "long": 30865,
+    "short": 14760,
+    "net": 16105
+   },
+   "ms_iron": {
+    "long": null,
+    "short": null,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 99644,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260914",
+   "gs_iron": {
+    "long": 30148,
+    "short": 15736,
+    "net": 14412
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 9102,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 109908,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260915",
+   "gs_iron": {
+    "long": 30748,
+    "short": 20320,
+    "net": 10428
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 10601,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 116173,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 24046,
+    "net": null
+   }
+  },
+  {
+   "date": "20260916",
+   "gs_iron": {
+    "long": 31143,
+    "short": 21549,
+    "net": 9594
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 11522,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 113319,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": null,
+    "net": null
+   }
+  },
+  {
+   "date": "20260917",
+   "gs_iron": {
+    "long": 30845,
+    "short": 20524,
+    "net": 10321
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 11597,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 104125,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 19379,
+    "net": null
+   }
+  },
+  {
+   "date": "20260918",
+   "gs_iron": {
+    "long": 31389,
+    "short": 19793,
+    "net": 11596
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 10263,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 105823,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 26343,
+    "net": null
+   }
+  },
+  {
+   "date": "20260921",
+   "gs_iron": {
+    "long": 29122,
+    "short": 19784,
+    "net": 9338
+   },
+   "ms_iron": {
+    "long": 8944,
+    "short": 10194,
+    "net": -1250
+   },
+   "gs_rebar": {
+    "long": null,
+    "short": 100703,
+    "net": null
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 26854,
+    "net": null
+   }
+  },
+  {
+   "date": "20260922",
+   "gs_iron": {
+    "long": 31161,
+    "short": 20400,
+    "net": 10761
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 13691,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 29500,
+    "short": 84995,
+    "net": -55495
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 26834,
+    "net": null
+   }
+  },
+  {
+   "date": "20260923",
+   "gs_iron": {
+    "long": 27643,
+    "short": 19803,
+    "net": 7840
+   },
+   "ms_iron": {
+    "long": 8676,
+    "short": 12414,
+    "net": -3738
+   },
+   "gs_rebar": {
+    "long": 30000,
+    "short": 80387,
+    "net": -50387
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 28342,
+    "net": null
+   }
+  },
+  {
+   "date": "20260924",
+   "gs_iron": {
+    "long": 28429,
+    "short": 20977,
+    "net": 7452
+   },
+   "ms_iron": {
+    "long": 8631,
+    "short": 14163,
+    "net": -5532
+   },
+   "gs_rebar": {
+    "long": 30500,
+    "short": 72841,
+    "net": -42341
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 30560,
+    "net": null
+   }
+  },
+  {
+   "date": "20260928",
+   "gs_iron": {
+    "long": 26250,
+    "short": 22135,
+    "net": 4115
+   },
+   "ms_iron": {
+    "long": 8795,
+    "short": 15653,
+    "net": -6858
+   },
+   "gs_rebar": {
+    "long": 49587,
+    "short": 56985,
+    "net": -7398
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 26501,
+    "net": null
+   }
+  },
+  {
+   "date": "20260929",
+   "gs_iron": {
+    "long": 27689,
+    "short": 22312,
+    "net": 5377
+   },
+   "ms_iron": {
+    "long": 8795,
+    "short": 18289,
+    "net": -9494
+   },
+   "gs_rebar": {
+    "long": 77673,
+    "short": 39481,
+    "net": 38192
+   },
+   "gs_hrc": {
+    "long": 15981,
+    "short": 29529,
+    "net": -13548
+   }
+  },
+  {
+   "date": "20260930",
+   "gs_iron": {
+    "long": 25575,
+    "short": 21179,
+    "net": 4396
+   },
+   "ms_iron": {
+    "long": 8795,
+    "short": 16786,
+    "net": -7991
+   },
+   "gs_rebar": {
+    "long": 87705,
+    "short": 32072,
+    "net": 55633
+   },
+   "gs_hrc": {
+    "long": 19013,
+    "short": 32427,
+    "net": -13414
+   }
+  },
+  {
+   "date": "20261008",
+   "gs_iron": {
+    "long": 27809,
+    "short": 24864,
+    "net": 2945
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 20603,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 57892,
+    "short": 48865,
+    "net": 9027
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 41385,
+    "net": null
+   }
+  },
+  {
+   "date": "20261009",
+   "gs_iron": {
+    "long": 26149,
+    "short": 26592,
+    "net": -443
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 22813,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 23231,
+    "short": 51709,
+    "net": -28478
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 45250,
+    "net": null
+   }
+  }
+ ]
+}
