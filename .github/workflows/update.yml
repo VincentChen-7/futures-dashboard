@@ -1,0 +1,44 @@
+name: Update Futures Dashboard
+
+on:
+  schedule:
+    - cron: '30 1 * * *'   # 09:30 北京时间 (UTC 01:30)
+    - cron: '30 8 * * *'   # 16:30 北京时间 (UTC 08:30)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-dashboard
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Detect weekend (skip Sat/Sun)
+        id: day
+        run: |
+          DOW=$(date -u +%u)
+          echo "dow=$DOW"
+          if [ "$DOW" -ge 6 ]; then echo "skip=1" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Run dashboard update
+        if: steps.day.outputs.skip != '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python update_dashboard.py
+
+      - name: Done
+        if: steps.day.outputs.skip != '1'
+        run: echo "Dashboard refreshed at $(date -u)"
