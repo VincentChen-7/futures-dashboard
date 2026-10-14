@@ -1,0 +1,2 @@
+# 期货持仓数据看板更新流水线：仅使用 Python 标准库，无需任何第三方依赖。
+# (urllib / ssl / json / csv / zipfile / datetime / concurrent.futures 等均为内置模块)
