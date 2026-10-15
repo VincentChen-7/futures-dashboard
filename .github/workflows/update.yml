@@ -2,8 +2,9 @@ name: Update Futures Dashboard
 
 on:
   schedule:
-    - cron: '30 1 * * *'   # 09:30 北京时间 (UTC 01:30)
-    - cron: '30 8 * * *'   # 16:30 北京时间 (UTC 08:30)
+    - cron: '30 1 * * *'   # 09:30 北京时间 (UTC 01:30) — 兜底补跑
+    - cron: '30 8 * * *'   # 16:30 北京时间 (UTC 08:30) — 国内盘收盘后更新
+    - cron: '30 10 * * *'  # 18:30 北京时间 (UTC 10:30) — SGX 日报 17:00 后出数，接住当天 SGX 持仓
   workflow_dispatch:
 
 permissions:
