@@ -55,13 +55,6 @@
   .sub-btn.active { background: var(--card); color: var(--ink); box-shadow: 0 2px 6px rgba(0,0,0,.08); }
   .sub-btn.active { background: var(--card); color: var(--ink); box-shadow: 0 2px 6px rgba(0,0,0,.08); }
 
-  /* ===== SUMMARY CARDS ===== */
-  .summary-bar { max-width: 1400px; margin: 0 auto 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-  .summary-item { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 14px 18px; text-align: center; }
-  .summary-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
-  .summary-value { font-size: 22px; font-weight: 700; }
-  .summary-change { font-size: 12px; margin-top: 4px; }
-
   /* ===== FUTURES TABLES & CHARTS ===== */
   .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 1400px; margin: 0 auto 24px; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 1px 3px rgba(16,24,40,0.04); padding: 18px; }
@@ -136,7 +129,6 @@
 
   @media (max-width: 900px) {
     .dashboard-grid, .chart-section { grid-template-columns: 1fr; }
-    .summary-bar { grid-template-columns: 1fr; }
     .options-controls { flex-direction: column; align-items: stretch; }
   }
 </style>
@@ -158,7 +150,6 @@
   <div class="header">
     <div class="subtitle">高盛期货 &amp; 摩根期货 — 持仓变化监测（大商所 / 上期所：铁矿石 · 螺纹钢 · 热卷）</div>
   </div>
-  <div class="summary-bar" id="ferrous-summary-bar"></div>
   <div class="section-label">持仓对比</div>
   <div class="dashboard-grid" id="ferrous-dashboard-grid"></div>
   <div class="section-label">历史持仓走势</div>
@@ -177,7 +168,6 @@
     <button class="sub-btn" data-c="hc">热卷</button>
   </div>
   <div class="iron-sub" data-c="i">
-    <div class="summary-bar" id="iron_i-summary-bar"></div>
     <div class="section-label">持仓对比</div>
     <div class="dashboard-grid" id="iron_i-grid"></div>
     <div class="section-label">历史持仓走势</div>
@@ -185,7 +175,6 @@
     <div class="chart-section" id="iron_i-chart-section"></div>
   </div>
   <div class="iron-sub" data-c="rb" style="display:none">
-    <div class="summary-bar" id="iron_rb-summary-bar"></div>
     <div class="section-label">持仓对比</div>
     <div class="dashboard-grid" id="iron_rb-grid"></div>
     <div class="section-label">历史持仓走势</div>
@@ -193,7 +182,6 @@
     <div class="chart-section" id="iron_rb-chart-section"></div>
   </div>
   <div class="iron-sub" data-c="hc" style="display:none">
-    <div class="summary-bar" id="iron_hc-summary-bar"></div>
     <div class="section-label">持仓对比</div>
     <div class="dashboard-grid" id="iron_hc-grid"></div>
     <div class="section-label">历史持仓走势</div>
@@ -207,7 +195,6 @@
   <div class="header">
     <div class="subtitle">国君 · 永安 · 东证 · 中信 · 银河 — 持仓变化监测（大连商品交易所：焦煤 jm）</div>
   </div>
-  <div class="summary-bar" id="jm-summary-bar"></div>
   <div class="section-label">持仓对比</div>
   <div class="dashboard-grid" id="jm-dashboard-grid"></div>
   <div class="section-label">历史持仓走势</div>
@@ -428,29 +415,8 @@ function renderFerrous() {
   const records = ferrousData.records;
   const today = records[records.length - 1];
   const yesterday = records[records.length - 2];
-  renderFerrousSummary(today, yesterday);
   renderGenericTables(today, yesterday, FERROUS_CATS, 'ferrous-dashboard-grid');
   renderGenericCharts(records, FERROUS_CATS, ferrousCharts, 'ferrous-chart-section');
-}
-// 净持仓卡：动态遍历所有品种，凡 net != null 即显示（确保后续 ms_iron/gs_rebar 等恢复后自动出现）
-function renderFerrousSummary(today, yesterday) {
-  let html = '';
-  for (const cat of FERROUS_CATS) {
-    const net = today[cat.key].net;
-    if (net === null || net === undefined) continue;
-    const prevNet = yesterday ? yesterday[cat.key].net : null;
-    const change = calcChange(net, prevNet);
-    let changeHtml = '';
-    if (change !== null) {
-      const sign = change > 0 ? '+' : '';
-      const cls = change > 0 ? 'positive' : (change < 0 ? 'negative' : 'neutral');
-      changeHtml = '<span class="' + cls + '">' + sign + change.toLocaleString() + ' (日变化)</span>';
-    }
-    html += '<div class="summary-item"><div class="summary-label">' + cat.title.replace('持仓','净持仓') + '</div>' +
-      '<div class="summary-value" style="color:' + cat.color + '">' + (net > 0 ? '+' : '') + net.toLocaleString() + '</div>' +
-      '<div class="summary-change">' + changeHtml + '</div></div>';
-  }
-  document.getElementById('ferrous-summary-bar').innerHTML = html;
 }
 
 // ============================================================
@@ -611,28 +577,8 @@ function renderIron(contract) {
   const records = data.records;
   const today = records[records.length - 1];
   const yesterday = records[records.length - 2];
-  renderIronSummary(contract, today, yesterday);
   renderGenericTables(today, yesterday, IRON_CATS, ironGrid(contract));
   renderGenericCharts(records, IRON_CATS, ironStore(contract), ironSection(contract));
-}
-function renderIronSummary(contract, today, yesterday) {
-  let html = '';
-  for (const cat of IRON_CATS) {
-    const net = today[cat.key].net;
-    if (net === null || net === undefined) continue;
-    const prevNet = yesterday ? yesterday[cat.key].net : null;
-    const change = calcChange(net, prevNet);
-    let changeHtml = '';
-    if (change !== null) {
-      const sign = change > 0 ? '+' : '';
-      const cls = change > 0 ? 'positive' : (change < 0 ? 'negative' : 'neutral');
-      changeHtml = '<span class="' + cls + '">' + sign + change.toLocaleString() + ' (日变化)</span>';
-    }
-    html += '<div class="summary-item"><div class="summary-label">' + cat.title.replace('持仓','净持仓') + '</div>' +
-      '<div class="summary-value" style="color:' + cat.color + '">' + (net > 0 ? '+' : '') + net.toLocaleString() + '</div>' +
-      '<div class="summary-change">' + changeHtml + '</div></div>';
-  }
-  document.getElementById('iron_'+contract+'-summary-bar').innerHTML = html;
 }
 function resizeIron(contract) {
   Object.values(ironStore(contract)).forEach(x => x.chart && x.chart.resize());
@@ -672,30 +618,9 @@ function renderJM() {
   const records = jmData.records;
   const today = records[records.length - 1];
   const yesterday = records[records.length - 2];
-  renderJMSummary(today, yesterday);
   renderGenericTables(today, yesterday, JM_CATS, 'jm-dashboard-grid');
   renderGenericCharts(records, JM_CATS, jmCharts, 'jm-chart-section');
 }
-function renderJMSummary(today, yesterday) {
-  let html = '';
-  for (const cat of JM_CATS) {
-    const net = today[cat.key].net;
-    if (net === null || net === undefined) continue;
-    const prevNet = yesterday ? yesterday[cat.key].net : null;
-    const change = calcChange(net, prevNet);
-    let changeHtml = '';
-    if (change !== null) {
-      const sign = change > 0 ? '+' : '';
-      const cls = change > 0 ? 'positive' : (change < 0 ? 'negative' : 'neutral');
-      changeHtml = '<span class="' + cls + '">' + sign + change.toLocaleString() + ' (日变化)</span>';
-    }
-    html += '<div class="summary-item"><div class="summary-label">' + cat.title.replace('持仓','净持仓') + '</div>' +
-      '<div class="summary-value" style="color:' + cat.color + '">' + (net > 0 ? '+' : '') + net.toLocaleString() + '</div>' +
-      '<div class="summary-change">' + changeHtml + '</div></div>';
-  }
-  document.getElementById('jm-summary-bar').innerHTML = html;
-}
-
 // ============================================================
 // TAB 5: 新交所铁矿期权持仓
 // ============================================================
