@@ -126,7 +126,7 @@
   .daily-summary-table-wrap table { font-size: 12px; }
   .daily-summary-table-wrap th { position: sticky; top: 0; z-index: 1; background: #f8f9fa !important; }
   .daily-summary-table-wrap td:first-child { white-space: nowrap; font-weight: 600; }
-  .empty-note { text-align: center; color: #999; padding: 40px; font-size: 14px; }
+  .empty-note { text-align: center; color: #667085; padding: 40px; font-size: 14px; }
 
   @media (max-width: 900px) {
     .dashboard-grid, .chart-section { grid-template-columns: 1fr; }
@@ -1049,7 +1049,7 @@ function renderOptionsChart() {
   if (!optChart) optChart = echarts.init(document.getElementById('opt-chart'));
   const monthLabel = currentContractMonth === '主力' ? ('主力(' + (dominantMonth(toKey) || '?') + ')') : '全部合约';
   optChart.setOption({
-    title: { text: currentOptType.toUpperCase() + ' ' + fromKey.substring(4) + '→' + toKey.substring(4) + ' 变化 · ' + monthLabel, subtext:'单位：手（正=增加/负=减少；橙柱为变化最集中处）', left:'center', top:8, textStyle:{fontSize:14,fontWeight:'normal'}, subtextStyle:{fontSize:11,color:'#999'} },
+    title: { text: currentOptType.toUpperCase() + ' ' + fromKey.substring(4) + '→' + toKey.substring(4) + ' 变化 · ' + monthLabel, subtext:'单位：手（正=增加/负=减少；橙柱为变化最集中处）', left:'center', top:8, textStyle:{fontSize:14,fontWeight:'normal'}, subtextStyle:{fontSize:11,color:'#667085'} },
     tooltip: { trigger:'axis', formatter: function(params) {
       const s = params[0]; const strike = s.name; const change = s.value;
       const vFrom = (oiFrom && oiFrom[strike]) || 0; const vTo = (oiTo && oiTo[strike]) || 0;
@@ -1123,7 +1123,7 @@ function renderDistributionChart() {
   const colors = oiVals.map(v => v === maxVal ? '#e67e22' : baseColor);
   if (!distChart) distChart = echarts.init(document.getElementById('dist-chart'));
   distChart.setOption({
-    title: { text: distType.toUpperCase() + ' 持仓分布 · ' + monthLabel + ' · ' + formatDateStr(dateKey), subtext:'单位：手（橙柱为持仓量最集中行权价）', left:'center', top:8, textStyle:{fontSize:14,fontWeight:'normal'}, subtextStyle:{fontSize:11,color:'#999'} },
+    title: { text: distType.toUpperCase() + ' 持仓分布 · ' + monthLabel + ' · ' + formatDateStr(dateKey), subtext:'单位：手（橙柱为持仓量最集中行权价）', left:'center', top:8, textStyle:{fontSize:14,fontWeight:'normal'}, subtextStyle:{fontSize:11,color:'#667085'} },
     tooltip: { trigger:'axis', formatter: function(params) {
       const s = params[0]; const k = s.name; const v = (oi[k]||0);
       const pct = total ? (v/total*100).toFixed(1) : '0';
