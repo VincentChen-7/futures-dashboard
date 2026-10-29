@@ -38,6 +38,8 @@
   .tab-panel.active { display: block; }
 
   .app-title { text-align: left; font-size: 30px; line-height: 1.2; font-weight: 400; color: var(--ink); margin: 6px 0; padding: 24px 0 14px; }
+  .update-badge { display: inline-block; margin: 0 0 14px; padding: 6px 14px; background: #fff; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; color: var(--muted); }
+  .update-badge #app-update-date { font-weight: 700; color: #1d2939; font-variant-numeric: tabular-nums; }
   .header { text-align: left; margin-bottom: 16px; }
   .subtitle { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
   .update-time { font-size: 12px; color: var(--muted); }
@@ -135,7 +137,8 @@
 </head>
 <body>
 
-<div class="app-title">📊 黑色衍生品数据看板</div>
+<div class="app-title">黑色衍生品数据看板</div>
+<div class="update-badge">最后更新：<span id="app-update-date">—</span></div>
 
 <div class="tab-bar">
   <button class="tab-btn active" data-tab="ferrous">外资国内期货黑色持仓</button>
@@ -404,10 +407,21 @@ const FERROUS_CATS = [
 ];
 const ferrousCharts = {};
 
+// 标题下"最后更新"徽标：取各数据源 lastUpdated 的最大日期，格式化为 YYYY-MM-DD
+function registerUpdateTime(s) {
+  if (!s) return;
+  const m = String(s).replace(/[^0-9]/g, '').substring(0, 8);
+  if (m.length !== 8) return;
+  const el = document.getElementById('app-update-date');
+  if (!el) return;
+  const cur = el.textContent.replace(/[^0-9]/g, '');
+  if (m >= cur) el.textContent = m.substring(0,4) + '-' + m.substring(4,6) + '-' + m.substring(6,8);
+}
 async function loadFerrousData() {
   try {
     const resp = await fetch('data.json?t=' + Date.now());
     ferrousData = await resp.json();
+    registerUpdateTime(ferrousData.lastUpdated);
   } catch(e) {}
   if (isActiveTab('ferrous')) renderFerrous();
 }
@@ -568,6 +582,7 @@ async function loadIronData() {
     try {
       const resp = await fetch(files[c] + '?t=' + Date.now());
       ironData[c] = await resp.json();
+      registerUpdateTime(ironData[c].lastUpdated);
     } catch(e) { ironData[c] = null; }
   }
   if (isActiveTab('iron')) renderIron(document.querySelector('.sub-btn.active').dataset.c);
@@ -611,6 +626,7 @@ async function loadJMData() {
   try {
     const resp = await fetch('JM_data.json?t=' + Date.now());
     jmData = await resp.json();
+    registerUpdateTime(jmData.lastUpdated);
   } catch(e) {}
   if (isActiveTab('jm')) renderJM();
 }
@@ -642,6 +658,7 @@ async function loadOptionsData() {
   try {
     const resp = await fetch('sgx_options.json?t=' + Date.now());
     sgxData = await resp.json();
+    registerUpdateTime(sgxData.lastUpdated);
   } catch(e) { sgxData = { dates: [], data: {} }; }
   try {
     const resp2 = await fetch('sgx_options_history.json?t=' + Date.now());
@@ -1138,6 +1155,7 @@ async function loadFuturesData() {
   try {
     const resp = await fetch('sgx_futures.json?t=' + Date.now());
     futuresData = await resp.json();
+    registerUpdateTime(futuresData.lastUpdated);
   } catch(e) { futuresData = { dates: [], data: {} }; }
   try {
     const resp2 = await fetch('sgx_futures_history.json?t=' + Date.now());
