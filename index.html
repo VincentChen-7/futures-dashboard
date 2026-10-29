@@ -38,8 +38,7 @@
   .tab-panel.active { display: block; }
 
   .app-title { text-align: left; font-size: 30px; line-height: 1.2; font-weight: 400; color: var(--ink); margin: 6px 0; padding: 24px 0 14px; }
-  .update-badge { display: inline-block; margin: 0 0 14px; padding: 6px 14px; background: #fff; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; color: var(--muted); }
-  .update-badge #app-update-date { font-weight: 700; color: #1d2939; font-variant-numeric: tabular-nums; }
+  /* 最后更新标签严格按视觉规范 .p-upd（下方定义） */
   .header { text-align: left; margin-bottom: 16px; }
   .subtitle { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
   .update-time { font-size: 12px; color: var(--muted); }
@@ -138,7 +137,7 @@
 <body>
 
 <div class="app-title">黑色衍生品数据看板</div>
-<div class="update-badge">最后更新：<span id="app-update-date">—</span></div>
+<div class="p-upd">最后更新：<span id="app-update-date">—</span></div>
 
 <div class="tab-bar">
   <button class="tab-btn active" data-tab="ferrous">外资国内期货黑色持仓</button>
@@ -304,7 +303,7 @@
         <span class="data-status" id="dist-verify" style="margin:0"></span>
       </div>
       <div class="chart-container" id="dist-chart" style="height:420px;"></div>
-      <div style="font-size:12px;color:#95a5a6;font-style:italic;margin-top:6px">注：橙柱为持仓量最集中的行权价；「全部合约」下各行权价持仓量加总 = 上方「每日持仓汇总」表中该日期的 CALL/PUT 合计（见标题右侧校验）。</div>
+      <div style="font-size:12px;color:#667085;font-style:italic;margin-top:6px">注：橙柱为持仓量最集中的行权价；「全部合约」下各行权价持仓量加总 = 上方「每日持仓汇总」表中该日期的 CALL/PUT 合计（见标题右侧校验）。</div>
     </div>
   </div>
 
@@ -980,7 +979,7 @@ function computeDailySummaries() {
 function renderDailySummaryTable() {
   const tableWrap = document.getElementById('daily-summary-table-wrap');
   const summaries = computeDailySummaries();
-  if (summaries.length === 0) { tableWrap.innerHTML = '<p style="text-align:center;color:#999;padding:30px;">暂无期权数据，等待更新...</p>'; return; }
+  if (summaries.length === 0) { tableWrap.innerHTML = '<p style="text-align:center;color:#667085;padding:30px;">暂无期权数据，等待更新...</p>'; return; }
   let html = '<table><thead><tr>' +
     '<th>DATE</th><th>看涨<br/>CALL</th><th>看跌<br/>PUT</th><th>看涨-看跌<br/>持仓量</th>' +
     '<th>CALL<br/>变化量</th><th>PUT<br/>变化量</th><th>看涨-看跌<br/>变化量</th>' +
@@ -1344,7 +1343,7 @@ function computeFuturesSummaries() {
 function renderFuturesSummaryTable() {
   const tableWrap = document.getElementById('futures-summary-table-wrap');
   const summaries = computeFuturesSummaries();
-  if (summaries.length === 0) { tableWrap.innerHTML = '<p style="text-align:center;color:#999;padding:30px;">暂无期货数据，等待更新...</p>'; return; }
+  if (summaries.length === 0) { tableWrap.innerHTML = '<p style="text-align:center;color:#667085;padding:30px;">暂无期货数据，等待更新...</p>'; return; }
   let html = '<table><thead><tr>' +
     '<th>DATE</th><th>总持仓量</th><th>主力持仓量</th>' +
     '<th>总持仓量<br/>变化量</th><th>主力持仓量<br/>变化量</th>' +
