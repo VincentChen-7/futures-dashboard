@@ -1,5 +1,5 @@
 {
- "lastUpdated": "20261029",
+ "lastUpdated": "20261030",
  "source": "东方财富期货龙虎榜（数据来源：大连商品交易所 / 上海期货交易所 每日持仓排名）",
  "records": [
   {
@@ -4530,6 +4530,29 @@
    "gs_hrc": {
     "long": null,
     "short": 75042,
+    "net": null
+   }
+  },
+  {
+   "date": "20261030",
+   "gs_iron": {
+    "long": 8919,
+    "short": 30416,
+    "net": -21497
+   },
+   "ms_iron": {
+    "long": null,
+    "short": 18766,
+    "net": null
+   },
+   "gs_rebar": {
+    "long": 23915,
+    "short": 56911,
+    "net": -32996
+   },
+   "gs_hrc": {
+    "long": null,
+    "short": 78254,
     "net": null
    }
   }
