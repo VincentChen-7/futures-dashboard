@@ -4605,14 +4605,14 @@
   {
    "date": "20261104",
    "gs_iron": {
-    "long": null,
-    "short": null,
-    "net": null
+    "long": 10252,
+    "short": 37923,
+    "net": -27671
    },
    "ms_iron": {
-    "long": null,
-    "short": null,
-    "net": null
+    "long": 7047,
+    "short": 16184,
+    "net": -9137
    },
    "gs_rebar": {
     "long": null,
